@@ -15,20 +15,12 @@ contract Auction {
 
     modifier hasEnded() {
         require(now >= dateEnd);
+        require(canceled == true);
         _;
     }
 
     modifier hasNotEnded() {
         require(now < dateEnd);
-        _;
-    }
-
-    modifier isCanceled() {
-        require(canceled == true);
-        _;
-    }
-
-    modifier isNotCanceled() {
         require(canceled == false);
         _;
     }
@@ -53,7 +45,7 @@ contract Auction {
     }
 
 
-    function makeBid() public payable isNotOwner isNotCanceled hasNotEnded {
+    function makeBid() public payable isNotOwner hasNotEnded {
         uint bidAmount = stakeByBidder[msg.sender] + msg.value;
         require(maxBid < bidAmount);
 
@@ -64,11 +56,19 @@ contract Auction {
     }
 
     function cancel() public isOwner hasNotEnded {
-
+        canceled = true;
     }
 
-    function withdraw() public isNotOwner hasEnded {
-     
+    function forceEnd() public isOwner hasNotEnded {
+        dateEnd = now;
+    }
+
+    function withdraw() public hasEnded {
+        if (msg.sender == owner) {
+            
+        } else {
+
+        }
     }
     
  
@@ -83,5 +83,9 @@ contract Auction {
 
     function getMaxBid() public view returns(uint) {
         return maxBid;
+    }
+
+    function getMaxBidder() public view returns (address) {
+        return maxBidder;
     }
 }
