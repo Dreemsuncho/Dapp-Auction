@@ -28,6 +28,11 @@ contract Auction {
         _;
     }
 
+    modifier isNotCanceled() {
+        require(canceled == false);
+        _;
+    }
+
     event NotifyBid(address bidder, uint amount);
 
     uint private dateEnd;
@@ -48,7 +53,7 @@ contract Auction {
     }
 
 
-    function makeBid() public payable isNotOwner hasNotEnded {
+    function makeBid() public payable isNotOwner isNotCanceled hasNotEnded {
         uint bidAmount = stakeByBidder[msg.sender] + msg.value;
         require(maxBid < bidAmount);
 
@@ -66,8 +71,17 @@ contract Auction {
      
     }
     
+ 
     function getStakeByBidder(address bidder) public view returns (uint stake) {
         stake = stakeByBidder[bidder];
         return stake;
+    }
+
+    function getOwner() public view returns (address) {
+        return owner;
+    }
+
+    function getMaxBid() public view returns(uint) {
+        return maxBid;
     }
 }

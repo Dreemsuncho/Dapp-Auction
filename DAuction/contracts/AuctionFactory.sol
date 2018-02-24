@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 import "./Auction.sol";
 
 contract AuctionFactory {
-    Auction[] public auctions;
+    Auction[] private auctions;
 
     event AuctionCreated(address owner, address auction);
 
