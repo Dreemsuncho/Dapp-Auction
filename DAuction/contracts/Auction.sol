@@ -1,4 +1,3 @@
-
 pragma solidity ^0.4.18;
 
 
@@ -29,7 +28,7 @@ contract Auction {
         _;
     }
 
-    event notifyBid(address bidder, uint amount);
+    event NotifyBid(address bidder, uint amount);
 
     uint private dateEnd;
     uint private maxBid;
@@ -39,12 +38,12 @@ contract Auction {
 
     mapping(address => uint) private stakeByBidder;
 
-    function Auction(uint duration, uint startAmount) public {
+    function Auction(address ownerInput, uint duration, uint startAuctionAmount) public {
         require(duration >= 1);
 
-        owner = msg.sender;
+        owner = ownerInput;
         dateEnd = now + duration;
-        maxBid = startAmount;
+        maxBid = startAuctionAmount;
         canceled = false;
     }
 
@@ -56,7 +55,7 @@ contract Auction {
         maxBid = bidAmount;
         maxBidder = msg.sender;
         stakeByBidder[msg.sender] = bidAmount;
-        notifyBid(maxBidder, maxBid);
+        NotifyBid(maxBidder, maxBid);
     }
 
     function cancel() public isOwner hasNotEnded {
