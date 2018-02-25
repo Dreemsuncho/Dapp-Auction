@@ -88,4 +88,12 @@ contract Auction {
     function getMaxBidder() public view returns (address) {
         return maxBidder;
     }
+
+    function isCanceled() public view returns (bool) {
+            return canceled;
+    }
+
+    function isEnd() public view returns (bool) {
+        return now >= dateEnd;
+    }
 }

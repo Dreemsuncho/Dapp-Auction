@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1> 
+        <ul>
+            <list-auction v-for="address in auctions" v-bind:item="address" v-bind:key="address.id"> </list-auction>
+        </ul>
+
+        <create-auction @create-auction="createAuction"></create-auction>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
+
+<!-- BROWSERIFY -->
+<!-- 
+    node_modules\.bin\browserify src/scripts/app.js -o src/bundle.js 
+-->

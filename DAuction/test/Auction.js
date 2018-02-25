@@ -86,7 +86,8 @@ contract("Auction", function (accounts) {
             let bidderStakeExpected = bidAmount + bidAmountSecond;
             let maxBid = await instance.getMaxBid();
             // Assert
-            assert.strictEqual(bidderStake.toNumber(), bidderStakeExpected);
+            assert.strictEqual(bidderStake.toNumber(), bidderStakeExpected);  
+            
             assert.strictEqual(bidderStake.toNumber(), maxBid.toNumber())
         });
 
