@@ -10,12 +10,14 @@
 
 <body>
     <div id="app">
-        <h1>{{ greet }}</h1> xixi
-        <ol>
-            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
-            </todo-item>
-        </ol>
+        <h1>{{ title }}</h1> 
+        <ul>
+            <list-auction v-for="address in auctions" v-bind:item="address" v-bind:key="address.id"> </list-auction>
+        </ul>
+
+        <create-auction @create-auction="createAuction"></create-auction>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="./bundle.js"></script>

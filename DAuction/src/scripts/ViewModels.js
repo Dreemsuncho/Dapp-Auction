@@ -32,7 +32,8 @@ let vmInit = function (FactoryAuction) {
                 let auctionOwner = web3.eth.accounts[0];
                 FactoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
                     .then(async function () {
-                        console.log(await FactoryAuction.getAuctions());
+                        console.log(await FactoryAuction.getAuctions()); 
+                        // TODO
                     });
             }
         },
@@ -47,9 +48,15 @@ let vmInit = function (FactoryAuction) {
     });
 }
 
+module.exports = { vmInit }
+
+
 function mapAuctions(addr, ind) {
     return { id: ind, address: addr }
 }
 
 
-module.exports = { vmInit }
+function initComponents() {
+    
+}
+
