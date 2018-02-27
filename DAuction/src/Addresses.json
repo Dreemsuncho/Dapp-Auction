@@ -1,8 +1,8 @@
 {
     "production": {
-        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
     },
     "development": {
-        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
     }
 }

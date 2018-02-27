@@ -57235,10 +57235,10 @@ module.exports = XMLHttpRequest;
 },{}],320:[function(require,module,exports){
 module.exports={
     "production": {
-        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
     },
     "development": {
-        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
     }
 }
 },{}],321:[function(require,module,exports){
@@ -57310,10 +57310,25 @@ let vmInit = function (app) {
 
                 let auctionOwner = web3.eth.accounts[0];
                 factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                    .then(function () {
-                        refreshAuctions();
-                    });
+                    .then(_ => refreshAuctions());
             },
+            bid: async function (addressAuction) {
+                let auction = await contractAuction.at(addressAuction);
+                let account = web3.eth.accounts[0];
+                let bidAmount = Number(document.getElementById(addressAuction).value);
+
+                let oldBid = (await auction.getMaxBid()).valueOf();
+                auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
+                    .then(async _ => {
+                        console.log("SUCCESS")
+
+                        let newBid;
+                        while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
+                        
+                        document.getElementById("max-bid-" + addressAuction).innerHTML = newBid;
+                    })
+                    .catch(_ => console.log("ERR"));
+            }
         },
 
         beforeCreate: function () {
@@ -57326,12 +57341,8 @@ let vmInit = function (app) {
     });
 
 
-    async function refreshAuctions() {
-        // let newAuctions = await factoryAuction.getAuctions();
-        // while (newAuctions.length === auctions.length) {
-        //     newAuctions = await factoryAuction.getAuctions();
-        // }
-            let newAuctions;
+    async function refreshAuctions(flag) {
+        let newAuctions;
         while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
 
         newAuctions.forEach(async (addr, ind) => {
