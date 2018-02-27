@@ -57235,10 +57235,10 @@ module.exports = XMLHttpRequest;
 },{}],320:[function(require,module,exports){
 module.exports={
     "production": {
-        "FactoryAuction": "0x345ca3e014aaf5dca488057592ee47305d9b3e10"
+        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
     },
     "development": {
-        "FactoryAuction": "0x345ca3e014aaf5dca488057592ee47305d9b3e10"
+        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
     }
 }
 },{}],321:[function(require,module,exports){
@@ -57246,32 +57246,39 @@ module.exports={
 const contract = require("truffle-contract");
 const vmInit = require("./ViewModels").vmInit;
 
+window.App = {};
 
-(async function () {
 
-    if (typeof web3 === "undefined") {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-    } else {
-        web3 = new Web3(web3.currentProvider);
-    }
+(function (app) {
+    (async function () {
 
-    var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
-    var JSON_Auction = require("../../build/contracts/Auction.json");
+        if (typeof web3 === "undefined") {
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+        } else {
+            web3 = new Web3(web3.currentProvider);
+        }
 
-    var contractFactoryAuction = contract(JSON_FactoryAuction);
-    let contractAuction = contract(JSON_Auction);
+        var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
+        var JSON_Auction = require("../../build/contracts/Auction.json");
 
-    contractFactoryAuction.setProvider(web3.currentProvider);
-    contractAuction.setProvider(web3.currentProvider);
+        var contractFactoryAuction = contract(JSON_FactoryAuction);
+        let contractAuction = contract(JSON_Auction);
 
-    let env = Number(web3.version.network) === 3
-        ? "production"
-        : "development";
+        contractFactoryAuction.setProvider(web3.currentProvider);
+        contractAuction.setProvider(web3.currentProvider);
 
-    let factoryAuction = await initFactoryAuction(env, contractFactoryAuction);
+        let env = Number(web3.version.network) === 3
+            ? "production"
+            : "development";
 
-    vmInit(contractAuction, factoryAuction);
-})();
+        let factoryAuction = await initFactoryAuction(env, contractFactoryAuction);
+
+        app.factoryAuction = factoryAuction;
+        app.contractAuction = contractAuction;
+        vmInit(app);
+
+    })();
+})(window.App);
 
 async function initFactoryAuction(env, contractFactoryAuction) {
     const addresses = require("../Addresses.json");
@@ -57282,11 +57289,15 @@ async function initFactoryAuction(env, contractFactoryAuction) {
 }
 },{"../../build/contracts/Auction.json":165,"../../build/contracts/AuctionFactory.json":166,"../Addresses.json":320,"./ViewModels":322,"truffle-contract":264}],322:[function(require,module,exports){
 
-let vmInit = function (contractAuction, factoryAuction) {
+let vmInit = function (app) {
+
+    let factoryAuction = app.factoryAuction;
+    let contractAuction = app.contractAuction;
+    let auctions;
 
     initComponents();
 
-    const app = new Vue({
+    const vm = new Vue({
         el: "#app",
         data: {
             title: "Welcome to Auction",
@@ -57299,52 +57310,70 @@ let vmInit = function (contractAuction, factoryAuction) {
 
                 let auctionOwner = web3.eth.accounts[0];
                 factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                    .then(async function () {
-                        console.log(await factoryAuction.getAuctions());
-                        // TODO
+                    .then(function () {
+                        refreshAuctions();
                     });
-            }
+            },
         },
 
-        beforeCreate: function () { },
+        beforeCreate: function () {
+        },
 
-        created: async function () {
-            this.auctions = await factoryAuction.getAuctions();
-            this.auctions.map(mapAuctions);
+        created: function () {
+            auctions = this.auctions
+            refreshAuctions();
         }
     });
+
+
+    async function refreshAuctions() {
+        // let newAuctions = await factoryAuction.getAuctions();
+        // while (newAuctions.length === auctions.length) {
+        //     newAuctions = await factoryAuction.getAuctions();
+        // }
+            let newAuctions;
+        while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
+
+        newAuctions.forEach(async (addr, ind) => {
+            let result = await mapAuctions(addr, ind);
+            if (ind >= auctions.length)
+                auctions.push(result)
+        });
+    }
 
     async function mapAuctions(addr, ind) {
 
         let currentAuction = await contractAuction.at(addr);
-        console.log(await currentAuction.getMaxBid())
 
-        return { id: ind, address: addr }
+        let maxBid = (await currentAuction.getMaxBid()).valueOf();
+        let owner = (await currentAuction.getOwner()).valueOf();
+        let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
+
+        if (maxBidder === "0x0000000000000000000000000000000000000000") {
+            maxBidder = "None"
+        }
+        let result = {
+            id: ind,
+            address: addr,
+            maxBid: maxBid,
+            owner: owner,
+            maxBidder: maxBidder
+        }
+
+        return result
+    }
+
+    function initComponents() {
+        component = Vue.component('list-auction', {
+            props: ["item"],
+            template: "#template-list-auction",
+        })
+
+        component = Vue.component('create-auction', {
+            template: "#template-create-auction",
+        })
     }
 }
 
 module.exports = { vmInit }
-
-
-
-function initComponents() {
-    component = Vue.component('list-auction', {
-        props: ["item"],
-        template: `
-            <li>Name: {{ item }}</li>
-        `,
-    })
-
-    component = Vue.component('create-auction', {
-        template: `
-            <section>
-                Duration: <input type="number" name="duration" id="duration">
-                Start Amount: <input type="number" name="start-auction-amount" id="start-auction-amount">
-                <button @click="$emit('create-auction')">Create Auction</button>
-            </section>
-            `,
-    })
-}
-
-
 },{}]},{},[321]);

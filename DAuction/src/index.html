@@ -6,25 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="app">
-        <h1>{{ title }}</h1> 
-        
-        <ul>
-            <list-auction v-for="address in auctions" v-bind:item="address" v-bind:key="address.id"> </list-auction>
-        </ul>
 
-        <create-auction @create-auction="createAuction"></create-auction>
+    <div class="container">
+        <section id="app">
+            <h1>{{ title }}</h1>
+
+            <div class="row">
+                <create-auction @create-auction="createAuction"></create-auction>
+            </div>
+
+            <div class="row">
+                <list-auction v-for="auc in auctions" v-bind:item="auc" v-bind:key="auc.id"> </list-auction>
+            </div>
+        </section>
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
     <script src="./bundle.js"></script>
 </body>
 
 </html>
+
+
+<script type="text/x-template" id="template-list-auction">
+    <div class="col jumbotron" style="margin:1%"> 
+        <ul>
+            <li><strong>Address:</strong> {{ item.address }}</li>
+            <li><strong>Max Bid:</strong> {{ item.maxBid }}</li>
+            <li><strong>Owner:</strong> {{ item.owner }}</li>
+            <li><strong>Max Bidder:</strong> {{ item.maxBidder }}</li>
+        </ul>
+    </div>
+</script>
+
+<script type="text/x-template" id="template-create-auction">
+    <section>
+        Duration: <input type="number" name="duration" id="duration">
+        Start Amount: <input type="number" name="start-auction-amount" id="start-auction-amount">
+        <button @click="$emit('create-auction')">Create Auction</button>
+    </section>
+</script>
 
 <!-- 
     ipfs daemon

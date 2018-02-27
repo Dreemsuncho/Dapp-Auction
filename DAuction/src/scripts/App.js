@@ -2,32 +2,39 @@
 const contract = require("truffle-contract");
 const vmInit = require("./ViewModels").vmInit;
 
+window.App = {};
 
-(async function () {
 
-    if (typeof web3 === "undefined") {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-    } else {
-        web3 = new Web3(web3.currentProvider);
-    }
+(function (app) {
+    (async function () {
 
-    var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
-    var JSON_Auction = require("../../build/contracts/Auction.json");
+        if (typeof web3 === "undefined") {
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+        } else {
+            web3 = new Web3(web3.currentProvider);
+        }
 
-    var contractFactoryAuction = contract(JSON_FactoryAuction);
-    let contractAuction = contract(JSON_Auction);
+        var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
+        var JSON_Auction = require("../../build/contracts/Auction.json");
 
-    contractFactoryAuction.setProvider(web3.currentProvider);
-    contractAuction.setProvider(web3.currentProvider);
+        var contractFactoryAuction = contract(JSON_FactoryAuction);
+        let contractAuction = contract(JSON_Auction);
 
-    let env = Number(web3.version.network) === 3
-        ? "production"
-        : "development";
+        contractFactoryAuction.setProvider(web3.currentProvider);
+        contractAuction.setProvider(web3.currentProvider);
 
-    let factoryAuction = await initFactoryAuction(env, contractFactoryAuction);
+        let env = Number(web3.version.network) === 3
+            ? "production"
+            : "development";
 
-    vmInit(contractAuction, factoryAuction);
-})();
+        let factoryAuction = await initFactoryAuction(env, contractFactoryAuction);
+
+        app.factoryAuction = factoryAuction;
+        app.contractAuction = contractAuction;
+        vmInit(app);
+
+    })();
+})(window.App);
 
 async function initFactoryAuction(env, contractFactoryAuction) {
     const addresses = require("../Addresses.json");
