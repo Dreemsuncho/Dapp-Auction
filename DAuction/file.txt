@@ -1,0 +1,4 @@
+function TruffleContract() {
+        this.constructor = temp;
+        return Contract.apply(this, arguments);
+      }

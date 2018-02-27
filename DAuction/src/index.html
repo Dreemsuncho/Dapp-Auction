@@ -11,6 +11,7 @@
 <body>
     <div id="app">
         <h1>{{ title }}</h1> 
+        
         <ul>
             <list-auction v-for="address in auctions" v-bind:item="address" v-bind:key="address.id"> </list-auction>
         </ul>
@@ -25,10 +26,6 @@
 
 </html>
 
-<!-- BROWSERIFY(watchify) -->
-<!-- 
-    watchify src/scripts/App.js -o ./dist/bundle.js ./src/bundle.js -v
--->
 <!-- 
     ipfs daemon
     ipfs swarm peers

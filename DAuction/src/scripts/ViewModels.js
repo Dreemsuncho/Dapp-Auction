@@ -1,6 +1,50 @@
 
-let vmInit = function (FactoryAuction) {
+let vmInit = function (contractAuction, factoryAuction) {
 
+    initComponents();
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            title: "Welcome to Auction",
+            auctions: []
+        },
+        methods: {
+            createAuction: function () {
+                let duration = document.getElementById("duration").value;
+                let startAmount = document.getElementById("start-auction-amount").value;
+
+                let auctionOwner = web3.eth.accounts[0];
+                factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
+                    .then(async function () {
+                        console.log(await factoryAuction.getAuctions());
+                        // TODO
+                    });
+            }
+        },
+
+        beforeCreate: function () { },
+
+        created: async function () {
+            this.auctions = await factoryAuction.getAuctions();
+            this.auctions.map(mapAuctions);
+        }
+    });
+
+    async function mapAuctions(addr, ind) {
+
+        let currentAuction = await contractAuction.at(addr);
+        console.log(await currentAuction.getMaxBid())
+
+        return { id: ind, address: addr }
+    }
+}
+
+module.exports = { vmInit }
+
+
+
+function initComponents() {
     component = Vue.component('list-auction', {
         props: ["item"],
         template: `
@@ -17,46 +61,5 @@ let vmInit = function (FactoryAuction) {
             </section>
             `,
     })
-
-    const app = new Vue({
-        el: "#app",
-        data: {
-            title: "Welcome to Auction",
-            auctions: []
-        },
-        methods: {
-            createAuction: function () {
-                let duration = document.getElementById("duration").value;
-                let startAmount = document.getElementById("start-auction-amount").value;
-
-                let auctionOwner = web3.eth.accounts[0];
-                FactoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                    .then(async function () {
-                        console.log(await FactoryAuction.getAuctions()); 
-                        // TODO
-                    });
-            }
-        },
-
-        beforeCreate: function () {
-        },
-
-        created: async function () {
-            this.auctions = await FactoryAuction.getAuctions();
-            this.auctions.map(mapAuctions);
-        }
-    });
-}
-
-module.exports = { vmInit }
-
-
-function mapAuctions(addr, ind) {
-    return { id: ind, address: addr }
-}
-
-
-function initComponents() {
-    
 }
 

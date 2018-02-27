@@ -1,7 +1,6 @@
 
 var Auction = artifacts.require("./Auction.sol");
 
-
 contract("Auction", function (accounts) {
 
     let instance;

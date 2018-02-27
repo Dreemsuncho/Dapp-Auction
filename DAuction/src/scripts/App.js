@@ -1,5 +1,5 @@
 
-const Contract = require("truffle-contract");
+const contract = require("truffle-contract");
 const vmInit = require("./ViewModels").vmInit;
 
 
@@ -14,61 +14,25 @@ const vmInit = require("./ViewModels").vmInit;
     var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
     var JSON_Auction = require("../../build/contracts/Auction.json");
 
-    var FactoryAuctionAbstraction = Contract(JSON_FactoryAuction);
-    let AuctionAbstraction = Contract(JSON_Auction);
+    var contractFactoryAuction = contract(JSON_FactoryAuction);
+    let contractAuction = contract(JSON_Auction);
 
-    FactoryAuctionAbstraction.setProvider(web3.currentProvider);
-    AuctionAbstraction.setProvider(web3.currentProvider);
+    contractFactoryAuction.setProvider(web3.currentProvider);
+    contractAuction.setProvider(web3.currentProvider);
 
-    let FactoryAuction;
-    let Auction;
+    let env = Number(web3.version.network) === 3
+        ? "production"
+        : "development";
 
-    let env = "";
+    let factoryAuction = await initFactoryAuction(env, contractFactoryAuction);
 
-    switch (web3.version.network) {
-        // Ganache || TestRpc
-        case "5777":
-        case "1519633464752":
-            env = "development"
-            break;
-
-        // Ropsten Test Net
-        case "3":
-            env = "production"
-            break;
-    }
-    ({ FactoryAuction, Auction } = await initFactoryAndAuctionProduction(
-        env,
-        FactoryAuction,
-        FactoryAuctionAbstraction,
-        Auction,
-        AuctionAbstraction
-    ));
+    vmInit(contractAuction, factoryAuction);
 })();
 
-async function initFactoryAndAuctionProduction(env, FactoryAuction, FactoryAuctionAbstraction, Auction, AuctionAbstraction) {
-
+async function initFactoryAuction(env, contractFactoryAuction) {
     const addresses = require("../Addresses.json");
     const addressFactoryAuction = addresses[env].FactoryAuction;
+    let factoryAuction = await contractFactoryAuction.at(addressFactoryAuction);
 
-    FactoryAuctionAbstraction.at(addressFactoryAuction)
-        .then(function(instance) {
-            FactoryAuction = instance
-            
-            FactoryAuction.getAuctions().then(async function (arr) {
-                let auctionAddress = arr[0];
-                Auction = await AuctionAbstraction.at(auctionAddress);
-                // must delete
-                window.a = Auction;
-                window.fa = FactoryAuction;
-                vmInit(FactoryAuction);
-            });
-        })
-        .catch(function(err) {
-            console.log("Error!");
-        });
-
-
-    return { FactoryAuction, Auction };
+    return factoryAuction;
 }
-

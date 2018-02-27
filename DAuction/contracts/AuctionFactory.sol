@@ -8,6 +8,10 @@ contract AuctionFactory {
 
     event AuctionCreated(address owner, address auction);
 
+    function AuctionFactory() public {
+
+    }
+
     function createAuction(uint duration, uint startAuctionAmount) public {
         Auction auction = new Auction(msg.sender, duration, startAuctionAmount);
         auctions.push(auction);
