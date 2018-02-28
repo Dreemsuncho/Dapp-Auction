@@ -9,11 +9,11 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/app.css">
 </head>
 
 <body>
-
-    <div class="container">
+    <div class="container-fluid" id="wrapper">
         <section id="app">
             <h1>{{ title }}</h1>
 
@@ -26,16 +26,21 @@
         </section>
     </div>
 
+    <footer>
+        <script src="https://wzrd.in/standalone/buffer"></script>
+        <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js" integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
+            crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-    <script src="./bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+        <script src="./bundle.js"></script>
+    </footer>
 </body>
 
 </html>
@@ -44,26 +49,34 @@
 <script type="text/x-template" id="template-list-auction">
     <div class="col jumbotron" style="margin:1%"> 
         <ul>
+            <li><strong>Owner:</strong> {{ item.owner }}</li>
             <li>
                 <strong>Address:</strong> 
                 <span>{{ item.address }}</span>
             </li>
             <li>
                 <strong>Max Bid:</strong> 
-                <span disabled v-bind:id="'max-bid-' + item.address">{{ item.maxBid }}</span>
+                <span v-bind:id="'max-bid-' + item.address">{{ item.maxBid }}</span>
             </li>
-            <li><strong>Owner:</strong> {{ item.owner }}</li>
-            <li><strong>Max Bidder:</strong> {{ item.maxBidder }}</li>
+            <li>
+                <strong>Max Bidder:</strong>
+                <span v-bind:id="'max-bidder-' + item.address"></span>{{ item.maxBidder }}
+            </li>
+            <li>
+                <strong>Photo:</strong>
+                <span>{{ item.imageUrl }}</span>
+            </li>
         </ul>
-        <input type="number" v-bind:id="item.address"/>
+        <input type="number" v-bind:id="'bid-value-' + item.address"/>
         <button @click="$emit('bid', item.address)">Bid</button>
     </div>
 </script>
 
 <script type="text/x-template" id="template-create-auction">
     <section>
-        Duration: <input type="number" name="duration" id="duration">
-        Start Amount: <input type="number" name="start-auction-amount" id="start-auction-amount">
+        <strong>Duration: </strong><input type="number" name="duration" id="duration">
+        <strong>Start Amount: </strong><input type="number" name="start-auction-amount" id="start-auction-amount">
+        <strong>Photo: </strong><input type="file" name="photo" id="photo">
         <button @click="$emit('create-auction')">Create Auction</button>
     </section>
 </script>
@@ -75,5 +88,5 @@
 
     ipfs name publish QmfZoCnPcgmHYmFJqHBcyuFh3FEYrTZqGdGyioSMrAZzw2
 
-    gateway.ipfs.io/ipns/QmZne9Jxu4cAqTGWFaT5tHDUrPsssn187vuZ1w3UkuCwaB:
+    gateway.ipfs.io/ipns/QmZne9Jxu4cAqTGWFaT5tHDUrPsssn187vuZ1w3UkuCwaB
  -->

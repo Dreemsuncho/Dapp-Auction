@@ -57235,10 +57235,10 @@ module.exports = XMLHttpRequest;
 },{}],320:[function(require,module,exports){
 module.exports={
     "production": {
-        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
+        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
     },
     "development": {
-        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
+        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
     }
 }
 },{}],321:[function(require,module,exports){
@@ -57295,6 +57295,7 @@ let vmInit = function (app) {
     let contractAuction = app.contractAuction;
     let auctions;
 
+
     initComponents();
 
     const vm = new Vue({
@@ -57308,26 +57309,29 @@ let vmInit = function (app) {
                 let duration = document.getElementById("duration").value;
                 let startAmount = document.getElementById("start-auction-amount").value;
 
-                let auctionOwner = web3.eth.accounts[0];
-                factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                    .then(_ => refreshAuctions());
+                function createContinue(imageUrl) {
+                    console.log(imageUrl)
+
+                    let auctionOwner = web3.eth.accounts[0];
+                    factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
+                        .then(_ => refreshAuctions(imageUrl));
+                }
+                uploadImage(createContinue);
             },
-            bid: async function (addressAuction) {
-                let auction = await contractAuction.at(addressAuction);
+            bid: async function (address) {
+                let auction = await contractAuction.at(address);
                 let account = web3.eth.accounts[0];
-                let bidAmount = Number(document.getElementById(addressAuction).value);
+                let bidAmount = Number(document.getElementById("bid-value-" + address).value);
 
                 let oldBid = (await auction.getMaxBid()).valueOf();
-                auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
-                    .then(async _ => {
-                        console.log("SUCCESS")
+                await auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
 
-                        let newBid;
-                        while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
-                        
-                        document.getElementById("max-bid-" + addressAuction).innerHTML = newBid;
-                    })
-                    .catch(_ => console.log("ERR"));
+                let newBid;
+                while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
+                let maxBidder = (await auction.getMaxBidder()).valueOf();
+
+                document.getElementById("max-bid-" + address).innerHTML = newBid;
+                document.getElementById("max-bidder-" + address).innerHTML = maxBidder;
             }
         },
 
@@ -57340,20 +57344,40 @@ let vmInit = function (app) {
         }
     });
 
+    function uploadImage(createContinue) {
+        const reader = new FileReader();
+        let imageUrl = "";
 
-    async function refreshAuctions(flag) {
+        reader.onloadend = function () {
+            const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
+            const buf = buffer.Buffer(reader.result) // Convert data into buffer
+
+            ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
+                if (err)
+                    console.error(err)
+                else
+                    imageUrl = `https://ipfs.io/ipfs/${result[0].hash}`
+
+                createContinue(imageUrl)
+            })
+        }
+
+        const photo = document.getElementById("photo");
+        reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
+    }
+
+    async function refreshAuctions(imageUrl) {
         let newAuctions;
         while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
 
         newAuctions.forEach(async (addr, ind) => {
-            let result = await mapAuctions(addr, ind);
+            let result = await mapAuctions(addr, ind, imageUrl);
             if (ind >= auctions.length)
                 auctions.push(result)
         });
     }
 
-    async function mapAuctions(addr, ind) {
-
+    async function mapAuctions(addr, ind, imageUrl) {
         let currentAuction = await contractAuction.at(addr);
 
         let maxBid = (await currentAuction.getMaxBid()).valueOf();
@@ -57368,7 +57392,8 @@ let vmInit = function (app) {
             address: addr,
             maxBid: maxBid,
             owner: owner,
-            maxBidder: maxBidder
+            maxBidder: maxBidder,
+            imageUrl: imageUrl
         }
 
         return result

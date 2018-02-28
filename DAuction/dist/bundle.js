@@ -24688,7 +24688,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -24729,7 +24729,7 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 371,
+                                      "referencedDeclaration": 318,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -24833,7 +24833,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -24874,7 +24874,7 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 371,
+                                      "referencedDeclaration": 318,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -24978,7 +24978,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25007,7 +25007,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 373,
+                                  "referencedDeclaration": 320,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -25072,7 +25072,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25203,7 +25203,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25232,7 +25232,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 373,
+                                  "referencedDeclaration": 320,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -25297,7 +25297,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25770,7 +25770,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25938,7 +25938,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 373,
+                                  "referencedDeclaration": 320,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -26269,7 +26269,7 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 371,
+                                      "referencedDeclaration": 318,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -26305,7 +26305,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 371,
+                                  "referencedDeclaration": 318,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -26356,7 +26356,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 374,
+                              "referencedDeclaration": 321,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -26518,7 +26518,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 371,
+                                  "referencedDeclaration": 318,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -26596,7 +26596,7 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 371,
+                                      "referencedDeclaration": 318,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -27001,7 +27001,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 373,
+                              "referencedDeclaration": 320,
                               "type": "uint256",
                               "value": "now"
                             },
@@ -27127,7 +27127,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 371,
+                                  "referencedDeclaration": 318,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -27866,7 +27866,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 373,
+                              "referencedDeclaration": 320,
                               "type": "uint256",
                               "value": "now"
                             },
@@ -27924,12 +27924,18 @@ module.exports={
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-02-26T10:03:03.673Z"
+  "updatedAt": "2018-02-27T09:36:03.985Z"
 }
 },{}],166:[function(require,module,exports){
 module.exports={
   "contractName": "AuctionFactory",
   "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
     {
       "anonymous": false,
       "inputs": [
@@ -27980,18 +27986,18 @@ module.exports={
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b610b8a8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630121683f14610051578063d7c069191461007d575b600080fd5b341561005c57600080fd5b61007b60048080359060200190919080359060200190919050506100e7565b005b341561008857600080fd5b61009061024f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100d35780820151818401526020810190506100b8565b505050509050019250505060405180910390f35b60003383836100f46102e3565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018281526020019350505050604051809103906000f080151561014e57600080fd5b90506000805480600101828161016491906102f3565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1505050565b61025761031f565b60008054806020026020016040519081016040528092919081815260200182805480156102d957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161028f575b5050505050905090565b6040516108068061035983390190565b81548183558181151161031a578183600052602060002091820191016103199190610333565b5b505050565b602060405190810160405280600081525090565b61035591905b80821115610351576000816000905550600101610339565b5090565b9056006060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029a165627a7a72305820a55eca7a06c28ad2c7c6b7a7ce75fb6aa55efbe6e014ef61b954b7b6c54b74350029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630121683f14610051578063d7c069191461007d575b600080fd5b341561005c57600080fd5b61007b60048080359060200190919080359060200190919050506100e7565b005b341561008857600080fd5b61009061024f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100d35780820151818401526020810190506100b8565b505050509050019250505060405180910390f35b60003383836100f46102e3565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018281526020019350505050604051809103906000f080151561014e57600080fd5b90506000805480600101828161016491906102f3565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1505050565b61025761031f565b60008054806020026020016040519081016040528092919081815260200182805480156102d957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161028f575b5050505050905090565b6040516108068061035983390190565b81548183558181151161031a578183600052602060002091820191016103199190610333565b5b505050565b602060405190810160405280600081525090565b61035591905b80821115610351576000816000905550600101610339565b5090565b9056006060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029a165627a7a72305820a55eca7a06c28ad2c7c6b7a7ce75fb6aa55efbe6e014ef61b954b7b6c54b74350029",
-  "sourceMap": "57:466:1:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "57:466:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;184:239;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;431:89;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;184:239:1;265:15;295:10;307:8;317:18;283:53;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;265:71;;347:8;:22;;;;;;;;;;;:::i;:::-;;;;;;;;;;361:7;347:22;;;;;;;;;;;;;;;;;;;;;;;380:35;395:10;407:7;380:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;184:239;;;:::o;431:89::-;475:9;;:::i;:::-;504:8;497:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;431:89;:::o;57:466::-;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.18;\r\n\r\n\r\nimport \"./Auction.sol\";\r\n\r\ncontract AuctionFactory {\r\n    Auction[] private auctions;\r\n\r\n    event AuctionCreated(address owner, address auction);\r\n\r\n    function createAuction(uint duration, uint startAuctionAmount) public {\r\n        Auction auction = new Auction(msg.sender, duration, startAuctionAmount);\r\n        auctions.push(auction);\r\n        AuctionCreated(msg.sender, auction);\r\n    }\r\n\r\n    function getAuctions() public view returns (Auction[]) {\r\n        return auctions;\r\n    }\r\n}",
+  "bytecode": "0x6060604052341561000f57600080fd5b610b8a8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630121683f14610051578063d7c069191461007d575b600080fd5b341561005c57600080fd5b61007b60048080359060200190919080359060200190919050506100e7565b005b341561008857600080fd5b61009061024f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100d35780820151818401526020810190506100b8565b505050509050019250505060405180910390f35b60003383836100f46102e3565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018281526020019350505050604051809103906000f080151561014e57600080fd5b90506000805480600101828161016491906102f3565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1505050565b61025761031f565b60008054806020026020016040519081016040528092919081815260200182805480156102d957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161028f575b5050505050905090565b6040516108068061035983390190565b81548183558181151161031a578183600052602060002091820191016103199190610333565b5b505050565b602060405190810160405280600081525090565b61035591905b80821115610351576000816000905550600101610339565b5090565b9056006060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029a165627a7a72305820a3e8fdcdc0fa8b37ad6a945140c485560eaba50580f5d265c374356558567ebd0029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630121683f14610051578063d7c069191461007d575b600080fd5b341561005c57600080fd5b61007b60048080359060200190919080359060200190919050506100e7565b005b341561008857600080fd5b61009061024f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100d35780820151818401526020810190506100b8565b505050509050019250505060405180910390f35b60003383836100f46102e3565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018281526020019350505050604051809103906000f080151561014e57600080fd5b90506000805480600101828161016491906102f3565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1505050565b61025761031f565b60008054806020026020016040519081016040528092919081815260200182805480156102d957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161028f575b5050505050905090565b6040516108068061035983390190565b81548183558181151161031a578183600052602060002091820191016103199190610333565b5b505050565b602060405190810160405280600081525090565b61035591905b80821115610351576000816000905550600101610339565b5090565b9056006060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029a165627a7a72305820a3e8fdcdc0fa8b37ad6a945140c485560eaba50580f5d265c374356558567ebd0029",
+  "sourceMap": "57:517:1:-;;;184:43;;;;;;;;57:517;;;;;;",
+  "deployedSourceMap": "57:517:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:239;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;482:89;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;235:239:1;316:15;346:10;358:8;368:18;334:53;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;316:71;;398:8;:22;;;;;;;;;;;:::i;:::-;;;;;;;;;;412:7;398:22;;;;;;;;;;;;;;;;;;;;;;;431:35;446:10;458:7;431:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:239;;;:::o;482:89::-;526:9;;:::i;:::-;555:8;548:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;482:89;:::o;57:517::-;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.18;\r\n\r\n\r\nimport \"./Auction.sol\";\r\n\r\ncontract AuctionFactory {\r\n    Auction[] private auctions;\r\n\r\n    event AuctionCreated(address owner, address auction);\r\n\r\n    function AuctionFactory() public {\r\n\r\n    }\r\n\r\n    function createAuction(uint duration, uint startAuctionAmount) public {\r\n        Auction auction = new Auction(msg.sender, duration, startAuctionAmount);\r\n        auctions.push(auction);\r\n        AuctionCreated(msg.sender, auction);\r\n    }\r\n\r\n    function getAuctions() public view returns (Auction[]) {\r\n        return auctions;\r\n    }\r\n}",
   "sourcePath": "D:\\Education\\Dapp-Auction\\DAuction\\contracts\\AuctionFactory.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/D/Education/Dapp-Auction/DAuction/contracts/AuctionFactory.sol",
       "exportedSymbols": {
         "AuctionFactory": [
-          302
+          306
         ]
       }
     },
@@ -28014,7 +28020,7 @@ module.exports={
           "SourceUnit": 251,
           "absolutePath": "/D/Education/Dapp-Auction/DAuction/contracts/Auction.sol",
           "file": "./Auction.sol",
-          "scope": 303,
+          "scope": 307,
           "symbolAliases": [
             null
           ],
@@ -28036,17 +28042,17 @@ module.exports={
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            302
+            306
           ],
           "name": "AuctionFactory",
-          "scope": 303
+          "scope": 307
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "auctions",
-              "scope": 302,
+              "scope": 306,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract Auction[] storage ref",
@@ -28157,13 +28163,67 @@ module.exports={
             "attributes": {
               "constant": false,
               "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "AuctionFactory",
+              "payable": false,
+              "scope": 306,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 263,
+                "name": "ParameterList",
+                "src": "207:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 264,
+                "name": "ParameterList",
+                "src": "217:0:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 265,
+                "name": "Block",
+                "src": "217:10:1"
+              }
+            ],
+            "id": 266,
+            "name": "FunctionDefinition",
+            "src": "184:43:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
               "isConstructor": false,
               "modifiers": [
                 null
               ],
               "name": "createAuction",
               "payable": false,
-              "scope": 302,
+              "scope": 306,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -28175,7 +28235,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "duration",
-                      "scope": 292,
+                      "scope": 296,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -28188,20 +28248,20 @@ module.exports={
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 263,
+                        "id": 267,
                         "name": "ElementaryTypeName",
-                        "src": "207:4:1"
+                        "src": "258:4:1"
                       }
                     ],
-                    "id": 264,
+                    "id": 268,
                     "name": "VariableDeclaration",
-                    "src": "207:13:1"
+                    "src": "258:13:1"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "startAuctionAmount",
-                      "scope": 292,
+                      "scope": 296,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -28214,19 +28274,19 @@ module.exports={
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 265,
+                        "id": 269,
                         "name": "ElementaryTypeName",
-                        "src": "222:4:1"
+                        "src": "273:4:1"
                       }
                     ],
-                    "id": 266,
+                    "id": 270,
                     "name": "VariableDeclaration",
-                    "src": "222:23:1"
+                    "src": "273:23:1"
                   }
                 ],
-                "id": 267,
+                "id": 271,
                 "name": "ParameterList",
-                "src": "206:40:1"
+                "src": "257:40:1"
               },
               {
                 "attributes": {
@@ -28235,16 +28295,16 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 268,
+                "id": 272,
                 "name": "ParameterList",
-                "src": "254:0:1"
+                "src": "305:0:1"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        270
+                        274
                       ]
                     },
                     "children": [
@@ -28252,7 +28312,7 @@ module.exports={
                         "attributes": {
                           "constant": false,
                           "name": "auction",
-                          "scope": 292,
+                          "scope": 296,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "contract Auction",
@@ -28267,14 +28327,14 @@ module.exports={
                               "referencedDeclaration": 250,
                               "type": "contract Auction"
                             },
-                            "id": 269,
+                            "id": 273,
                             "name": "UserDefinedTypeName",
-                            "src": "265:7:1"
+                            "src": "316:7:1"
                           }
                         ],
-                        "id": 270,
+                        "id": 274,
                         "name": "VariableDeclaration",
-                        "src": "265:15:1"
+                        "src": "316:15:1"
                       },
                       {
                         "attributes": {
@@ -28321,14 +28381,14 @@ module.exports={
                                   "referencedDeclaration": 250,
                                   "type": "contract Auction"
                                 },
-                                "id": 271,
+                                "id": 275,
                                 "name": "UserDefinedTypeName",
-                                "src": "287:7:1"
+                                "src": "338:7:1"
                               }
                             ],
-                            "id": 272,
+                            "id": 276,
                             "name": "NewExpression",
-                            "src": "283:11:1"
+                            "src": "334:11:1"
                           },
                           {
                             "attributes": {
@@ -28348,18 +28408,18 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 371,
+                                  "referencedDeclaration": 318,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 273,
+                                "id": 277,
                                 "name": "Identifier",
-                                "src": "295:3:1"
+                                "src": "346:3:1"
                               }
                             ],
-                            "id": 274,
+                            "id": 278,
                             "name": "MemberAccess",
-                            "src": "295:10:1"
+                            "src": "346:10:1"
                           },
                           {
                             "attributes": {
@@ -28367,13 +28427,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 264,
+                              "referencedDeclaration": 268,
                               "type": "uint256",
                               "value": "duration"
                             },
-                            "id": 275,
+                            "id": 279,
                             "name": "Identifier",
-                            "src": "307:8:1"
+                            "src": "358:8:1"
                           },
                           {
                             "attributes": {
@@ -28381,23 +28441,23 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 266,
+                              "referencedDeclaration": 270,
                               "type": "uint256",
                               "value": "startAuctionAmount"
                             },
-                            "id": 276,
+                            "id": 280,
                             "name": "Identifier",
-                            "src": "317:18:1"
+                            "src": "368:18:1"
                           }
                         ],
-                        "id": 277,
+                        "id": 281,
                         "name": "FunctionCall",
-                        "src": "283:53:1"
+                        "src": "334:53:1"
                       }
                     ],
-                    "id": 278,
+                    "id": 282,
                     "name": "VariableDeclarationStatement",
-                    "src": "265:71:1"
+                    "src": "316:71:1"
                   },
                   {
                     "children": [
@@ -28443,14 +28503,14 @@ module.exports={
                                   "type": "contract Auction[] storage ref",
                                   "value": "auctions"
                                 },
-                                "id": 279,
+                                "id": 283,
                                 "name": "Identifier",
-                                "src": "347:8:1"
+                                "src": "398:8:1"
                               }
                             ],
-                            "id": 281,
+                            "id": 285,
                             "name": "MemberAccess",
-                            "src": "347:13:1"
+                            "src": "398:13:1"
                           },
                           {
                             "attributes": {
@@ -28458,23 +28518,23 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 270,
+                              "referencedDeclaration": 274,
                               "type": "contract Auction",
                               "value": "auction"
                             },
-                            "id": 282,
+                            "id": 286,
                             "name": "Identifier",
-                            "src": "361:7:1"
+                            "src": "412:7:1"
                           }
                         ],
-                        "id": 283,
+                        "id": 287,
                         "name": "FunctionCall",
-                        "src": "347:22:1"
+                        "src": "398:22:1"
                       }
                     ],
-                    "id": 284,
+                    "id": 288,
                     "name": "ExpressionStatement",
-                    "src": "347:22:1"
+                    "src": "398:22:1"
                   },
                   {
                     "children": [
@@ -28512,9 +28572,9 @@ module.exports={
                               "type": "function (address,address)",
                               "value": "AuctionCreated"
                             },
-                            "id": 285,
+                            "id": 289,
                             "name": "Identifier",
-                            "src": "380:14:1"
+                            "src": "431:14:1"
                           },
                           {
                             "attributes": {
@@ -28534,18 +28594,18 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 371,
+                                  "referencedDeclaration": 318,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 286,
+                                "id": 290,
                                 "name": "Identifier",
-                                "src": "395:3:1"
+                                "src": "446:3:1"
                               }
                             ],
-                            "id": 287,
+                            "id": 291,
                             "name": "MemberAccess",
-                            "src": "395:10:1"
+                            "src": "446:10:1"
                           },
                           {
                             "attributes": {
@@ -28553,33 +28613,33 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 270,
+                              "referencedDeclaration": 274,
                               "type": "contract Auction",
                               "value": "auction"
                             },
-                            "id": 288,
+                            "id": 292,
                             "name": "Identifier",
-                            "src": "407:7:1"
+                            "src": "458:7:1"
                           }
                         ],
-                        "id": 289,
+                        "id": 293,
                         "name": "FunctionCall",
-                        "src": "380:35:1"
+                        "src": "431:35:1"
                       }
                     ],
-                    "id": 290,
+                    "id": 294,
                     "name": "ExpressionStatement",
-                    "src": "380:35:1"
+                    "src": "431:35:1"
                   }
                 ],
-                "id": 291,
+                "id": 295,
                 "name": "Block",
-                "src": "254:169:1"
+                "src": "305:169:1"
               }
             ],
-            "id": 292,
+            "id": 296,
             "name": "FunctionDefinition",
-            "src": "184:239:1"
+            "src": "235:239:1"
           },
           {
             "attributes": {
@@ -28591,7 +28651,7 @@ module.exports={
               ],
               "name": "getAuctions",
               "payable": false,
-              "scope": 302,
+              "scope": 306,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -28604,9 +28664,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 293,
+                "id": 297,
                 "name": "ParameterList",
-                "src": "451:2:1"
+                "src": "502:2:1"
               },
               {
                 "children": [
@@ -28614,7 +28674,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 301,
+                      "scope": 305,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract Auction[] memory",
@@ -28635,30 +28695,30 @@ module.exports={
                               "referencedDeclaration": 250,
                               "type": "contract Auction"
                             },
-                            "id": 294,
+                            "id": 298,
                             "name": "UserDefinedTypeName",
-                            "src": "475:7:1"
+                            "src": "526:7:1"
                           }
                         ],
-                        "id": 295,
+                        "id": 299,
                         "name": "ArrayTypeName",
-                        "src": "475:9:1"
+                        "src": "526:9:1"
                       }
                     ],
-                    "id": 296,
+                    "id": 300,
                     "name": "VariableDeclaration",
-                    "src": "475:9:1"
+                    "src": "526:9:1"
                   }
                 ],
-                "id": 297,
+                "id": 301,
                 "name": "ParameterList",
-                "src": "474:11:1"
+                "src": "525:11:1"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 297
+                      "functionReturnParameters": 301
                     },
                     "children": [
                       {
@@ -28671,34 +28731,34 @@ module.exports={
                           "type": "contract Auction[] storage ref",
                           "value": "auctions"
                         },
-                        "id": 298,
+                        "id": 302,
                         "name": "Identifier",
-                        "src": "504:8:1"
+                        "src": "555:8:1"
                       }
                     ],
-                    "id": 299,
+                    "id": 303,
                     "name": "Return",
-                    "src": "497:15:1"
+                    "src": "548:15:1"
                   }
                 ],
-                "id": 300,
+                "id": 304,
                 "name": "Block",
-                "src": "486:34:1"
+                "src": "537:34:1"
               }
             ],
-            "id": 301,
+            "id": 305,
             "name": "FunctionDefinition",
-            "src": "431:89:1"
+            "src": "482:89:1"
           }
         ],
-        "id": 302,
+        "id": 306,
         "name": "ContractDefinition",
-        "src": "57:466:1"
+        "src": "57:517:1"
       }
     ],
-    "id": 303,
+    "id": 307,
     "name": "SourceUnit",
-    "src": "0:523:1"
+    "src": "0:574:1"
   },
   "compiler": {
     "name": "solc",
@@ -28708,11 +28768,11 @@ module.exports={
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x2c2b9c9a4a25e24b174f26114e8926a9f2128fe4"
+      "address": "0xf12b5dd4ead5f743c6baa640b0216200e89b60da"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-02-26T10:03:04.017Z"
+  "updatedAt": "2018-02-27T09:36:04.456Z"
 }
 },{}],167:[function(require,module,exports){
 'use strict';
@@ -48710,29 +48770,34 @@ arguments[4][238][0].apply(exports,arguments)
 arguments[4][242][0].apply(exports,arguments)
 },{"./core":256,"dup":242}],259:[function(require,module,exports){
 module.exports={
-  "_from": "truffle-contract-schema@^1.0.0",
+  "_args": [
+    [
+      "truffle-contract-schema@1.0.1",
+      "D:\\Education\\Dapp-Auction\\DAuction"
+    ]
+  ],
+  "_from": "truffle-contract-schema@1.0.1",
   "_id": "truffle-contract-schema@1.0.1",
   "_inBundle": false,
   "_integrity": "sha512-37ZO9FVvmW/PZz/sh00LAz7HN2U4FHERuxI4mCbUR6h3r2cRgZ4YBfzHuAHOnZlrVzM1qx/Dx/1Ng3UyfWseEA==",
   "_location": "/truffle-contract-schema",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "truffle-contract-schema@^1.0.0",
+    "raw": "truffle-contract-schema@1.0.1",
     "name": "truffle-contract-schema",
     "escapedName": "truffle-contract-schema",
-    "rawSpec": "^1.0.0",
+    "rawSpec": "1.0.1",
     "saveSpec": null,
-    "fetchSpec": "^1.0.0"
+    "fetchSpec": "1.0.1"
   },
   "_requiredBy": [
     "/truffle-contract"
   ],
   "_resolved": "https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-1.0.1.tgz",
-  "_shasum": "08ceaefe71062a8ac9ab881a77a30fda3744176e",
-  "_spec": "truffle-contract-schema@^1.0.0",
-  "_where": "D:\\Education\\Dapp-Auction\\DAuction\\node_modules\\truffle-contract",
+  "_spec": "1.0.1",
+  "_where": "D:\\Education\\Dapp-Auction\\DAuction",
   "author": {
     "name": "Tim Coulter",
     "email": "tim.coulter@consensys.net"
@@ -48740,12 +48805,10 @@ module.exports={
   "bugs": {
     "url": "https://github.com/trufflesuite/truffle-schema/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "ajv": "^5.1.1",
     "crypto-js": "^3.1.9-1"
   },
-  "deprecated": false,
   "description": "JSON schema for contract artifacts",
   "devDependencies": {
     "mocha": "^3.2.0",
@@ -57172,110 +57235,69 @@ module.exports = XMLHttpRequest;
 },{}],320:[function(require,module,exports){
 module.exports={
     "production": {
-        "FactoryAuction": "0x49fd402df4892e43b79e17243df10c8dcc4d8ac3"
+        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
     },
     "development": {
-        "FactoryAuction": "0x49fd402df4892e43b79e17243df10c8dcc4d8ac3"
+        "FactoryAuction": "0x13274fe19c0178208bcbee397af8167a7be27f6f"
     }
 }
 },{}],321:[function(require,module,exports){
 
-const Contract = require("truffle-contract");
+const contract = require("truffle-contract");
 const vmInit = require("./ViewModels").vmInit;
 
+window.App = {};
 
-(async function () {
 
-    if (typeof web3 === "undefined") {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-    } else {
-        web3 = new Web3(web3.currentProvider);
-    }
+(function (app) {
+    (async function () {
 
-    var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
-    var JSON_Auction = require("../../build/contracts/Auction.json");
+        if (typeof web3 === "undefined") {
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+        } else {
+            web3 = new Web3(web3.currentProvider);
+        }
 
-    var FactoryAuctionAbstraction = Contract(JSON_FactoryAuction);
-    let AuctionAbstraction = Contract(JSON_Auction);
+        var JSON_FactoryAuction = require("../../build/contracts/AuctionFactory.json");
+        var JSON_Auction = require("../../build/contracts/Auction.json");
 
-    FactoryAuctionAbstraction.setProvider(web3.currentProvider);
-    AuctionAbstraction.setProvider(web3.currentProvider);
+        var contractFactoryAuction = contract(JSON_FactoryAuction);
+        let contractAuction = contract(JSON_Auction);
 
-    let FactoryAuction;
-    let Auction;
+        contractFactoryAuction.setProvider(web3.currentProvider);
+        contractAuction.setProvider(web3.currentProvider);
 
-    let env = "";
+        let env = Number(web3.version.network) === 3
+            ? "production"
+            : "development";
 
-    switch (web3.version.network) {
-        // Ganache || TestRpc
-        case "5777":
-        case "1519633464752":
-            env = "development"
-            break;
+        let factoryAuction = await initFactoryAuction(env, contractFactoryAuction);
 
-        // Ropsten Test Net
-        case "3":
-            env = "production"
-            break;
-    }
-    ({ FactoryAuction, Auction } = await initFactoryAndAuctionProduction(
-        env,
-        FactoryAuction,
-        FactoryAuctionAbstraction,
-        Auction,
-        AuctionAbstraction
-    ));
-})();
+        app.factoryAuction = factoryAuction;
+        app.contractAuction = contractAuction;
+        vmInit(app);
 
-async function initFactoryAndAuctionProduction(env, FactoryAuction, FactoryAuctionAbstraction, Auction, AuctionAbstraction) {
+    })();
+})(window.App);
 
+async function initFactoryAuction(env, contractFactoryAuction) {
     const addresses = require("../Addresses.json");
     const addressFactoryAuction = addresses[env].FactoryAuction;
+    let factoryAuction = await contractFactoryAuction.at(addressFactoryAuction);
 
-    FactoryAuctionAbstraction.at(addressFactoryAuction)
-        .then(function(instance) {
-            FactoryAuction = instance
-            
-            FactoryAuction.getAuctions().then(async function (arr) {
-                let auctionAddress = arr[0];
-                Auction = await AuctionAbstraction.at(auctionAddress);
-                // must delete
-                window.a = Auction;
-                window.fa = FactoryAuction;
-                vmInit(FactoryAuction);
-            });
-        })
-        .catch(function(err) {
-            console.log("Error!");
-        });
-
-
-    return { FactoryAuction, Auction };
+    return factoryAuction;
 }
-
-
 },{"../../build/contracts/Auction.json":165,"../../build/contracts/AuctionFactory.json":166,"../Addresses.json":320,"./ViewModels":322,"truffle-contract":264}],322:[function(require,module,exports){
 
-let vmInit = function (FactoryAuction) {
+let vmInit = function (app) {
 
-    component = Vue.component('list-auction', {
-        props: ["item"],
-        template: `
-            <li>Name: {{ item }}</li>
-        `,
-    })
+    let factoryAuction = app.factoryAuction;
+    let contractAuction = app.contractAuction;
+    let auctions;
 
-    component = Vue.component('create-auction', {
-        template: `
-            <section>
-                Duration: <input type="number" name="duration" id="duration">
-                Start Amount: <input type="number" name="start-auction-amount" id="start-auction-amount">
-                <button @click="$emit('create-auction')">Create Auction</button>
-            </section>
-            `,
-    })
+    initComponents();
 
-    const app = new Vue({
+    const vm = new Vue({
         el: "#app",
         data: {
             title: "Welcome to Auction",
@@ -57287,35 +57309,82 @@ let vmInit = function (FactoryAuction) {
                 let startAmount = document.getElementById("start-auction-amount").value;
 
                 let auctionOwner = web3.eth.accounts[0];
-                FactoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                    .then(async function () {
-                        console.log(await FactoryAuction.getAuctions()); 
-                        // TODO
-                    });
+                factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
+                    .then(_ => refreshAuctions());
+            },
+            bid: async function (addressAuction) {
+                let auction = await contractAuction.at(addressAuction);
+                let account = web3.eth.accounts[0];
+                let bidAmount = Number(document.getElementById(addressAuction).value);
+
+                let oldBid = (await auction.getMaxBid()).valueOf();
+                auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
+                    .then(async _ => {
+                        console.log("SUCCESS")
+
+                        let newBid;
+                        while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
+                        
+                        document.getElementById("max-bid-" + addressAuction).innerHTML = newBid;
+                    })
+                    .catch(_ => console.log("ERR"));
             }
         },
 
         beforeCreate: function () {
         },
 
-        created: async function () {
-            this.auctions = await FactoryAuction.getAuctions();
-            this.auctions.map(mapAuctions);
+        created: function () {
+            auctions = this.auctions
+            refreshAuctions();
         }
     });
+
+
+    async function refreshAuctions(flag) {
+        let newAuctions;
+        while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
+
+        newAuctions.forEach(async (addr, ind) => {
+            let result = await mapAuctions(addr, ind);
+            if (ind >= auctions.length)
+                auctions.push(result)
+        });
+    }
+
+    async function mapAuctions(addr, ind) {
+
+        let currentAuction = await contractAuction.at(addr);
+
+        let maxBid = (await currentAuction.getMaxBid()).valueOf();
+        let owner = (await currentAuction.getOwner()).valueOf();
+        let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
+
+        if (maxBidder === "0x0000000000000000000000000000000000000000") {
+            maxBidder = "None"
+        }
+        let result = {
+            id: ind,
+            address: addr,
+            maxBid: maxBid,
+            owner: owner,
+            maxBidder: maxBidder
+        }
+
+        return result
+    }
+
+    function initComponents() {
+        component = Vue.component('list-auction', {
+            props: ["item"],
+            template: "#template-list-auction",
+        })
+
+        component = Vue.component('create-auction', {
+            template: "#template-create-auction",
+        })
+    }
 }
 
 module.exports = { vmInit }
-
-
-function mapAuctions(addr, ind) {
-    return { id: ind, address: addr }
-}
-
-
-function initComponents() {
-    
-}
-
-
 },{}]},{},[321]);
