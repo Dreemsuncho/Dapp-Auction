@@ -58456,7 +58456,7 @@ module.exports={
         "FactoryAuction": "0xc5aa968073441a530c5776dd15097a8ef45c3c3f"
     },
     "development": {
-        "FactoryAuction": "0xfa5b6432308d45b54a1ce1373513fab77166436f"
+        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
     }
 }
 },{}],321:[function(require,module,exports){
@@ -58512,6 +58512,7 @@ let vmInit = function (app) {
     let factoryAuction = app.factoryAuction;
     let contractAuction = app.contractAuction;
     let auctions;
+    let timers = {}
 
 
     initComponents();
@@ -58562,6 +58563,45 @@ let vmInit = function (app) {
 
                 let difference = (maxBid - currentBidderStake + 1);
                 document.getElementById("bid-value-" + auctionAddress).value = difference;
+            },
+            withdraw: async function (auctionAddress) {
+                let auction = await contractAuction.at(auctionAddress);
+                let account = web3.eth.accounts[0];
+                let accountStake = (await auction.getStakeByBidder("")).valueOf();
+
+                let hasWithdraw;
+                try {
+                    hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
+                } catch (err) {
+                    console.log("ERR:", err)
+                }
+
+                if (hasWithdraw) {
+                    toastr.success("Success")
+                } else {
+                    toastr.info("You cannot withdraw funds" + accountStake)
+                }
+
+                console.log("hasWithdraw:", hasWithdraw);
+            },
+            cancel: async function (auctionAddress) {
+                let auction = await contractAuction.at(auctionAddress);
+                let account = web3.eth.accounts[0];
+
+                let error = false;
+                try {
+                    await auction.forceEnd({ from: account });
+                } catch (err) {
+                    toastr.error("You are not owner or Auction is already end!");
+                    error = err;
+                }
+
+                if (error === false) {
+                    toastr.success("Auction canceled: " + auctionAddress)
+                    clearInterval(timers[auctionAddress]);
+                    document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
+                    document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
+                }
             }
         },
 
@@ -58575,7 +58615,7 @@ let vmInit = function (app) {
     });
 
     function setTimer(auctionAddress, endDate) {
-        var countDownDate = new Date("Mar 7, 2018 15:37:25").getTime();
+        var countDownDate = new Date(endDate * 1000).getTime();
 
         let timer = setInterval(function () {
             var now = new Date().getTime();
@@ -58590,12 +58630,15 @@ let vmInit = function (app) {
             if (distance < 0) {
                 clearInterval(timer);
                 document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
+                document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
             }
             else {
-                document.getElementById("timer-" + auctionAddress).innerHTML =
-                    days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
+                document.getElementById("timer-" + auctionAddress).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
+                document.getElementById("expired-" + auctionAddress).setAttribute("disabled", "disabled")
             }
         }, 1000);
+
+        timers[auctionAddress] = timer;
     }
 
     function uploadImage(createContinue) {
