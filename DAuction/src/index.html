@@ -20,11 +20,13 @@
             <div class="row">
                 <create-auction @create-auction="createAuction" />
             </div>
+
             <div class="row">
                 <list-auction v-for="auc in auctions" v-bind:item="auc" v-bind:key="auc.id" @bid="bid" />
             </div>
         </section>
     </div>
+    
 
     <footer>
         <script src="https://wzrd.in/standalone/buffer"></script>

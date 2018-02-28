@@ -14,14 +14,18 @@ contract Auction {
     }
 
     modifier hasEnded() {
-        require(now >= dateEnd);
-        require(canceled == true);
+        require(now >= dateEnd || canceled == true);
         _;
     }
 
     modifier hasNotEnded() {
         require(now < dateEnd);
         require(canceled == false);
+        _;
+    }
+
+    modifier hasNotMaxStake() {
+        require(msg.sender != maxBidder);
         _;
     }
 
@@ -65,12 +69,26 @@ contract Auction {
         dateEnd = now;
     }
 
-    function withdraw() public hasEnded {
+    function withdraw() public hasEnded hasNotMaxStake returns (bool) {
+        bool result = false;
+        address stakeAccount = msg.sender;
+    
         if (msg.sender == owner) {
-            
-        } else {
-
+            stakeAccount = maxBidder;
         }
+
+        uint stake = getStakeByBidder(stakeAccount);
+        if (stake > 0) {
+            stakeByBidder[stakeAccount] = 0;
+
+            if (msg.sender.send(stake)) {
+                result = true;
+            } else {
+                stakeByBidder[stakeAccount] = stake;
+            }
+        }
+
+        return result;
     }
     
  
