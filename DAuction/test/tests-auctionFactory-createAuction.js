@@ -3,7 +3,7 @@ var AuctionFactory = artifacts.require("./AuctionFactory.sol");
 var Auction = artifacts.require("./Auction.sol");
 
 
-contract("AuctionFactory", function (accounts) {
+contract("Create Auction", function (accounts) {
 
     let instance;
     let instanceOwner = accounts[0];
@@ -12,18 +12,8 @@ contract("AuctionFactory", function (accounts) {
         instance = await AuctionFactory.new({ from: instanceOwner });
     });
 
-
-    describe("Initialization", function () {
-        it("should have zero auctions", async function () {
-            // Arrange Act
-            let auctions = await instance.getAuctions();
-            // Assert
-            assert.strictEqual(auctions.length, 0);
-        });
-    });
-
     
-    describe("Create Auction", function () {
+    describe("Happy Path", function () {
         it("should initialize new auction", async function () {
             // Arrange Act
             let auctionsBefore = await instance.getAuctions();

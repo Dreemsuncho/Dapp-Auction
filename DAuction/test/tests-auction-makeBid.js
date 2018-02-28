@@ -1,7 +1,7 @@
 
 var Auction = artifacts.require("./Auction.sol");
 
-contract("Auction", function (accounts) {
+contract("Auction - Bidding", function (accounts) {
 
     let instance;
     let instanceOwner = accounts[0];
@@ -13,25 +13,7 @@ contract("Auction", function (accounts) {
         instance = await Auction.new(instanceOwner, durationAuction, startAuctionAmount, "ipfs.imageUrl");
     });
 
-
-    describe("Initialization", function () {
-        it("should owner equal to instanceOwner", async function () {
-            // Arrange Act
-            let owner = await instance.getOwner();
-            // Assert
-            assert.strictEqual(owner, instanceOwner);
-        })
-
-        it("should maxBid equal to startAuctionAmount", async function () {
-            // Arrange Act
-            let maxBid = await instance.getMaxBid();
-            // Assert
-            assert.strictEqual(maxBid.toNumber(), startAuctionAmount);
-        })
-    })
-
-
-    describe("Make Bidding - Happy Path", function () {
+    describe("Happy Path", function () {
         it("should have make a bid successfully", async function () {
             // Arrange
             let bidder = accounts[1];
@@ -105,7 +87,7 @@ contract("Auction", function (accounts) {
     });
 
 
-    describe("Make Bidding - (Sad & Bad) Path", function () {
+    describe("(Sad & Bad) Path", function () {
         it("should not owner be able to make a bid", async function () {
             // Arrange
             let owner = await instance.getOwner();
