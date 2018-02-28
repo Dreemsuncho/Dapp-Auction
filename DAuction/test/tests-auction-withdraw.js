@@ -71,5 +71,25 @@ contract("Auction - Withdraw", function (accounts) {
             // Assert
             assert.ok(error);
         });
+
+        it("should doesn't withdraw when withdrawler is maxBidder", async function () {
+            // Arrange
+            let bidder = accounts[1];
+            let bidAmount = 12;
+
+            let error = null;
+
+            await instance.makeBid({ from: bidder, value: bidAmount });
+            await instance.cancel({ from: instanceOwner });
+            // Act
+            try {
+                await instance.withdraw.call({ from: bidder });
+            } catch (err) {
+                error = err;
+            }
+
+            // Assert
+            assert.ok(error);
+        });
     })
 });
