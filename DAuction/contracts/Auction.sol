@@ -117,6 +117,10 @@ contract Auction {
         return now >= dateEnd;
     }
 
+    function getEndDate() public view returns(uint) {
+        return dateEnd;
+    }
+
     function getImageUrl() public view returns (string) {
         return imageUrl;
     }

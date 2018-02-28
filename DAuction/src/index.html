@@ -22,11 +22,16 @@
             </div>
 
             <div class="row">
-                <list-auction v-for="auc in auctions" v-bind:item="auc" v-bind:key="auc.id" @bid="bid" />
+                <list-auction 
+                    v-for="auc in auctions" 
+                    v-bind:item="auc" 
+                    v-bind:key="auc.id" 
+                    @bid="bid" 
+                    @calculate-bid="calculateBid" />
             </div>
         </section>
     </div>
-    
+
 
     <footer>
         <script src="https://wzrd.in/standalone/buffer"></script>
@@ -60,24 +65,28 @@
                     <a v-bind:href="item.imageUrl">{{ item.imageUrl }}</a>
                 </li>
                 <li>
-                    <strong>Owner:</strong> 
+                    <strong>Auction Owner:</strong> 
                     <span>{{ item.owner }}</span>
                 </li>
                 <li>
-                    <strong>Address:</strong> 
+                    <strong>Auction Address:</strong> 
                     <span>{{ item.address }}</span>
                 </li>
                 <li>
-                    <strong>Max Bid:</strong> 
+                    <strong>Max Stake:</strong> 
                     <span v-bind:id="'max-bid-' + item.address">{{ item.maxBid }}</span>
                 </li>
                 <li>
-                    <strong>Max Bidder:</strong>
+                    <strong>Current Winner:</strong>
                     <span v-bind:id="'max-bidder-' + item.address">{{ item.maxBidder }}</span>
                 </li>
             </ul>
+            <br>
             <input type="number" v-bind:id="'bid-value-' + item.address" class="form-control-sm"/>
-            <button @click="$emit('bid', item.address)" class="btn btn-success">Add Bid</button>
+            <button @click="$emit('bid', item.address)" class="btn btn-primary">Add Bid</button>
+            <button @click="$emit('calculate-bid', item.address)" class="btn btn-success">Calculate Bid</button>
+            
+            <h5 v-bind:id="'timer-' + item.address" class="text-right"></h5>
         </div>
 </script>
 
@@ -104,6 +113,7 @@
         </div>
     </form>
 </script>
+
 
 
 <!-- 

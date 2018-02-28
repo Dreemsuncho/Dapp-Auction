@@ -30,10 +30,10 @@ let vmInit = function (app) {
 
                 uploadImage(createContinue);
             },
-            bid: async function (address) {
-                let auction = await contractAuction.at(address);
+            bid: async function (auctionAddress) {
+                let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
-                let bidAmount = Number(document.getElementById("bid-value-" + address).value);
+                let bidAmount = Number(document.getElementById("bid-value-" + auctionAddress).value);
 
                 let oldBid = (await auction.getMaxBid()).valueOf();
                 await auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
@@ -42,8 +42,18 @@ let vmInit = function (app) {
                 while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
                 let maxBidder = (await auction.getMaxBidder()).valueOf();
 
-                document.getElementById("max-bid-" + address).innerHTML = newBid;
-                document.getElementById("max-bidder-" + address).innerText = maxBidder;
+                document.getElementById("max-bid-" + auctionAddress).innerHTML = newBid;
+                document.getElementById("max-bidder-" + auctionAddress).innerText = maxBidder;
+            },
+            calculateBid: async function (auctionAddress) {
+                let auction = await contractAuction.at(auctionAddress);
+                let account = web3.eth.accounts[0];
+
+                let maxBid = (await auction.getMaxBid()).valueOf();
+                let currentBidderStake = (await auction.getStakeByBidder(account)).valueOf();
+
+                let difference = (maxBid - currentBidderStake + 1);
+                document.getElementById("bid-value-" + auctionAddress).value = difference;
             }
         },
 
@@ -55,6 +65,30 @@ let vmInit = function (app) {
             refreshAuctions();
         }
     });
+
+    function setTimer(auctionAddress, endDate) {
+        var countDownDate = new Date("Mar 7, 2018 15:37:25").getTime();
+
+        let timer = setInterval(function () {
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
+            }
+            else {
+                document.getElementById("timer-" + auctionAddress).innerHTML =
+                    days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
+            }
+        }, 1000);
+    }
 
     function uploadImage(createContinue) {
         const reader = new FileReader();
@@ -85,7 +119,8 @@ let vmInit = function (app) {
         newAuctions.forEach(async (addr, ind) => {
             let result = await mapAuctions(addr, ind);
             if (ind >= auctions.length)
-                auctions.push(result)
+                // auctions.push(result)
+                auctions.splice(0, 0, result)
         });
     }
 
@@ -96,11 +131,13 @@ let vmInit = function (app) {
         let owner = (await currentAuction.getOwner()).valueOf();
         let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
         let imageUrl = (await currentAuction.getImageUrl()).valueOf();
+        let endDate = (await currentAuction.getEndDate()).valueOf();
+        setTimer(addr, endDate);
+
 
         if (maxBidder === "0x0000000000000000000000000000000000000000") {
             maxBidder = "None"
         }
-
         let result = {
             id: ind,
             address: addr,
