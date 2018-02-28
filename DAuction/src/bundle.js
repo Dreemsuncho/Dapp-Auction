@@ -24445,6 +24445,10 @@ module.exports={
         {
           "name": "startAuctionAmount",
           "type": "uint256"
+        },
+        {
+          "name": "inputImageUrl",
+          "type": "string"
         }
       ],
       "payable": false,
@@ -24592,20 +24596,34 @@ module.exports={
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getImageUrl",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029",
-  "deployedBytecode": "0x6060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029",
-  "sourceMap": "30:2211:0:-;;;725:256;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;840:1;828:8;:13;;820:22;;;;;;;;863:10;855:5;;:18;;;;;;;;;;;;;;;;;;900:8;894:3;:14;884:7;:24;;;;928:18;919:6;:27;;;;968:5;957:8;;:16;;;;;;;;;;;;;;;;;;725:256;;;30:2211;;;;;;",
-  "deployedSourceMap": "30:2211:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2059:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2154:84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1962:89;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1492:125;;;;;;;;;;;;;;1405:79;;;;;;;;;;;;;;1875;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1786:81;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1632:146;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1318:79;;;;;;;;;;;;;;991:319;;;;;;2059:87;2102:4;2130:8;;;;;;;;;;;2123:15;;2059:87;:::o;2154:84::-;2192:4;2223:7;;2216:3;:14;;2209:21;;2154:84;:::o;1962:89::-;2007:7;2034:9;;;;;;;;;;;2027:16;;1962:89;:::o;1492:125::-;281:7;;274:3;:14;;266:23;;;;;;;;320:4;308:16;;:8;;;;;;;;;;;:16;;;300:25;;;;;;;;1557:5;;;;;;;;;;;1543:19;;:10;:19;;;1539:71;;;;;;;1492:125::o;1405:79::-;112:5;;;;;;;;;;;98:19;;:10;:19;;;90:28;;;;;;;;401:7;;395:3;:13;387:22;;;;;;;;440:5;428:17;;:8;;;;;;;;;;;:17;;;420:26;;;;;;;;1473:3;1463:7;:13;;;;1405:79::o;1875:::-;1916:4;1940:6;;1933:13;;1875:79;:::o;1786:81::-;1827:7;1854:5;;;;;;;;;;;1847:12;;1786:81;:::o;1632:146::-;1695:10;1726:13;:21;1740:6;1726:21;;;;;;;;;;;;;;;;1718:29;;1765:5;1758:12;;1632:146;;;:::o;1318:79::-;112:5;;;;;;;;;;;98:19;;:10;:19;;;90:28;;;;;;;;401:7;;395:3;:13;387:22;;;;;;;;440:5;428:17;;:8;;;;;;;;;;;:17;;;420:26;;;;;;;;1385:4;1374:8;;:15;;;;;;;;;;;;;;;;;;1318:79::o;991:319::-;1059:14;201:5;;;;;;;;;;;187:19;;:10;:19;;;;179:28;;;;;;;;401:7;;395:3;:13;387:22;;;;;;;;440:5;428:17;;:8;;;;;;;;;;;:17;;;420:26;;;;;;;;1104:9;1076:13;:25;1090:10;1076:25;;;;;;;;;;;;;;;;:37;1059:54;;1141:9;1132:6;;:18;1124:27;;;;;;;;1173:9;1164:6;:18;;;;1205:10;1193:9;;:22;;;;;;;;;;;;;;;;;;1254:9;1226:13;:25;1240:10;1226:25;;;;;;;;;;;;;;;:37;;;;1274:28;1284:9;;;;;;;;;;;1295:6;;1274:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;991:319;:::o",
-  "source": "pragma solidity ^0.4.18;\r\n\r\n\r\ncontract Auction {\r\n    \r\n    modifier isOwner() {\r\n        require(msg.sender == owner);\r\n        _;\r\n    }\r\n\r\n    modifier isNotOwner() {\r\n        require(msg.sender != owner);\r\n        _;\r\n    }\r\n\r\n    modifier hasEnded() {\r\n        require(now >= dateEnd);\r\n        require(canceled == true);\r\n        _;\r\n    }\r\n\r\n    modifier hasNotEnded() {\r\n        require(now < dateEnd);\r\n        require(canceled == false);\r\n        _;\r\n    }\r\n\r\n    event NotifyBid(address bidder, uint amount);\r\n\r\n    uint private dateEnd;\r\n    uint private maxBid;\r\n    address private maxBidder;\r\n    address private owner;\r\n    bool private canceled;\r\n\r\n    mapping(address => uint) private stakeByBidder;\r\n\r\n    function Auction(address ownerInput, uint duration, uint startAuctionAmount) public {\r\n        require(duration >= 1);\r\n\r\n        owner = ownerInput;\r\n        dateEnd = now + duration;\r\n        maxBid = startAuctionAmount;\r\n        canceled = false;\r\n    }\r\n\r\n\r\n    function makeBid() public payable isNotOwner hasNotEnded {\r\n        uint bidAmount = stakeByBidder[msg.sender] + msg.value;\r\n        require(maxBid < bidAmount);\r\n\r\n        maxBid = bidAmount;\r\n        maxBidder = msg.sender;\r\n        stakeByBidder[msg.sender] = bidAmount;\r\n        NotifyBid(maxBidder, maxBid);\r\n    }\r\n\r\n    function cancel() public isOwner hasNotEnded {\r\n        canceled = true;\r\n    }\r\n\r\n    function forceEnd() public isOwner hasNotEnded {\r\n        dateEnd = now;\r\n    }\r\n\r\n    function withdraw() public hasEnded {\r\n        if (msg.sender == owner) {\r\n            \r\n        } else {\r\n\r\n        }\r\n    }\r\n    \r\n \r\n    function getStakeByBidder(address bidder) public view returns (uint stake) {\r\n        stake = stakeByBidder[bidder];\r\n        return stake;\r\n    }\r\n\r\n    function getOwner() public view returns (address) {\r\n        return owner;\r\n    }\r\n\r\n    function getMaxBid() public view returns(uint) {\r\n        return maxBid;\r\n    }\r\n\r\n    function getMaxBidder() public view returns (address) {\r\n        return maxBidder;\r\n    }\r\n\r\n    function isCanceled() public view returns (bool) {\r\n            return canceled;\r\n    }\r\n\r\n    function isEnd() public view returns (bool) {\r\n        return now >= dateEnd;\r\n    }\r\n}",
+  "bytecode": "0x6060604052341561000f57600080fd5b604051610a26380380610a26833981016040528080519060200190919080519060200190919080519060200190919080518201919050506001831015151561005657600080fd5b83600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508242016000819055508160018190555080600490805190602001906100bd9291906100e2565b506000600560006101000a81548160ff02191690831515021790555050505050610187565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061012357805160ff1916838001178555610151565b82800160010185558215610151579182015b82811115610150578251825591602001919060010190610135565b5b50905061015e9190610162565b5090565b61018491905b80821115610180576000816000905550600101610168565b5090565b90565b610890806101966000396000f3006060604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100b45780632fc6e8b7146100e15780633bd2a6781461010e5780633ccfd60b146101635780634ee0ab0d146101785780637e12a2511461018d578063893d20e8146101b65780639743a6911461020b578063ad6cedf614610299578063ea8a1af0146102e6578063f30e3658146102fb575b600080fd5b34156100bf57600080fd5b6100c7610305565b604051808215151515815260200191505060405180910390f35b34156100ec57600080fd5b6100f461031c565b604051808215151515815260200191505060405180910390f35b341561011957600080fd5b610121610328565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016e57600080fd5b610176610352565b005b341561018357600080fd5b61018b6103e3565b005b341561019857600080fd5b6101a061047a565b6040518082815260200191505060405180910390f35b34156101c157600080fd5b6101c9610484565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021657600080fd5b61021e6104ae565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561025e578082015181840152602081019050610243565b50505050905090810190601f16801561028b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156102a457600080fd5b6102d0600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610556565b6040518082815260200191505060405180910390f35b34156102f157600080fd5b6102f96105a2565b005b61030361064d565b005b6000600560009054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600054421015151561036357600080fd5b60011515600560009054906101000a900460ff16151514151561038557600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156103e0576103e1565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561043f57600080fd5b6000544210151561044f57600080fd5b60001515600560009054906101000a900460ff16151514151561047157600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6104b6610850565b60048054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561054c5780601f106105215761010080835404028352916020019161054c565b820191906000526020600020905b81548152906001019060200180831161052f57829003601f168201915b5050505050905090565b6000600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105fe57600080fd5b6000544210151561060e57600080fd5b60001515600560009054906101000a900460ff16151514151561063057600080fd5b6001600560006101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515156106ac57600080fd5b600054421015156106bc57600080fd5b60001515600560009054906101000a900460ff1615151415156106de57600080fd5b34600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020540190508060015410151561073257600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b6020604051908101604052806000815250905600a165627a7a723058208fe330c4799a4df4a247a3d9a2a326ecd37b5abaa06f0629b91c9415ef2e0d750029",
+  "deployedBytecode": "0x6060604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100b45780632fc6e8b7146100e15780633bd2a6781461010e5780633ccfd60b146101635780634ee0ab0d146101785780637e12a2511461018d578063893d20e8146101b65780639743a6911461020b578063ad6cedf614610299578063ea8a1af0146102e6578063f30e3658146102fb575b600080fd5b34156100bf57600080fd5b6100c7610305565b604051808215151515815260200191505060405180910390f35b34156100ec57600080fd5b6100f461031c565b604051808215151515815260200191505060405180910390f35b341561011957600080fd5b610121610328565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016e57600080fd5b610176610352565b005b341561018357600080fd5b61018b6103e3565b005b341561019857600080fd5b6101a061047a565b6040518082815260200191505060405180910390f35b34156101c157600080fd5b6101c9610484565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021657600080fd5b61021e6104ae565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561025e578082015181840152602081019050610243565b50505050905090810190601f16801561028b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156102a457600080fd5b6102d0600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610556565b6040518082815260200191505060405180910390f35b34156102f157600080fd5b6102f96105a2565b005b61030361064d565b005b6000600560009054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600054421015151561036357600080fd5b60011515600560009054906101000a900460ff16151514151561038557600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156103e0576103e1565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561043f57600080fd5b6000544210151561044f57600080fd5b60001515600560009054906101000a900460ff16151514151561047157600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6104b6610850565b60048054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561054c5780601f106105215761010080835404028352916020019161054c565b820191906000526020600020905b81548152906001019060200180831161052f57829003601f168201915b5050505050905090565b6000600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105fe57600080fd5b6000544210151561060e57600080fd5b60001515600560009054906101000a900460ff16151514151561063057600080fd5b6001600560006101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515156106ac57600080fd5b600054421015156106bc57600080fd5b60001515600560009054906101000a900460ff1615151415156106de57600080fd5b34600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020540190508060015410151561073257600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b6020604051908101604052806000815250905600a165627a7a723058208fe330c4799a4df4a247a3d9a2a326ecd37b5abaa06f0629b91c9415ef2e0d750029",
+  "sourceMap": "30:2392:0:-;;;755:313;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;892:1;880:8;:13;;872:22;;;;;;;;915:10;907:5;;:18;;;;;;;;;;;;;;;;;;952:8;946:3;:14;936:7;:24;;;;980:18;971:6;:27;;;;1020:13;1009:8;:24;;;;;;;;;;;;:::i;:::-;;1055:5;1044:8;;:16;;;;;;;;;;;;;;;;;;755:313;;;;30:2392;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "30:2392:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2146:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2241:84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2049:89;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1579:125;;;;;;;;;;;;;;1492:79;;;;;;;;;;;;;;1962;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1873:81;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2333:86;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1719:146:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1405:79;;;;;;;;;;;;;;1078:319;;;;;;2146:87;2189:4;2217:8;;;;;;;;;;;2210:15;;2146:87;:::o;2241:84::-;2279:4;2310:7;;2303:3;:14;;2296:21;;2241:84;:::o;2049:89::-;2094:7;2121:9;;;;;;;;;;;2114:16;;2049:89;:::o;1579:125::-;281:7;;274:3;:14;;266:23;;;;;;;;320:4;308:16;;:8;;;;;;;;;;;:16;;;300:25;;;;;;;;1644:5;;;;;;;;;;;1630:19;;:10;:19;;;1626:71;;;;;;;1579:125::o;1492:79::-;112:5;;;;;;;;;;;98:19;;:10;:19;;;90:28;;;;;;;;401:7;;395:3;:13;387:22;;;;;;;;440:5;428:17;;:8;;;;;;;;;;;:17;;;420:26;;;;;;;;1560:3;1550:7;:13;;;;1492:79::o;1962:::-;2003:4;2027:6;;2020:13;;1962:79;:::o;1873:81::-;1914:7;1941:5;;;;;;;;;;;1934:12;;1873:81;:::o;2333:86::-;2377:6;;:::i;:::-;2403:8;2396:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2333:86;:::o;1719:146::-;1782:10;1813:13;:21;1827:6;1813:21;;;;;;;;;;;;;;;;1805:29;;1852:5;1845:12;;1719:146;;;:::o;1405:79::-;112:5;;;;;;;;;;;98:19;;:10;:19;;;90:28;;;;;;;;401:7;;395:3;:13;387:22;;;;;;;;440:5;428:17;;:8;;;;;;;;;;;:17;;;420:26;;;;;;;;1472:4;1461:8;;:15;;;;;;;;;;;;;;;;;;1405:79::o;1078:319::-;1146:14;201:5;;;;;;;;;;;187:19;;:10;:19;;;;179:28;;;;;;;;401:7;;395:3;:13;387:22;;;;;;;;440:5;428:17;;:8;;;;;;;;;;;:17;;;420:26;;;;;;;;1191:9;1163:13;:25;1177:10;1163:25;;;;;;;;;;;;;;;;:37;1146:54;;1228:9;1219:6;;:18;1211:27;;;;;;;;1260:9;1251:6;:18;;;;1292:10;1280:9;;:22;;;;;;;;;;;;;;;;;;1341:9;1313:13;:25;1327:10;1313:25;;;;;;;;;;;;;;;:37;;;;1361:28;1371:9;;;;;;;;;;;1382:6;;1361:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;1078:319;:::o;30:2392::-;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.18;\r\n\r\n\r\ncontract Auction {\r\n    \r\n    modifier isOwner() {\r\n        require(msg.sender == owner);\r\n        _;\r\n    }\r\n\r\n    modifier isNotOwner() {\r\n        require(msg.sender != owner);\r\n        _;\r\n    }\r\n\r\n    modifier hasEnded() {\r\n        require(now >= dateEnd);\r\n        require(canceled == true);\r\n        _;\r\n    }\r\n\r\n    modifier hasNotEnded() {\r\n        require(now < dateEnd);\r\n        require(canceled == false);\r\n        _;\r\n    }\r\n\r\n    event NotifyBid(address bidder, uint amount);\r\n\r\n    uint private dateEnd;\r\n    uint private maxBid;\r\n    address private maxBidder;\r\n    address private owner;\r\n    string private imageUrl;\r\n    bool private canceled;\r\n\r\n    mapping(address => uint) private stakeByBidder;\r\n\r\n    function Auction(address ownerInput, uint duration, uint startAuctionAmount, string inputImageUrl) public {\r\n        require(duration >= 1);\r\n\r\n        owner = ownerInput;\r\n        dateEnd = now + duration;\r\n        maxBid = startAuctionAmount;\r\n        imageUrl = inputImageUrl;\r\n        canceled = false;\r\n    }\r\n\r\n\r\n    function makeBid() public payable isNotOwner hasNotEnded {\r\n        uint bidAmount = stakeByBidder[msg.sender] + msg.value;\r\n        require(maxBid < bidAmount);\r\n\r\n        maxBid = bidAmount;\r\n        maxBidder = msg.sender;\r\n        stakeByBidder[msg.sender] = bidAmount;\r\n        NotifyBid(maxBidder, maxBid);\r\n    }\r\n\r\n    function cancel() public isOwner hasNotEnded {\r\n        canceled = true;\r\n    }\r\n\r\n    function forceEnd() public isOwner hasNotEnded {\r\n        dateEnd = now;\r\n    }\r\n\r\n    function withdraw() public hasEnded {\r\n        if (msg.sender == owner) {\r\n            \r\n        } else {\r\n\r\n        }\r\n    }\r\n    \r\n \r\n    function getStakeByBidder(address bidder) public view returns (uint stake) {\r\n        stake = stakeByBidder[bidder];\r\n        return stake;\r\n    }\r\n\r\n    function getOwner() public view returns (address) {\r\n        return owner;\r\n    }\r\n\r\n    function getMaxBid() public view returns(uint) {\r\n        return maxBid;\r\n    }\r\n\r\n    function getMaxBidder() public view returns (address) {\r\n        return maxBidder;\r\n    }\r\n\r\n    function isCanceled() public view returns (bool) {\r\n            return canceled;\r\n    }\r\n\r\n    function isEnd() public view returns (bool) {\r\n        return now >= dateEnd;\r\n    }\r\n\r\n    function getImageUrl() public view returns (string) {\r\n        return imageUrl;\r\n    }\r\n}",
   "sourcePath": "D:\\Education\\Dapp-Auction\\DAuction\\contracts\\Auction.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/D/Education/Dapp-Auction/DAuction/contracts/Auction.sol",
       "exportedSymbols": {
         "Auction": [
-          250
+          266
         ]
       }
     },
@@ -24635,10 +24653,10 @@ module.exports={
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            250
+            266
           ],
           "name": "Auction",
-          "scope": 251
+          "scope": 267
         },
         "children": [
           {
@@ -24688,7 +24706,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -24729,7 +24747,7 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 318,
+                                      "referencedDeclaration": 337,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -24833,7 +24851,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -24874,7 +24892,7 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 318,
+                                      "referencedDeclaration": 337,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -24978,7 +24996,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25007,7 +25025,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 320,
+                                  "referencedDeclaration": 339,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -25072,7 +25090,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25101,7 +25119,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 71,
+                                  "referencedDeclaration": 73,
                                   "type": "bool",
                                   "value": "canceled"
                                 },
@@ -25203,7 +25221,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25232,7 +25250,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 320,
+                                  "referencedDeclaration": 339,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -25297,7 +25315,7 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -25326,7 +25344,7 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 71,
+                                  "referencedDeclaration": 73,
                                   "type": "bool",
                                   "value": "canceled"
                                 },
@@ -25457,7 +25475,7 @@ module.exports={
             "attributes": {
               "constant": false,
               "name": "dateEnd",
-              "scope": 250,
+              "scope": 266,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -25483,7 +25501,7 @@ module.exports={
             "attributes": {
               "constant": false,
               "name": "maxBid",
-              "scope": 250,
+              "scope": 266,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -25509,7 +25527,7 @@ module.exports={
             "attributes": {
               "constant": false,
               "name": "maxBidder",
-              "scope": 250,
+              "scope": 266,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "address",
@@ -25535,7 +25553,7 @@ module.exports={
             "attributes": {
               "constant": false,
               "name": "owner",
-              "scope": 250,
+              "scope": 266,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "address",
@@ -25560,8 +25578,34 @@ module.exports={
           {
             "attributes": {
               "constant": false,
+              "name": "imageUrl",
+              "scope": 266,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string storage ref",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string storage pointer"
+                },
+                "id": 70,
+                "name": "ElementaryTypeName",
+                "src": "640:6:0"
+              }
+            ],
+            "id": 71,
+            "name": "VariableDeclaration",
+            "src": "640:23:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
               "name": "canceled",
-              "scope": 250,
+              "scope": 266,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "bool",
@@ -25574,20 +25618,20 @@ module.exports={
                   "name": "bool",
                   "type": "bool"
                 },
-                "id": 70,
+                "id": 72,
                 "name": "ElementaryTypeName",
-                "src": "640:4:0"
+                "src": "670:4:0"
               }
             ],
-            "id": 71,
+            "id": 73,
             "name": "VariableDeclaration",
-            "src": "640:21:0"
+            "src": "670:21:0"
           },
           {
             "attributes": {
               "constant": false,
               "name": "stakeByBidder",
-              "scope": 250,
+              "scope": 266,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => uint256)",
@@ -25605,28 +25649,28 @@ module.exports={
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 72,
+                    "id": 74,
                     "name": "ElementaryTypeName",
-                    "src": "678:7:0"
+                    "src": "708:7:0"
                   },
                   {
                     "attributes": {
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 73,
+                    "id": 75,
                     "name": "ElementaryTypeName",
-                    "src": "689:4:0"
+                    "src": "719:4:0"
                   }
                 ],
-                "id": 74,
+                "id": 76,
                 "name": "Mapping",
-                "src": "670:24:0"
+                "src": "700:24:0"
               }
             ],
-            "id": 75,
+            "id": 77,
             "name": "VariableDeclaration",
-            "src": "670:46:0"
+            "src": "700:46:0"
           },
           {
             "attributes": {
@@ -25638,7 +25682,7 @@ module.exports={
               ],
               "name": "Auction",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -25650,7 +25694,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "ownerInput",
-                      "scope": 109,
+                      "scope": 117,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -25663,46 +25707,20 @@ module.exports={
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 76,
+                        "id": 78,
                         "name": "ElementaryTypeName",
-                        "src": "742:7:0"
+                        "src": "772:7:0"
                       }
                     ],
-                    "id": 77,
+                    "id": 79,
                     "name": "VariableDeclaration",
-                    "src": "742:18:0"
+                    "src": "772:18:0"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "duration",
-                      "scope": 109,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 78,
-                        "name": "ElementaryTypeName",
-                        "src": "762:4:0"
-                      }
-                    ],
-                    "id": 79,
-                    "name": "VariableDeclaration",
-                    "src": "762:13:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "startAuctionAmount",
-                      "scope": 109,
+                      "scope": 117,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -25717,17 +25735,69 @@ module.exports={
                         },
                         "id": 80,
                         "name": "ElementaryTypeName",
-                        "src": "777:4:0"
+                        "src": "792:4:0"
                       }
                     ],
                     "id": 81,
                     "name": "VariableDeclaration",
-                    "src": "777:23:0"
+                    "src": "792:13:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "startAuctionAmount",
+                      "scope": 117,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 82,
+                        "name": "ElementaryTypeName",
+                        "src": "807:4:0"
+                      }
+                    ],
+                    "id": 83,
+                    "name": "VariableDeclaration",
+                    "src": "807:23:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "inputImageUrl",
+                      "scope": 117,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 84,
+                        "name": "ElementaryTypeName",
+                        "src": "832:6:0"
+                      }
+                    ],
+                    "id": 85,
+                    "name": "VariableDeclaration",
+                    "src": "832:20:0"
                   }
                 ],
-                "id": 82,
+                "id": 86,
                 "name": "ParameterList",
-                "src": "741:60:0"
+                "src": "771:82:0"
               },
               {
                 "attributes": {
@@ -25736,9 +25806,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 83,
+                "id": 87,
                 "name": "ParameterList",
-                "src": "809:0:0"
+                "src": "861:0:0"
               },
               {
                 "children": [
@@ -25770,13 +25840,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
-                            "id": 84,
+                            "id": 88,
                             "name": "Identifier",
-                            "src": "820:7:0"
+                            "src": "872:7:0"
                           },
                           {
                             "attributes": {
@@ -25799,13 +25869,13 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 79,
+                                  "referencedDeclaration": 81,
                                   "type": "uint256",
                                   "value": "duration"
                                 },
-                                "id": 85,
+                                "id": 89,
                                 "name": "Identifier",
-                                "src": "828:8:0"
+                                "src": "880:8:0"
                               },
                               {
                                 "attributes": {
@@ -25820,24 +25890,24 @@ module.exports={
                                   "type": "int_const 1",
                                   "value": "1"
                                 },
-                                "id": 86,
+                                "id": 90,
                                 "name": "Literal",
-                                "src": "840:1:0"
+                                "src": "892:1:0"
                               }
                             ],
-                            "id": 87,
+                            "id": 91,
                             "name": "BinaryOperation",
-                            "src": "828:13:0"
+                            "src": "880:13:0"
                           }
                         ],
-                        "id": 88,
+                        "id": 92,
                         "name": "FunctionCall",
-                        "src": "820:22:0"
+                        "src": "872:22:0"
                       }
                     ],
-                    "id": 89,
+                    "id": 93,
                     "name": "ExpressionStatement",
-                    "src": "820:22:0"
+                    "src": "872:22:0"
                   },
                   {
                     "children": [
@@ -25862,9 +25932,9 @@ module.exports={
                               "type": "address",
                               "value": "owner"
                             },
-                            "id": 90,
+                            "id": 94,
                             "name": "Identifier",
-                            "src": "855:5:0"
+                            "src": "907:5:0"
                           },
                           {
                             "attributes": {
@@ -25872,23 +25942,23 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 77,
+                              "referencedDeclaration": 79,
                               "type": "address",
                               "value": "ownerInput"
                             },
-                            "id": 91,
+                            "id": 95,
                             "name": "Identifier",
-                            "src": "863:10:0"
+                            "src": "915:10:0"
                           }
                         ],
-                        "id": 92,
+                        "id": 96,
                         "name": "Assignment",
-                        "src": "855:18:0"
+                        "src": "907:18:0"
                       }
                     ],
-                    "id": 93,
+                    "id": 97,
                     "name": "ExpressionStatement",
-                    "src": "855:18:0"
+                    "src": "907:18:0"
                   },
                   {
                     "children": [
@@ -25913,9 +25983,9 @@ module.exports={
                               "type": "uint256",
                               "value": "dateEnd"
                             },
-                            "id": 94,
+                            "id": 98,
                             "name": "Identifier",
-                            "src": "884:7:0"
+                            "src": "936:7:0"
                           },
                           {
                             "attributes": {
@@ -25938,13 +26008,13 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 320,
+                                  "referencedDeclaration": 339,
                                   "type": "uint256",
                                   "value": "now"
                                 },
-                                "id": 95,
+                                "id": 99,
                                 "name": "Identifier",
-                                "src": "894:3:0"
+                                "src": "946:3:0"
                               },
                               {
                                 "attributes": {
@@ -25952,28 +26022,28 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 79,
+                                  "referencedDeclaration": 81,
                                   "type": "uint256",
                                   "value": "duration"
                                 },
-                                "id": 96,
+                                "id": 100,
                                 "name": "Identifier",
-                                "src": "900:8:0"
+                                "src": "952:8:0"
                               }
                             ],
-                            "id": 97,
+                            "id": 101,
                             "name": "BinaryOperation",
-                            "src": "894:14:0"
+                            "src": "946:14:0"
                           }
                         ],
-                        "id": 98,
+                        "id": 102,
                         "name": "Assignment",
-                        "src": "884:24:0"
+                        "src": "936:24:0"
                       }
                     ],
-                    "id": 99,
+                    "id": 103,
                     "name": "ExpressionStatement",
-                    "src": "884:24:0"
+                    "src": "936:24:0"
                   },
                   {
                     "children": [
@@ -25998,9 +26068,9 @@ module.exports={
                               "type": "uint256",
                               "value": "maxBid"
                             },
-                            "id": 100,
+                            "id": 104,
                             "name": "Identifier",
-                            "src": "919:6:0"
+                            "src": "971:6:0"
                           },
                           {
                             "attributes": {
@@ -26008,23 +26078,74 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 81,
+                              "referencedDeclaration": 83,
                               "type": "uint256",
                               "value": "startAuctionAmount"
                             },
-                            "id": 101,
+                            "id": 105,
                             "name": "Identifier",
-                            "src": "928:18:0"
+                            "src": "980:18:0"
                           }
                         ],
-                        "id": 102,
+                        "id": 106,
                         "name": "Assignment",
-                        "src": "919:27:0"
+                        "src": "971:27:0"
                       }
                     ],
-                    "id": 103,
+                    "id": 107,
                     "name": "ExpressionStatement",
-                    "src": "919:27:0"
+                    "src": "971:27:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 71,
+                              "type": "string storage ref",
+                              "value": "imageUrl"
+                            },
+                            "id": 108,
+                            "name": "Identifier",
+                            "src": "1009:8:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 85,
+                              "type": "string memory",
+                              "value": "inputImageUrl"
+                            },
+                            "id": 109,
+                            "name": "Identifier",
+                            "src": "1020:13:0"
+                          }
+                        ],
+                        "id": 110,
+                        "name": "Assignment",
+                        "src": "1009:24:0"
+                      }
+                    ],
+                    "id": 111,
+                    "name": "ExpressionStatement",
+                    "src": "1009:24:0"
                   },
                   {
                     "children": [
@@ -26045,13 +26166,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 71,
+                              "referencedDeclaration": 73,
                               "type": "bool",
                               "value": "canceled"
                             },
-                            "id": 104,
+                            "id": 112,
                             "name": "Identifier",
-                            "src": "957:8:0"
+                            "src": "1044:8:0"
                           },
                           {
                             "attributes": {
@@ -26066,29 +26187,29 @@ module.exports={
                               "type": "bool",
                               "value": "false"
                             },
-                            "id": 105,
+                            "id": 113,
                             "name": "Literal",
-                            "src": "968:5:0"
+                            "src": "1055:5:0"
                           }
                         ],
-                        "id": 106,
+                        "id": 114,
                         "name": "Assignment",
-                        "src": "957:16:0"
+                        "src": "1044:16:0"
                       }
                     ],
-                    "id": 107,
+                    "id": 115,
                     "name": "ExpressionStatement",
-                    "src": "957:16:0"
+                    "src": "1044:16:0"
                   }
                 ],
-                "id": 108,
+                "id": 116,
                 "name": "Block",
-                "src": "809:172:0"
+                "src": "861:207:0"
               }
             ],
-            "id": 109,
+            "id": 117,
             "name": "FunctionDefinition",
-            "src": "725:256:0"
+            "src": "755:313:0"
           },
           {
             "attributes": {
@@ -26097,7 +26218,7 @@ module.exports={
               "isConstructor": false,
               "name": "makeBid",
               "payable": true,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -26110,9 +26231,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 110,
+                "id": 118,
                 "name": "ParameterList",
-                "src": "1007:2:0"
+                "src": "1094:2:0"
               },
               {
                 "attributes": {
@@ -26121,9 +26242,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 115,
+                "id": 123,
                 "name": "ParameterList",
-                "src": "1048:0:0"
+                "src": "1135:0:0"
               },
               {
                 "attributes": {
@@ -26142,14 +26263,14 @@ module.exports={
                       "type": "modifier ()",
                       "value": "isNotOwner"
                     },
-                    "id": 111,
+                    "id": 119,
                     "name": "Identifier",
-                    "src": "1025:10:0"
+                    "src": "1112:10:0"
                   }
                 ],
-                "id": 112,
+                "id": 120,
                 "name": "ModifierInvocation",
-                "src": "1025:10:0"
+                "src": "1112:10:0"
               },
               {
                 "attributes": {
@@ -26168,21 +26289,21 @@ module.exports={
                       "type": "modifier ()",
                       "value": "hasNotEnded"
                     },
-                    "id": 113,
+                    "id": 121,
                     "name": "Identifier",
-                    "src": "1036:11:0"
+                    "src": "1123:11:0"
                   }
                 ],
-                "id": 114,
+                "id": 122,
                 "name": "ModifierInvocation",
-                "src": "1036:11:0"
+                "src": "1123:11:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        117
+                        125
                       ]
                     },
                     "children": [
@@ -26190,7 +26311,7 @@ module.exports={
                         "attributes": {
                           "constant": false,
                           "name": "bidAmount",
-                          "scope": 154,
+                          "scope": 162,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint256",
@@ -26203,14 +26324,14 @@ module.exports={
                               "name": "uint",
                               "type": "uint256"
                             },
-                            "id": 116,
+                            "id": 124,
                             "name": "ElementaryTypeName",
-                            "src": "1059:4:0"
+                            "src": "1146:4:0"
                           }
                         ],
-                        "id": 117,
+                        "id": 125,
                         "name": "VariableDeclaration",
-                        "src": "1059:14:0"
+                        "src": "1146:14:0"
                       },
                       {
                         "attributes": {
@@ -26243,13 +26364,13 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 75,
+                                  "referencedDeclaration": 77,
                                   "type": "mapping(address => uint256)",
                                   "value": "stakeByBidder"
                                 },
-                                "id": 118,
+                                "id": 126,
                                 "name": "Identifier",
-                                "src": "1076:13:0"
+                                "src": "1163:13:0"
                               },
                               {
                                 "attributes": {
@@ -26269,23 +26390,23 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 318,
+                                      "referencedDeclaration": 337,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 119,
+                                    "id": 127,
                                     "name": "Identifier",
-                                    "src": "1090:3:0"
+                                    "src": "1177:3:0"
                                   }
                                 ],
-                                "id": 120,
+                                "id": 128,
                                 "name": "MemberAccess",
-                                "src": "1090:10:0"
+                                "src": "1177:10:0"
                               }
                             ],
-                            "id": 121,
+                            "id": 129,
                             "name": "IndexAccess",
-                            "src": "1076:25:0"
+                            "src": "1163:25:0"
                           },
                           {
                             "attributes": {
@@ -26305,28 +26426,28 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 318,
+                                  "referencedDeclaration": 337,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 122,
+                                "id": 130,
                                 "name": "Identifier",
-                                "src": "1104:3:0"
+                                "src": "1191:3:0"
                               }
                             ],
-                            "id": 123,
+                            "id": 131,
                             "name": "MemberAccess",
-                            "src": "1104:9:0"
+                            "src": "1191:9:0"
                           }
                         ],
-                        "id": 124,
+                        "id": 132,
                         "name": "BinaryOperation",
-                        "src": "1076:37:0"
+                        "src": "1163:37:0"
                       }
                     ],
-                    "id": 125,
+                    "id": 133,
                     "name": "VariableDeclarationStatement",
-                    "src": "1059:54:0"
+                    "src": "1146:54:0"
                   },
                   {
                     "children": [
@@ -26356,13 +26477,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 321,
+                              "referencedDeclaration": 340,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
-                            "id": 126,
+                            "id": 134,
                             "name": "Identifier",
-                            "src": "1124:7:0"
+                            "src": "1211:7:0"
                           },
                           {
                             "attributes": {
@@ -26389,9 +26510,9 @@ module.exports={
                                   "type": "uint256",
                                   "value": "maxBid"
                                 },
-                                "id": 127,
+                                "id": 135,
                                 "name": "Identifier",
-                                "src": "1132:6:0"
+                                "src": "1219:6:0"
                               },
                               {
                                 "attributes": {
@@ -26399,28 +26520,28 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 117,
+                                  "referencedDeclaration": 125,
                                   "type": "uint256",
                                   "value": "bidAmount"
                                 },
-                                "id": 128,
+                                "id": 136,
                                 "name": "Identifier",
-                                "src": "1141:9:0"
+                                "src": "1228:9:0"
                               }
                             ],
-                            "id": 129,
+                            "id": 137,
                             "name": "BinaryOperation",
-                            "src": "1132:18:0"
+                            "src": "1219:18:0"
                           }
                         ],
-                        "id": 130,
+                        "id": 138,
                         "name": "FunctionCall",
-                        "src": "1124:27:0"
+                        "src": "1211:27:0"
                       }
                     ],
-                    "id": 131,
+                    "id": 139,
                     "name": "ExpressionStatement",
-                    "src": "1124:27:0"
+                    "src": "1211:27:0"
                   },
                   {
                     "children": [
@@ -26445,9 +26566,9 @@ module.exports={
                               "type": "uint256",
                               "value": "maxBid"
                             },
-                            "id": 132,
+                            "id": 140,
                             "name": "Identifier",
-                            "src": "1164:6:0"
+                            "src": "1251:6:0"
                           },
                           {
                             "attributes": {
@@ -26455,23 +26576,23 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 117,
+                              "referencedDeclaration": 125,
                               "type": "uint256",
                               "value": "bidAmount"
                             },
-                            "id": 133,
+                            "id": 141,
                             "name": "Identifier",
-                            "src": "1173:9:0"
+                            "src": "1260:9:0"
                           }
                         ],
-                        "id": 134,
+                        "id": 142,
                         "name": "Assignment",
-                        "src": "1164:18:0"
+                        "src": "1251:18:0"
                       }
                     ],
-                    "id": 135,
+                    "id": 143,
                     "name": "ExpressionStatement",
-                    "src": "1164:18:0"
+                    "src": "1251:18:0"
                   },
                   {
                     "children": [
@@ -26496,9 +26617,9 @@ module.exports={
                               "type": "address",
                               "value": "maxBidder"
                             },
-                            "id": 136,
+                            "id": 144,
                             "name": "Identifier",
-                            "src": "1193:9:0"
+                            "src": "1280:9:0"
                           },
                           {
                             "attributes": {
@@ -26518,28 +26639,28 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 318,
+                                  "referencedDeclaration": 337,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 137,
+                                "id": 145,
                                 "name": "Identifier",
-                                "src": "1205:3:0"
+                                "src": "1292:3:0"
                               }
                             ],
-                            "id": 138,
+                            "id": 146,
                             "name": "MemberAccess",
-                            "src": "1205:10:0"
+                            "src": "1292:10:0"
                           }
                         ],
-                        "id": 139,
+                        "id": 147,
                         "name": "Assignment",
-                        "src": "1193:22:0"
+                        "src": "1280:22:0"
                       }
                     ],
-                    "id": 140,
+                    "id": 148,
                     "name": "ExpressionStatement",
-                    "src": "1193:22:0"
+                    "src": "1280:22:0"
                   },
                   {
                     "children": [
@@ -26570,13 +26691,13 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 75,
+                                  "referencedDeclaration": 77,
                                   "type": "mapping(address => uint256)",
                                   "value": "stakeByBidder"
                                 },
-                                "id": 141,
+                                "id": 149,
                                 "name": "Identifier",
-                                "src": "1226:13:0"
+                                "src": "1313:13:0"
                               },
                               {
                                 "attributes": {
@@ -26596,23 +26717,23 @@ module.exports={
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 318,
+                                      "referencedDeclaration": 337,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 142,
+                                    "id": 150,
                                     "name": "Identifier",
-                                    "src": "1240:3:0"
+                                    "src": "1327:3:0"
                                   }
                                 ],
-                                "id": 143,
+                                "id": 151,
                                 "name": "MemberAccess",
-                                "src": "1240:10:0"
+                                "src": "1327:10:0"
                               }
                             ],
-                            "id": 144,
+                            "id": 152,
                             "name": "IndexAccess",
-                            "src": "1226:25:0"
+                            "src": "1313:25:0"
                           },
                           {
                             "attributes": {
@@ -26620,23 +26741,23 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 117,
+                              "referencedDeclaration": 125,
                               "type": "uint256",
                               "value": "bidAmount"
                             },
-                            "id": 145,
+                            "id": 153,
                             "name": "Identifier",
-                            "src": "1254:9:0"
+                            "src": "1341:9:0"
                           }
                         ],
-                        "id": 146,
+                        "id": 154,
                         "name": "Assignment",
-                        "src": "1226:37:0"
+                        "src": "1313:37:0"
                       }
                     ],
-                    "id": 147,
+                    "id": 155,
                     "name": "ExpressionStatement",
-                    "src": "1226:37:0"
+                    "src": "1313:37:0"
                   },
                   {
                     "children": [
@@ -26674,9 +26795,9 @@ module.exports={
                               "type": "function (address,uint256)",
                               "value": "NotifyBid"
                             },
-                            "id": 148,
+                            "id": 156,
                             "name": "Identifier",
-                            "src": "1274:9:0"
+                            "src": "1361:9:0"
                           },
                           {
                             "attributes": {
@@ -26688,9 +26809,9 @@ module.exports={
                               "type": "address",
                               "value": "maxBidder"
                             },
-                            "id": 149,
+                            "id": 157,
                             "name": "Identifier",
-                            "src": "1284:9:0"
+                            "src": "1371:9:0"
                           },
                           {
                             "attributes": {
@@ -26702,29 +26823,29 @@ module.exports={
                               "type": "uint256",
                               "value": "maxBid"
                             },
-                            "id": 150,
+                            "id": 158,
                             "name": "Identifier",
-                            "src": "1295:6:0"
+                            "src": "1382:6:0"
                           }
                         ],
-                        "id": 151,
+                        "id": 159,
                         "name": "FunctionCall",
-                        "src": "1274:28:0"
+                        "src": "1361:28:0"
                       }
                     ],
-                    "id": 152,
+                    "id": 160,
                     "name": "ExpressionStatement",
-                    "src": "1274:28:0"
+                    "src": "1361:28:0"
                   }
                 ],
-                "id": 153,
+                "id": 161,
                 "name": "Block",
-                "src": "1048:262:0"
+                "src": "1135:262:0"
               }
             ],
-            "id": 154,
+            "id": 162,
             "name": "FunctionDefinition",
-            "src": "991:319:0"
+            "src": "1078:319:0"
           },
           {
             "attributes": {
@@ -26733,7 +26854,7 @@ module.exports={
               "isConstructor": false,
               "name": "cancel",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -26746,9 +26867,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 155,
+                "id": 163,
                 "name": "ParameterList",
-                "src": "1333:2:0"
+                "src": "1420:2:0"
               },
               {
                 "attributes": {
@@ -26757,9 +26878,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 160,
+                "id": 168,
                 "name": "ParameterList",
-                "src": "1363:0:0"
+                "src": "1450:0:0"
               },
               {
                 "attributes": {
@@ -26778,14 +26899,14 @@ module.exports={
                       "type": "modifier ()",
                       "value": "isOwner"
                     },
-                    "id": 156,
+                    "id": 164,
                     "name": "Identifier",
-                    "src": "1343:7:0"
+                    "src": "1430:7:0"
                   }
                 ],
-                "id": 157,
+                "id": 165,
                 "name": "ModifierInvocation",
-                "src": "1343:7:0"
+                "src": "1430:7:0"
               },
               {
                 "attributes": {
@@ -26804,14 +26925,14 @@ module.exports={
                       "type": "modifier ()",
                       "value": "hasNotEnded"
                     },
-                    "id": 158,
+                    "id": 166,
                     "name": "Identifier",
-                    "src": "1351:11:0"
+                    "src": "1438:11:0"
                   }
                 ],
-                "id": 159,
+                "id": 167,
                 "name": "ModifierInvocation",
-                "src": "1351:11:0"
+                "src": "1438:11:0"
               },
               {
                 "children": [
@@ -26834,13 +26955,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 71,
+                              "referencedDeclaration": 73,
                               "type": "bool",
                               "value": "canceled"
                             },
-                            "id": 161,
+                            "id": 169,
                             "name": "Identifier",
-                            "src": "1374:8:0"
+                            "src": "1461:8:0"
                           },
                           {
                             "attributes": {
@@ -26855,29 +26976,29 @@ module.exports={
                               "type": "bool",
                               "value": "true"
                             },
-                            "id": 162,
+                            "id": 170,
                             "name": "Literal",
-                            "src": "1385:4:0"
+                            "src": "1472:4:0"
                           }
                         ],
-                        "id": 163,
+                        "id": 171,
                         "name": "Assignment",
-                        "src": "1374:15:0"
+                        "src": "1461:15:0"
                       }
                     ],
-                    "id": 164,
+                    "id": 172,
                     "name": "ExpressionStatement",
-                    "src": "1374:15:0"
+                    "src": "1461:15:0"
                   }
                 ],
-                "id": 165,
+                "id": 173,
                 "name": "Block",
-                "src": "1363:34:0"
+                "src": "1450:34:0"
               }
             ],
-            "id": 166,
+            "id": 174,
             "name": "FunctionDefinition",
-            "src": "1318:79:0"
+            "src": "1405:79:0"
           },
           {
             "attributes": {
@@ -26886,7 +27007,7 @@ module.exports={
               "isConstructor": false,
               "name": "forceEnd",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -26899,9 +27020,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 167,
+                "id": 175,
                 "name": "ParameterList",
-                "src": "1422:2:0"
+                "src": "1509:2:0"
               },
               {
                 "attributes": {
@@ -26910,9 +27031,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 172,
+                "id": 180,
                 "name": "ParameterList",
-                "src": "1452:0:0"
+                "src": "1539:0:0"
               },
               {
                 "attributes": {
@@ -26931,14 +27052,14 @@ module.exports={
                       "type": "modifier ()",
                       "value": "isOwner"
                     },
-                    "id": 168,
+                    "id": 176,
                     "name": "Identifier",
-                    "src": "1432:7:0"
+                    "src": "1519:7:0"
                   }
                 ],
-                "id": 169,
+                "id": 177,
                 "name": "ModifierInvocation",
-                "src": "1432:7:0"
+                "src": "1519:7:0"
               },
               {
                 "attributes": {
@@ -26957,14 +27078,14 @@ module.exports={
                       "type": "modifier ()",
                       "value": "hasNotEnded"
                     },
-                    "id": 170,
+                    "id": 178,
                     "name": "Identifier",
-                    "src": "1440:11:0"
+                    "src": "1527:11:0"
                   }
                 ],
-                "id": 171,
+                "id": 179,
                 "name": "ModifierInvocation",
-                "src": "1440:11:0"
+                "src": "1527:11:0"
               },
               {
                 "children": [
@@ -26991,9 +27112,9 @@ module.exports={
                               "type": "uint256",
                               "value": "dateEnd"
                             },
-                            "id": 173,
+                            "id": 181,
                             "name": "Identifier",
-                            "src": "1463:7:0"
+                            "src": "1550:7:0"
                           },
                           {
                             "attributes": {
@@ -27001,33 +27122,33 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 320,
+                              "referencedDeclaration": 339,
                               "type": "uint256",
                               "value": "now"
                             },
-                            "id": 174,
+                            "id": 182,
                             "name": "Identifier",
-                            "src": "1473:3:0"
+                            "src": "1560:3:0"
                           }
                         ],
-                        "id": 175,
+                        "id": 183,
                         "name": "Assignment",
-                        "src": "1463:13:0"
+                        "src": "1550:13:0"
                       }
                     ],
-                    "id": 176,
+                    "id": 184,
                     "name": "ExpressionStatement",
-                    "src": "1463:13:0"
+                    "src": "1550:13:0"
                   }
                 ],
-                "id": 177,
+                "id": 185,
                 "name": "Block",
-                "src": "1452:32:0"
+                "src": "1539:32:0"
               }
             ],
-            "id": 178,
+            "id": 186,
             "name": "FunctionDefinition",
-            "src": "1405:79:0"
+            "src": "1492:79:0"
           },
           {
             "attributes": {
@@ -27036,7 +27157,7 @@ module.exports={
               "isConstructor": false,
               "name": "withdraw",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -27049,9 +27170,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 179,
+                "id": 187,
                 "name": "ParameterList",
-                "src": "1509:2:0"
+                "src": "1596:2:0"
               },
               {
                 "attributes": {
@@ -27060,9 +27181,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 182,
+                "id": 190,
                 "name": "ParameterList",
-                "src": "1528:0:0"
+                "src": "1615:0:0"
               },
               {
                 "attributes": {
@@ -27081,14 +27202,14 @@ module.exports={
                       "type": "modifier ()",
                       "value": "hasEnded"
                     },
-                    "id": 180,
+                    "id": 188,
                     "name": "Identifier",
-                    "src": "1519:8:0"
+                    "src": "1606:8:0"
                   }
                 ],
-                "id": 181,
+                "id": 189,
                 "name": "ModifierInvocation",
-                "src": "1519:8:0"
+                "src": "1606:8:0"
               },
               {
                 "children": [
@@ -27127,18 +27248,18 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 318,
+                                  "referencedDeclaration": 337,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 183,
+                                "id": 191,
                                 "name": "Identifier",
-                                "src": "1543:3:0"
+                                "src": "1630:3:0"
                               }
                             ],
-                            "id": 184,
+                            "id": 192,
                             "name": "MemberAccess",
-                            "src": "1543:10:0"
+                            "src": "1630:10:0"
                           },
                           {
                             "attributes": {
@@ -27150,14 +27271,14 @@ module.exports={
                               "type": "address",
                               "value": "owner"
                             },
-                            "id": 185,
+                            "id": 193,
                             "name": "Identifier",
-                            "src": "1557:5:0"
+                            "src": "1644:5:0"
                           }
                         ],
-                        "id": 186,
+                        "id": 194,
                         "name": "BinaryOperation",
-                        "src": "1543:19:0"
+                        "src": "1630:19:0"
                       },
                       {
                         "attributes": {
@@ -27166,9 +27287,9 @@ module.exports={
                           ]
                         },
                         "children": [],
-                        "id": 187,
+                        "id": 195,
                         "name": "Block",
-                        "src": "1564:26:0"
+                        "src": "1651:26:0"
                       },
                       {
                         "attributes": {
@@ -27177,24 +27298,24 @@ module.exports={
                           ]
                         },
                         "children": [],
-                        "id": 188,
+                        "id": 196,
                         "name": "Block",
-                        "src": "1596:14:0"
+                        "src": "1683:14:0"
                       }
                     ],
-                    "id": 189,
+                    "id": 197,
                     "name": "IfStatement",
-                    "src": "1539:71:0"
+                    "src": "1626:71:0"
                   }
                 ],
-                "id": 190,
+                "id": 198,
                 "name": "Block",
-                "src": "1528:89:0"
+                "src": "1615:89:0"
               }
             ],
-            "id": 191,
+            "id": 199,
             "name": "FunctionDefinition",
-            "src": "1492:125:0"
+            "src": "1579:125:0"
           },
           {
             "attributes": {
@@ -27206,7 +27327,7 @@ module.exports={
               ],
               "name": "getStakeByBidder",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -27218,7 +27339,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "bidder",
-                      "scope": 207,
+                      "scope": 215,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -27231,19 +27352,19 @@ module.exports={
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 192,
+                        "id": 200,
                         "name": "ElementaryTypeName",
-                        "src": "1658:7:0"
+                        "src": "1745:7:0"
                       }
                     ],
-                    "id": 193,
+                    "id": 201,
                     "name": "VariableDeclaration",
-                    "src": "1658:14:0"
+                    "src": "1745:14:0"
                   }
                 ],
-                "id": 194,
+                "id": 202,
                 "name": "ParameterList",
-                "src": "1657:16:0"
+                "src": "1744:16:0"
               },
               {
                 "children": [
@@ -27251,7 +27372,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "stake",
-                      "scope": 207,
+                      "scope": 215,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -27264,19 +27385,19 @@ module.exports={
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 195,
+                        "id": 203,
                         "name": "ElementaryTypeName",
-                        "src": "1695:4:0"
+                        "src": "1782:4:0"
                       }
                     ],
-                    "id": 196,
+                    "id": 204,
                     "name": "VariableDeclaration",
-                    "src": "1695:10:0"
+                    "src": "1782:10:0"
                   }
                 ],
-                "id": 197,
+                "id": 205,
                 "name": "ParameterList",
-                "src": "1694:12:0"
+                "src": "1781:12:0"
               },
               {
                 "children": [
@@ -27299,13 +27420,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 196,
+                              "referencedDeclaration": 204,
                               "type": "uint256",
                               "value": "stake"
                             },
-                            "id": 198,
+                            "id": 206,
                             "name": "Identifier",
-                            "src": "1718:5:0"
+                            "src": "1805:5:0"
                           },
                           {
                             "attributes": {
@@ -27323,13 +27444,13 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 75,
+                                  "referencedDeclaration": 77,
                                   "type": "mapping(address => uint256)",
                                   "value": "stakeByBidder"
                                 },
-                                "id": 199,
+                                "id": 207,
                                 "name": "Identifier",
-                                "src": "1726:13:0"
+                                "src": "1813:13:0"
                               },
                               {
                                 "attributes": {
@@ -27337,32 +27458,32 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 193,
+                                  "referencedDeclaration": 201,
                                   "type": "address",
                                   "value": "bidder"
                                 },
-                                "id": 200,
+                                "id": 208,
                                 "name": "Identifier",
-                                "src": "1740:6:0"
+                                "src": "1827:6:0"
                               }
                             ],
-                            "id": 201,
+                            "id": 209,
                             "name": "IndexAccess",
-                            "src": "1726:21:0"
+                            "src": "1813:21:0"
                           }
                         ],
-                        "id": 202,
+                        "id": 210,
                         "name": "Assignment",
-                        "src": "1718:29:0"
+                        "src": "1805:29:0"
                       }
                     ],
-                    "id": 203,
+                    "id": 211,
                     "name": "ExpressionStatement",
-                    "src": "1718:29:0"
+                    "src": "1805:29:0"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 197
+                      "functionReturnParameters": 205
                     },
                     "children": [
                       {
@@ -27371,28 +27492,28 @@ module.exports={
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 196,
+                          "referencedDeclaration": 204,
                           "type": "uint256",
                           "value": "stake"
                         },
-                        "id": 204,
+                        "id": 212,
                         "name": "Identifier",
-                        "src": "1765:5:0"
+                        "src": "1852:5:0"
                       }
                     ],
-                    "id": 205,
+                    "id": 213,
                     "name": "Return",
-                    "src": "1758:12:0"
+                    "src": "1845:12:0"
                   }
                 ],
-                "id": 206,
+                "id": 214,
                 "name": "Block",
-                "src": "1707:71:0"
+                "src": "1794:71:0"
               }
             ],
-            "id": 207,
+            "id": 215,
             "name": "FunctionDefinition",
-            "src": "1632:146:0"
+            "src": "1719:146:0"
           },
           {
             "attributes": {
@@ -27404,103 +27525,7 @@ module.exports={
               ],
               "name": "getOwner",
               "payable": false,
-              "scope": 250,
-              "stateMutability": "view",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 208,
-                "name": "ParameterList",
-                "src": "1803:2:0"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 215,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "type": "address"
-                        },
-                        "id": 209,
-                        "name": "ElementaryTypeName",
-                        "src": "1827:7:0"
-                      }
-                    ],
-                    "id": 210,
-                    "name": "VariableDeclaration",
-                    "src": "1827:7:0"
-                  }
-                ],
-                "id": 211,
-                "name": "ParameterList",
-                "src": "1826:9:0"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "functionReturnParameters": 211
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 69,
-                          "type": "address",
-                          "value": "owner"
-                        },
-                        "id": 212,
-                        "name": "Identifier",
-                        "src": "1854:5:0"
-                      }
-                    ],
-                    "id": 213,
-                    "name": "Return",
-                    "src": "1847:12:0"
-                  }
-                ],
-                "id": 214,
-                "name": "Block",
-                "src": "1836:31:0"
-              }
-            ],
-            "id": 215,
-            "name": "FunctionDefinition",
-            "src": "1786:81:0"
-          },
-          {
-            "attributes": {
-              "constant": true,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "getMaxBid",
-              "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -27515,7 +27540,7 @@ module.exports={
                 "children": [],
                 "id": 216,
                 "name": "ParameterList",
-                "src": "1893:2:0"
+                "src": "1890:2:0"
               },
               {
                 "children": [
@@ -27526,29 +27551,29 @@ module.exports={
                       "scope": 223,
                       "stateVariable": false,
                       "storageLocation": "default",
-                      "type": "uint256",
+                      "type": "address",
                       "value": null,
                       "visibility": "internal"
                     },
                     "children": [
                       {
                         "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
+                          "name": "address",
+                          "type": "address"
                         },
                         "id": 217,
                         "name": "ElementaryTypeName",
-                        "src": "1916:4:0"
+                        "src": "1914:7:0"
                       }
                     ],
                     "id": 218,
                     "name": "VariableDeclaration",
-                    "src": "1916:4:0"
+                    "src": "1914:7:0"
                   }
                 ],
                 "id": 219,
                 "name": "ParameterList",
-                "src": "1915:6:0"
+                "src": "1913:9:0"
               },
               {
                 "children": [
@@ -27563,28 +27588,28 @@ module.exports={
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 65,
-                          "type": "uint256",
-                          "value": "maxBid"
+                          "referencedDeclaration": 69,
+                          "type": "address",
+                          "value": "owner"
                         },
                         "id": 220,
                         "name": "Identifier",
-                        "src": "1940:6:0"
+                        "src": "1941:5:0"
                       }
                     ],
                     "id": 221,
                     "name": "Return",
-                    "src": "1933:13:0"
+                    "src": "1934:12:0"
                   }
                 ],
                 "id": 222,
                 "name": "Block",
-                "src": "1922:32:0"
+                "src": "1923:31:0"
               }
             ],
             "id": 223,
             "name": "FunctionDefinition",
-            "src": "1875:79:0"
+            "src": "1873:81:0"
           },
           {
             "attributes": {
@@ -27594,9 +27619,9 @@ module.exports={
               "modifiers": [
                 null
               ],
-              "name": "getMaxBidder",
+              "name": "getMaxBid",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -27611,7 +27636,7 @@ module.exports={
                 "children": [],
                 "id": 224,
                 "name": "ParameterList",
-                "src": "1983:2:0"
+                "src": "1980:2:0"
               },
               {
                 "children": [
@@ -27622,29 +27647,29 @@ module.exports={
                       "scope": 231,
                       "stateVariable": false,
                       "storageLocation": "default",
-                      "type": "address",
+                      "type": "uint256",
                       "value": null,
                       "visibility": "internal"
                     },
                     "children": [
                       {
                         "attributes": {
-                          "name": "address",
-                          "type": "address"
+                          "name": "uint",
+                          "type": "uint256"
                         },
                         "id": 225,
                         "name": "ElementaryTypeName",
-                        "src": "2007:7:0"
+                        "src": "2003:4:0"
                       }
                     ],
                     "id": 226,
                     "name": "VariableDeclaration",
-                    "src": "2007:7:0"
+                    "src": "2003:4:0"
                   }
                 ],
                 "id": 227,
                 "name": "ParameterList",
-                "src": "2006:9:0"
+                "src": "2002:6:0"
               },
               {
                 "children": [
@@ -27659,28 +27684,28 @@ module.exports={
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 67,
-                          "type": "address",
-                          "value": "maxBidder"
+                          "referencedDeclaration": 65,
+                          "type": "uint256",
+                          "value": "maxBid"
                         },
                         "id": 228,
                         "name": "Identifier",
-                        "src": "2034:9:0"
+                        "src": "2027:6:0"
                       }
                     ],
                     "id": 229,
                     "name": "Return",
-                    "src": "2027:16:0"
+                    "src": "2020:13:0"
                   }
                 ],
                 "id": 230,
                 "name": "Block",
-                "src": "2016:35:0"
+                "src": "2009:32:0"
               }
             ],
             "id": 231,
             "name": "FunctionDefinition",
-            "src": "1962:89:0"
+            "src": "1962:79:0"
           },
           {
             "attributes": {
@@ -27690,9 +27715,9 @@ module.exports={
               "modifiers": [
                 null
               ],
-              "name": "isCanceled",
+              "name": "getMaxBidder",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -27707,7 +27732,7 @@ module.exports={
                 "children": [],
                 "id": 232,
                 "name": "ParameterList",
-                "src": "2078:2:0"
+                "src": "2070:2:0"
               },
               {
                 "children": [
@@ -27718,29 +27743,29 @@ module.exports={
                       "scope": 239,
                       "stateVariable": false,
                       "storageLocation": "default",
-                      "type": "bool",
+                      "type": "address",
                       "value": null,
                       "visibility": "internal"
                     },
                     "children": [
                       {
                         "attributes": {
-                          "name": "bool",
-                          "type": "bool"
+                          "name": "address",
+                          "type": "address"
                         },
                         "id": 233,
                         "name": "ElementaryTypeName",
-                        "src": "2102:4:0"
+                        "src": "2094:7:0"
                       }
                     ],
                     "id": 234,
                     "name": "VariableDeclaration",
-                    "src": "2102:4:0"
+                    "src": "2094:7:0"
                   }
                 ],
                 "id": 235,
                 "name": "ParameterList",
-                "src": "2101:6:0"
+                "src": "2093:9:0"
               },
               {
                 "children": [
@@ -27755,28 +27780,28 @@ module.exports={
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 71,
-                          "type": "bool",
-                          "value": "canceled"
+                          "referencedDeclaration": 67,
+                          "type": "address",
+                          "value": "maxBidder"
                         },
                         "id": 236,
                         "name": "Identifier",
-                        "src": "2130:8:0"
+                        "src": "2121:9:0"
                       }
                     ],
                     "id": 237,
                     "name": "Return",
-                    "src": "2123:15:0"
+                    "src": "2114:16:0"
                   }
                 ],
                 "id": 238,
                 "name": "Block",
-                "src": "2108:38:0"
+                "src": "2103:35:0"
               }
             ],
             "id": 239,
             "name": "FunctionDefinition",
-            "src": "2059:87:0"
+            "src": "2049:89:0"
           },
           {
             "attributes": {
@@ -27786,9 +27811,9 @@ module.exports={
               "modifiers": [
                 null
               ],
-              "name": "isEnd",
+              "name": "isCanceled",
               "payable": false,
-              "scope": 250,
+              "scope": 266,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -27803,7 +27828,7 @@ module.exports={
                 "children": [],
                 "id": 240,
                 "name": "ParameterList",
-                "src": "2168:2:0"
+                "src": "2165:2:0"
               },
               {
                 "children": [
@@ -27811,7 +27836,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 249,
+                      "scope": 247,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -27826,23 +27851,119 @@ module.exports={
                         },
                         "id": 241,
                         "name": "ElementaryTypeName",
-                        "src": "2192:4:0"
+                        "src": "2189:4:0"
                       }
                     ],
                     "id": 242,
                     "name": "VariableDeclaration",
-                    "src": "2192:4:0"
+                    "src": "2189:4:0"
                   }
                 ],
                 "id": 243,
                 "name": "ParameterList",
-                "src": "2191:6:0"
+                "src": "2188:6:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "functionReturnParameters": 243
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 73,
+                          "type": "bool",
+                          "value": "canceled"
+                        },
+                        "id": 244,
+                        "name": "Identifier",
+                        "src": "2217:8:0"
+                      }
+                    ],
+                    "id": 245,
+                    "name": "Return",
+                    "src": "2210:15:0"
+                  }
+                ],
+                "id": 246,
+                "name": "Block",
+                "src": "2195:38:0"
+              }
+            ],
+            "id": 247,
+            "name": "FunctionDefinition",
+            "src": "2146:87:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "isEnd",
+              "payable": false,
+              "scope": 266,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 248,
+                "name": "ParameterList",
+                "src": "2255:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 257,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 249,
+                        "name": "ElementaryTypeName",
+                        "src": "2279:4:0"
+                      }
+                    ],
+                    "id": 250,
+                    "name": "VariableDeclaration",
+                    "src": "2279:4:0"
+                  }
+                ],
+                "id": 251,
+                "name": "ParameterList",
+                "src": "2278:6:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 251
                     },
                     "children": [
                       {
@@ -27866,13 +27987,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 320,
+                              "referencedDeclaration": 339,
                               "type": "uint256",
                               "value": "now"
                             },
-                            "id": 244,
+                            "id": 252,
                             "name": "Identifier",
-                            "src": "2216:3:0"
+                            "src": "2303:3:0"
                           },
                           {
                             "attributes": {
@@ -27884,39 +28005,135 @@ module.exports={
                               "type": "uint256",
                               "value": "dateEnd"
                             },
-                            "id": 245,
+                            "id": 253,
                             "name": "Identifier",
-                            "src": "2223:7:0"
+                            "src": "2310:7:0"
                           }
                         ],
-                        "id": 246,
+                        "id": 254,
                         "name": "BinaryOperation",
-                        "src": "2216:14:0"
+                        "src": "2303:14:0"
                       }
                     ],
-                    "id": 247,
+                    "id": 255,
                     "name": "Return",
-                    "src": "2209:21:0"
+                    "src": "2296:21:0"
                   }
                 ],
-                "id": 248,
+                "id": 256,
                 "name": "Block",
-                "src": "2198:40:0"
+                "src": "2285:40:0"
               }
             ],
-            "id": 249,
+            "id": 257,
             "name": "FunctionDefinition",
-            "src": "2154:84:0"
+            "src": "2241:84:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getImageUrl",
+              "payable": false,
+              "scope": 266,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 258,
+                "name": "ParameterList",
+                "src": "2353:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 265,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 259,
+                        "name": "ElementaryTypeName",
+                        "src": "2377:6:0"
+                      }
+                    ],
+                    "id": 260,
+                    "name": "VariableDeclaration",
+                    "src": "2377:6:0"
+                  }
+                ],
+                "id": 261,
+                "name": "ParameterList",
+                "src": "2376:8:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 261
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 71,
+                          "type": "string storage ref",
+                          "value": "imageUrl"
+                        },
+                        "id": 262,
+                        "name": "Identifier",
+                        "src": "2403:8:0"
+                      }
+                    ],
+                    "id": 263,
+                    "name": "Return",
+                    "src": "2396:15:0"
+                  }
+                ],
+                "id": 264,
+                "name": "Block",
+                "src": "2385:34:0"
+              }
+            ],
+            "id": 265,
+            "name": "FunctionDefinition",
+            "src": "2333:86:0"
           }
         ],
-        "id": 250,
+        "id": 266,
         "name": "ContractDefinition",
-        "src": "30:2211:0"
+        "src": "30:2392:0"
       }
     ],
-    "id": 251,
+    "id": 267,
     "name": "SourceUnit",
-    "src": "0:2241:0"
+    "src": "0:2422:0"
   },
   "compiler": {
     "name": "solc",
@@ -27924,7 +28141,7 @@ module.exports={
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-02-27T09:36:03.985Z"
+  "updatedAt": "2018-02-28T10:06:51.419Z"
 }
 },{}],166:[function(require,module,exports){
 module.exports={
@@ -27963,6 +28180,10 @@ module.exports={
         {
           "name": "startAuctionAmount",
           "type": "uint256"
+        },
+        {
+          "name": "imageUrl",
+          "type": "string"
         }
       ],
       "name": "createAuction",
@@ -27986,18 +28207,18 @@ module.exports={
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b610b8a8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630121683f14610051578063d7c069191461007d575b600080fd5b341561005c57600080fd5b61007b60048080359060200190919080359060200190919050506100e7565b005b341561008857600080fd5b61009061024f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100d35780820151818401526020810190506100b8565b505050509050019250505060405180910390f35b60003383836100f46102e3565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018281526020019350505050604051809103906000f080151561014e57600080fd5b90506000805480600101828161016491906102f3565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1505050565b61025761031f565b60008054806020026020016040519081016040528092919081815260200182805480156102d957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161028f575b5050505050905090565b6040516108068061035983390190565b81548183558181151161031a578183600052602060002091820191016103199190610333565b5b505050565b602060405190810160405280600081525090565b61035591905b80821115610351576000816000905550600101610339565b5090565b9056006060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029a165627a7a72305820a3e8fdcdc0fa8b37ad6a945140c485560eaba50580f5d265c374356558567ebd0029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630121683f14610051578063d7c069191461007d575b600080fd5b341561005c57600080fd5b61007b60048080359060200190919080359060200190919050506100e7565b005b341561008857600080fd5b61009061024f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100d35780820151818401526020810190506100b8565b505050509050019250505060405180910390f35b60003383836100f46102e3565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018281526020019350505050604051809103906000f080151561014e57600080fd5b90506000805480600101828161016491906102f3565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1505050565b61025761031f565b60008054806020026020016040519081016040528092919081815260200182805480156102d957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161028f575b5050505050905090565b6040516108068061035983390190565b81548183558181151161031a578183600052602060002091820191016103199190610333565b5b505050565b602060405190810160405280600081525090565b61035591905b80821115610351576000816000905550600101610339565b5090565b9056006060604052341561000f57600080fd5b604051606080610806833981016040528080519060200190919080519060200190919080519060200190919050506001821015151561004d57600080fd5b82600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550814201600081905550806001819055506000600360146101000a81548160ff02191690831515021790555050505061073b806100cb6000396000f3006060604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100a95780632fc6e8b7146100d65780633bd2a678146101035780633ccfd60b146101585780634ee0ab0d1461016d5780637e12a25114610182578063893d20e8146101ab578063ad6cedf614610200578063ea8a1af01461024d578063f30e365814610262575b600080fd5b34156100b457600080fd5b6100bc61026c565b604051808215151515815260200191505060405180910390f35b34156100e157600080fd5b6100e9610283565b604051808215151515815260200191505060405180910390f35b341561010e57600080fd5b61011661028f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016357600080fd5b61016b6102b9565b005b341561017857600080fd5b61018061034a565b005b341561018d57600080fd5b6101956103e1565b6040518082815260200191505060405180910390f35b34156101b657600080fd5b6101be6103eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561020b57600080fd5b610237600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610415565b6040518082815260200191505060405180910390f35b341561025857600080fd5b610260610461565b005b61026a61050c565b005b6000600360149054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60005442101515156102ca57600080fd5b60011515600360149054906101000a900460ff1615151415156102ec57600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561034757610348565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a657600080fd5b600054421015156103b657600080fd5b60001515600360149054906101000a900460ff1615151415156103d857600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104bd57600080fd5b600054421015156104cd57600080fd5b60001515600360149054906101000a900460ff1615151415156104ef57600080fd5b6001600360146101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415151561056b57600080fd5b6000544210151561057b57600080fd5b60001515600360149054906101000a900460ff16151514151561059d57600080fd5b34600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054019050806001541015156105f157600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a1505600a165627a7a7230582013e9c0a53ccb94dd9c8ac02d69f0856ce75cbc6f6e69947facc581be3bcc71190029a165627a7a72305820a3e8fdcdc0fa8b37ad6a945140c485560eaba50580f5d265c374356558567ebd0029",
-  "sourceMap": "57:517:1:-;;;184:43;;;;;;;;57:517;;;;;;",
-  "deployedSourceMap": "57:517:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:239;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;482:89;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;235:239:1;316:15;346:10;358:8;368:18;334:53;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;316:71;;398:8;:22;;;;;;;;;;;:::i;:::-;;;;;;;;;;412:7;398:22;;;;;;;;;;;;;;;;;;;;;;;431:35;446:10;458:7;431:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:239;;;:::o;482:89::-;526:9;;:::i;:::-;555:8;548:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;482:89;:::o;57:517::-;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.18;\r\n\r\n\r\nimport \"./Auction.sol\";\r\n\r\ncontract AuctionFactory {\r\n    Auction[] private auctions;\r\n\r\n    event AuctionCreated(address owner, address auction);\r\n\r\n    function AuctionFactory() public {\r\n\r\n    }\r\n\r\n    function createAuction(uint duration, uint startAuctionAmount) public {\r\n        Auction auction = new Auction(msg.sender, duration, startAuctionAmount);\r\n        auctions.push(auction);\r\n        AuctionCreated(msg.sender, auction);\r\n    }\r\n\r\n    function getAuctions() public view returns (Auction[]) {\r\n        return auctions;\r\n    }\r\n}",
+  "bytecode": "0x6060604052341561000f57600080fd5b610e5b8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634736b35914610051578063d7c06919146100c0575b600080fd5b341561005c57600080fd5b6100be600480803590602001909190803590602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061012a565b005b34156100cb57600080fd5b6100d3610300565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101165780820151818401526020810190506100fb565b505050509050019250505060405180910390f35b600033848484610138610394565b808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101b3578082015181840152602081019050610198565b50505050905090810190601f1680156101e05780820380516001836020036101000a031916815260200191505b5095505050505050604051809103906000f08015156101fe57600080fd5b90506000805480600101828161021491906103a4565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a150505050565b6103086103d0565b600080548060200260200160405190810160405280929190818152602001828054801561038a57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610340575b5050505050905090565b604051610a268061040a83390190565b8154818355818115116103cb578183600052602060002091820191016103ca91906103e4565b5b505050565b602060405190810160405280600081525090565b61040691905b808211156104025760008160009055506001016103ea565b5090565b9056006060604052341561000f57600080fd5b604051610a26380380610a26833981016040528080519060200190919080519060200190919080519060200190919080518201919050506001831015151561005657600080fd5b83600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508242016000819055508160018190555080600490805190602001906100bd9291906100e2565b506000600560006101000a81548160ff02191690831515021790555050505050610187565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061012357805160ff1916838001178555610151565b82800160010185558215610151579182015b82811115610150578251825591602001919060010190610135565b5b50905061015e9190610162565b5090565b61018491905b80821115610180576000816000905550600101610168565b5090565b90565b610890806101966000396000f3006060604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100b45780632fc6e8b7146100e15780633bd2a6781461010e5780633ccfd60b146101635780634ee0ab0d146101785780637e12a2511461018d578063893d20e8146101b65780639743a6911461020b578063ad6cedf614610299578063ea8a1af0146102e6578063f30e3658146102fb575b600080fd5b34156100bf57600080fd5b6100c7610305565b604051808215151515815260200191505060405180910390f35b34156100ec57600080fd5b6100f461031c565b604051808215151515815260200191505060405180910390f35b341561011957600080fd5b610121610328565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016e57600080fd5b610176610352565b005b341561018357600080fd5b61018b6103e3565b005b341561019857600080fd5b6101a061047a565b6040518082815260200191505060405180910390f35b34156101c157600080fd5b6101c9610484565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021657600080fd5b61021e6104ae565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561025e578082015181840152602081019050610243565b50505050905090810190601f16801561028b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156102a457600080fd5b6102d0600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610556565b6040518082815260200191505060405180910390f35b34156102f157600080fd5b6102f96105a2565b005b61030361064d565b005b6000600560009054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600054421015151561036357600080fd5b60011515600560009054906101000a900460ff16151514151561038557600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156103e0576103e1565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561043f57600080fd5b6000544210151561044f57600080fd5b60001515600560009054906101000a900460ff16151514151561047157600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6104b6610850565b60048054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561054c5780601f106105215761010080835404028352916020019161054c565b820191906000526020600020905b81548152906001019060200180831161052f57829003601f168201915b5050505050905090565b6000600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105fe57600080fd5b6000544210151561060e57600080fd5b60001515600560009054906101000a900460ff16151514151561063057600080fd5b6001600560006101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515156106ac57600080fd5b600054421015156106bc57600080fd5b60001515600560009054906101000a900460ff1615151415156106de57600080fd5b34600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020540190508060015410151561073257600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b6020604051908101604052806000815250905600a165627a7a723058208fe330c4799a4df4a247a3d9a2a326ecd37b5abaa06f0629b91c9415ef2e0d750029a165627a7a72305820a2723caa745683b4a3e3b3914fb2d4a342b4a992a770a8f93417170d437eb90f0029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634736b35914610051578063d7c06919146100c0575b600080fd5b341561005c57600080fd5b6100be600480803590602001909190803590602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061012a565b005b34156100cb57600080fd5b6100d3610300565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156101165780820151818401526020810190506100fb565b505050509050019250505060405180910390f35b600033848484610138610394565b808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101b3578082015181840152602081019050610198565b50505050905090810190601f1680156101e05780820380516001836020036101000a031916815260200191505b5095505050505050604051809103906000f08015156101fe57600080fd5b90506000805480600101828161021491906103a4565b9160005260206000209001600083909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550507f0bdb7849ed0b0249d0f995067a2ca77769f68ab4c654931e262676effeb395f23382604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a150505050565b6103086103d0565b600080548060200260200160405190810160405280929190818152602001828054801561038a57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610340575b5050505050905090565b604051610a268061040a83390190565b8154818355818115116103cb578183600052602060002091820191016103ca91906103e4565b5b505050565b602060405190810160405280600081525090565b61040691905b808211156104025760008160009055506001016103ea565b5090565b9056006060604052341561000f57600080fd5b604051610a26380380610a26833981016040528080519060200190919080519060200190919080519060200190919080518201919050506001831015151561005657600080fd5b83600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508242016000819055508160018190555080600490805190602001906100bd9291906100e2565b506000600560006101000a81548160ff02191690831515021790555050505050610187565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061012357805160ff1916838001178555610151565b82800160010185558215610151579182015b82811115610150578251825591602001919060010190610135565b5b50905061015e9190610162565b5090565b61018491905b80821115610180576000816000905550600101610168565b5090565b90565b610890806101966000396000f3006060604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630ed5a933146100b45780632fc6e8b7146100e15780633bd2a6781461010e5780633ccfd60b146101635780634ee0ab0d146101785780637e12a2511461018d578063893d20e8146101b65780639743a6911461020b578063ad6cedf614610299578063ea8a1af0146102e6578063f30e3658146102fb575b600080fd5b34156100bf57600080fd5b6100c7610305565b604051808215151515815260200191505060405180910390f35b34156100ec57600080fd5b6100f461031c565b604051808215151515815260200191505060405180910390f35b341561011957600080fd5b610121610328565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561016e57600080fd5b610176610352565b005b341561018357600080fd5b61018b6103e3565b005b341561019857600080fd5b6101a061047a565b6040518082815260200191505060405180910390f35b34156101c157600080fd5b6101c9610484565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021657600080fd5b61021e6104ae565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561025e578082015181840152602081019050610243565b50505050905090810190601f16801561028b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156102a457600080fd5b6102d0600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610556565b6040518082815260200191505060405180910390f35b34156102f157600080fd5b6102f96105a2565b005b61030361064d565b005b6000600560009054906101000a900460ff16905090565b60008054421015905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600054421015151561036357600080fd5b60011515600560009054906101000a900460ff16151514151561038557600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156103e0576103e1565b5b565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561043f57600080fd5b6000544210151561044f57600080fd5b60001515600560009054906101000a900460ff16151514151561047157600080fd5b42600081905550565b6000600154905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6104b6610850565b60048054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561054c5780601f106105215761010080835404028352916020019161054c565b820191906000526020600020905b81548152906001019060200180831161052f57829003601f168201915b5050505050905090565b6000600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050809050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105fe57600080fd5b6000544210151561060e57600080fd5b60001515600560009054906101000a900460ff16151514151561063057600080fd5b6001600560006101000a81548160ff021916908315150217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515156106ac57600080fd5b600054421015156106bc57600080fd5b60001515600560009054906101000a900460ff1615151415156106de57600080fd5b34600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020540190508060015410151561073257600080fd5b8060018190555033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507f920013593b68219a1686cf4db30fbac5fb83addce1b2f82ef2e8182c87e23d5f600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600154604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b6020604051908101604052806000815250905600a165627a7a723058208fe330c4799a4df4a247a3d9a2a326ecd37b5abaa06f0629b91c9415ef2e0d750029a165627a7a72305820a2723caa745683b4a3e3b3914fb2d4a342b4a992a770a8f93417170d437eb90f0029",
+  "sourceMap": "57:544:1:-;;;184:43;;;;;;;;57:544;;;;;;",
+  "deployedSourceMap": "57:544:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:266;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;509:89;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;235:266:1;333:15;363:10;375:8;385:18;405:8;351:63;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;333:81:1;;425:8;:22;;;;;;;;;;;:::i;:::-;;;;;;;;;;439:7;425:22;;;;;;;;;;;;;;;;;;;;;;;458:35;473:10;485:7;458:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:266;;;;:::o;509:89::-;553:9;;:::i;:::-;582:8;575:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;509:89;:::o;57:544::-;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.18;\r\n\r\n\r\nimport \"./Auction.sol\";\r\n\r\ncontract AuctionFactory {\r\n    Auction[] private auctions;\r\n\r\n    event AuctionCreated(address owner, address auction);\r\n\r\n    function AuctionFactory() public {\r\n\r\n    }\r\n\r\n    function createAuction(uint duration, uint startAuctionAmount, string imageUrl) public {\r\n        Auction auction = new Auction(msg.sender, duration, startAuctionAmount, imageUrl);\r\n        auctions.push(auction);\r\n        AuctionCreated(msg.sender, auction);\r\n    }\r\n\r\n    function getAuctions() public view returns (Auction[]) {\r\n        return auctions;\r\n    }\r\n}",
   "sourcePath": "D:\\Education\\Dapp-Auction\\DAuction\\contracts\\AuctionFactory.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/D/Education/Dapp-Auction/DAuction/contracts/AuctionFactory.sol",
       "exportedSymbols": {
         "AuctionFactory": [
-          306
+          325
         ]
       }
     },
@@ -28011,22 +28232,22 @@ module.exports={
             ".18"
           ]
         },
-        "id": 252,
+        "id": 268,
         "name": "PragmaDirective",
         "src": "0:24:1"
       },
       {
         "attributes": {
-          "SourceUnit": 251,
+          "SourceUnit": 267,
           "absolutePath": "/D/Education/Dapp-Auction/DAuction/contracts/Auction.sol",
           "file": "./Auction.sol",
-          "scope": 307,
+          "scope": 326,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 253,
+        "id": 269,
         "name": "ImportDirective",
         "src": "30:23:1"
       },
@@ -28036,23 +28257,23 @@ module.exports={
             null
           ],
           "contractDependencies": [
-            250
+            266
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            306
+            325
           ],
           "name": "AuctionFactory",
-          "scope": 307
+          "scope": 326
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "auctions",
-              "scope": 306,
+              "scope": 325,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract Auction[] storage ref",
@@ -28070,20 +28291,20 @@ module.exports={
                     "attributes": {
                       "contractScope": null,
                       "name": "Auction",
-                      "referencedDeclaration": 250,
+                      "referencedDeclaration": 266,
                       "type": "contract Auction"
                     },
-                    "id": 254,
+                    "id": 270,
                     "name": "UserDefinedTypeName",
                     "src": "88:7:1"
                   }
                 ],
-                "id": 255,
+                "id": 271,
                 "name": "ArrayTypeName",
                 "src": "88:9:1"
               }
             ],
-            "id": 256,
+            "id": 272,
             "name": "VariableDeclaration",
             "src": "88:26:1"
           },
@@ -28100,7 +28321,7 @@ module.exports={
                       "constant": false,
                       "indexed": false,
                       "name": "owner",
-                      "scope": 262,
+                      "scope": 278,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -28113,12 +28334,12 @@ module.exports={
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 257,
+                        "id": 273,
                         "name": "ElementaryTypeName",
                         "src": "144:7:1"
                       }
                     ],
-                    "id": 258,
+                    "id": 274,
                     "name": "VariableDeclaration",
                     "src": "144:13:1"
                   },
@@ -28127,7 +28348,7 @@ module.exports={
                       "constant": false,
                       "indexed": false,
                       "name": "auction",
-                      "scope": 262,
+                      "scope": 278,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -28140,22 +28361,22 @@ module.exports={
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 259,
+                        "id": 275,
                         "name": "ElementaryTypeName",
                         "src": "159:7:1"
                       }
                     ],
-                    "id": 260,
+                    "id": 276,
                     "name": "VariableDeclaration",
                     "src": "159:15:1"
                   }
                 ],
-                "id": 261,
+                "id": 277,
                 "name": "ParameterList",
                 "src": "143:32:1"
               }
             ],
-            "id": 262,
+            "id": 278,
             "name": "EventDefinition",
             "src": "123:53:1"
           },
@@ -28169,7 +28390,7 @@ module.exports={
               ],
               "name": "AuctionFactory",
               "payable": false,
-              "scope": 306,
+              "scope": 325,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -28182,7 +28403,7 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 263,
+                "id": 279,
                 "name": "ParameterList",
                 "src": "207:2:1"
               },
@@ -28193,7 +28414,7 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 264,
+                "id": 280,
                 "name": "ParameterList",
                 "src": "217:0:1"
               },
@@ -28204,12 +28425,12 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 265,
+                "id": 281,
                 "name": "Block",
                 "src": "217:10:1"
               }
             ],
-            "id": 266,
+            "id": 282,
             "name": "FunctionDefinition",
             "src": "184:43:1"
           },
@@ -28223,7 +28444,7 @@ module.exports={
               ],
               "name": "createAuction",
               "payable": false,
-              "scope": 306,
+              "scope": 325,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -28235,7 +28456,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "duration",
-                      "scope": 296,
+                      "scope": 315,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -28248,12 +28469,12 @@ module.exports={
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 267,
+                        "id": 283,
                         "name": "ElementaryTypeName",
                         "src": "258:4:1"
                       }
                     ],
-                    "id": 268,
+                    "id": 284,
                     "name": "VariableDeclaration",
                     "src": "258:13:1"
                   },
@@ -28261,7 +28482,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "startAuctionAmount",
-                      "scope": 296,
+                      "scope": 315,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -28274,19 +28495,45 @@ module.exports={
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 269,
+                        "id": 285,
                         "name": "ElementaryTypeName",
                         "src": "273:4:1"
                       }
                     ],
-                    "id": 270,
+                    "id": 286,
                     "name": "VariableDeclaration",
                     "src": "273:23:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "imageUrl",
+                      "scope": 315,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 287,
+                        "name": "ElementaryTypeName",
+                        "src": "298:6:1"
+                      }
+                    ],
+                    "id": 288,
+                    "name": "VariableDeclaration",
+                    "src": "298:15:1"
                   }
                 ],
-                "id": 271,
+                "id": 289,
                 "name": "ParameterList",
-                "src": "257:40:1"
+                "src": "257:57:1"
               },
               {
                 "attributes": {
@@ -28295,16 +28542,16 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 272,
+                "id": 290,
                 "name": "ParameterList",
-                "src": "305:0:1"
+                "src": "322:0:1"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        274
+                        292
                       ]
                     },
                     "children": [
@@ -28312,7 +28559,7 @@ module.exports={
                         "attributes": {
                           "constant": false,
                           "name": "auction",
-                          "scope": 296,
+                          "scope": 315,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "contract Auction",
@@ -28324,17 +28571,17 @@ module.exports={
                             "attributes": {
                               "contractScope": null,
                               "name": "Auction",
-                              "referencedDeclaration": 250,
+                              "referencedDeclaration": 266,
                               "type": "contract Auction"
                             },
-                            "id": 273,
+                            "id": 291,
                             "name": "UserDefinedTypeName",
-                            "src": "316:7:1"
+                            "src": "333:7:1"
                           }
                         ],
-                        "id": 274,
+                        "id": 292,
                         "name": "VariableDeclaration",
-                        "src": "316:15:1"
+                        "src": "333:15:1"
                       },
                       {
                         "attributes": {
@@ -28365,30 +28612,34 @@ module.exports={
                                 {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
                                 }
                               ],
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "type": "function (address,uint256,uint256) returns (contract Auction)"
+                              "type": "function (address,uint256,uint256,string memory) returns (contract Auction)"
                             },
                             "children": [
                               {
                                 "attributes": {
                                   "contractScope": null,
                                   "name": "Auction",
-                                  "referencedDeclaration": 250,
+                                  "referencedDeclaration": 266,
                                   "type": "contract Auction"
                                 },
-                                "id": 275,
+                                "id": 293,
                                 "name": "UserDefinedTypeName",
-                                "src": "338:7:1"
+                                "src": "355:7:1"
                               }
                             ],
-                            "id": 276,
+                            "id": 294,
                             "name": "NewExpression",
-                            "src": "334:11:1"
+                            "src": "351:11:1"
                           },
                           {
                             "attributes": {
@@ -28408,18 +28659,18 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 318,
+                                  "referencedDeclaration": 337,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 277,
+                                "id": 295,
                                 "name": "Identifier",
-                                "src": "346:3:1"
+                                "src": "363:3:1"
                               }
                             ],
-                            "id": 278,
+                            "id": 296,
                             "name": "MemberAccess",
-                            "src": "346:10:1"
+                            "src": "363:10:1"
                           },
                           {
                             "attributes": {
@@ -28427,13 +28678,13 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 268,
+                              "referencedDeclaration": 284,
                               "type": "uint256",
                               "value": "duration"
                             },
-                            "id": 279,
+                            "id": 297,
                             "name": "Identifier",
-                            "src": "358:8:1"
+                            "src": "375:8:1"
                           },
                           {
                             "attributes": {
@@ -28441,23 +28692,37 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 270,
+                              "referencedDeclaration": 286,
                               "type": "uint256",
                               "value": "startAuctionAmount"
                             },
-                            "id": 280,
+                            "id": 298,
                             "name": "Identifier",
-                            "src": "368:18:1"
+                            "src": "385:18:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 288,
+                              "type": "string memory",
+                              "value": "imageUrl"
+                            },
+                            "id": 299,
+                            "name": "Identifier",
+                            "src": "405:8:1"
                           }
                         ],
-                        "id": 281,
+                        "id": 300,
                         "name": "FunctionCall",
-                        "src": "334:53:1"
+                        "src": "351:63:1"
                       }
                     ],
-                    "id": 282,
+                    "id": 301,
                     "name": "VariableDeclarationStatement",
-                    "src": "316:71:1"
+                    "src": "333:81:1"
                   },
                   {
                     "children": [
@@ -28480,7 +28745,7 @@ module.exports={
                             "attributes": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_Auction_$250",
+                                  "typeIdentifier": "t_contract$_Auction_$266",
                                   "typeString": "contract Auction"
                                 }
                               ],
@@ -28499,18 +28764,18 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 256,
+                                  "referencedDeclaration": 272,
                                   "type": "contract Auction[] storage ref",
                                   "value": "auctions"
                                 },
-                                "id": 283,
+                                "id": 302,
                                 "name": "Identifier",
-                                "src": "398:8:1"
+                                "src": "425:8:1"
                               }
                             ],
-                            "id": 285,
+                            "id": 304,
                             "name": "MemberAccess",
-                            "src": "398:13:1"
+                            "src": "425:13:1"
                           },
                           {
                             "attributes": {
@@ -28518,23 +28783,23 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 274,
+                              "referencedDeclaration": 292,
                               "type": "contract Auction",
                               "value": "auction"
                             },
-                            "id": 286,
+                            "id": 305,
                             "name": "Identifier",
-                            "src": "412:7:1"
+                            "src": "439:7:1"
                           }
                         ],
-                        "id": 287,
+                        "id": 306,
                         "name": "FunctionCall",
-                        "src": "398:22:1"
+                        "src": "425:22:1"
                       }
                     ],
-                    "id": 288,
+                    "id": 307,
                     "name": "ExpressionStatement",
-                    "src": "398:22:1"
+                    "src": "425:22:1"
                   },
                   {
                     "children": [
@@ -28561,20 +28826,20 @@ module.exports={
                                   "typeString": "address"
                                 },
                                 {
-                                  "typeIdentifier": "t_contract$_Auction_$250",
+                                  "typeIdentifier": "t_contract$_Auction_$266",
                                   "typeString": "contract Auction"
                                 }
                               ],
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 262,
+                              "referencedDeclaration": 278,
                               "type": "function (address,address)",
                               "value": "AuctionCreated"
                             },
-                            "id": 289,
+                            "id": 308,
                             "name": "Identifier",
-                            "src": "431:14:1"
+                            "src": "458:14:1"
                           },
                           {
                             "attributes": {
@@ -28594,18 +28859,18 @@ module.exports={
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 318,
+                                  "referencedDeclaration": 337,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 290,
+                                "id": 309,
                                 "name": "Identifier",
-                                "src": "446:3:1"
+                                "src": "473:3:1"
                               }
                             ],
-                            "id": 291,
+                            "id": 310,
                             "name": "MemberAccess",
-                            "src": "446:10:1"
+                            "src": "473:10:1"
                           },
                           {
                             "attributes": {
@@ -28613,33 +28878,33 @@ module.exports={
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 274,
+                              "referencedDeclaration": 292,
                               "type": "contract Auction",
                               "value": "auction"
                             },
-                            "id": 292,
+                            "id": 311,
                             "name": "Identifier",
-                            "src": "458:7:1"
+                            "src": "485:7:1"
                           }
                         ],
-                        "id": 293,
+                        "id": 312,
                         "name": "FunctionCall",
-                        "src": "431:35:1"
+                        "src": "458:35:1"
                       }
                     ],
-                    "id": 294,
+                    "id": 313,
                     "name": "ExpressionStatement",
-                    "src": "431:35:1"
+                    "src": "458:35:1"
                   }
                 ],
-                "id": 295,
+                "id": 314,
                 "name": "Block",
-                "src": "305:169:1"
+                "src": "322:179:1"
               }
             ],
-            "id": 296,
+            "id": 315,
             "name": "FunctionDefinition",
-            "src": "235:239:1"
+            "src": "235:266:1"
           },
           {
             "attributes": {
@@ -28651,7 +28916,7 @@ module.exports={
               ],
               "name": "getAuctions",
               "payable": false,
-              "scope": 306,
+              "scope": 325,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -28664,9 +28929,9 @@ module.exports={
                   ]
                 },
                 "children": [],
-                "id": 297,
+                "id": 316,
                 "name": "ParameterList",
-                "src": "502:2:1"
+                "src": "529:2:1"
               },
               {
                 "children": [
@@ -28674,7 +28939,7 @@ module.exports={
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 305,
+                      "scope": 324,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract Auction[] memory",
@@ -28692,33 +28957,33 @@ module.exports={
                             "attributes": {
                               "contractScope": null,
                               "name": "Auction",
-                              "referencedDeclaration": 250,
+                              "referencedDeclaration": 266,
                               "type": "contract Auction"
                             },
-                            "id": 298,
+                            "id": 317,
                             "name": "UserDefinedTypeName",
-                            "src": "526:7:1"
+                            "src": "553:7:1"
                           }
                         ],
-                        "id": 299,
+                        "id": 318,
                         "name": "ArrayTypeName",
-                        "src": "526:9:1"
+                        "src": "553:9:1"
                       }
                     ],
-                    "id": 300,
+                    "id": 319,
                     "name": "VariableDeclaration",
-                    "src": "526:9:1"
+                    "src": "553:9:1"
                   }
                 ],
-                "id": 301,
+                "id": 320,
                 "name": "ParameterList",
-                "src": "525:11:1"
+                "src": "552:11:1"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 301
+                      "functionReturnParameters": 320
                     },
                     "children": [
                       {
@@ -28727,38 +28992,38 @@ module.exports={
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 256,
+                          "referencedDeclaration": 272,
                           "type": "contract Auction[] storage ref",
                           "value": "auctions"
                         },
-                        "id": 302,
+                        "id": 321,
                         "name": "Identifier",
-                        "src": "555:8:1"
+                        "src": "582:8:1"
                       }
                     ],
-                    "id": 303,
+                    "id": 322,
                     "name": "Return",
-                    "src": "548:15:1"
+                    "src": "575:15:1"
                   }
                 ],
-                "id": 304,
+                "id": 323,
                 "name": "Block",
-                "src": "537:34:1"
+                "src": "564:34:1"
               }
             ],
-            "id": 305,
+            "id": 324,
             "name": "FunctionDefinition",
-            "src": "482:89:1"
+            "src": "509:89:1"
           }
         ],
-        "id": 306,
+        "id": 325,
         "name": "ContractDefinition",
-        "src": "57:517:1"
+        "src": "57:544:1"
       }
     ],
-    "id": 307,
+    "id": 326,
     "name": "SourceUnit",
-    "src": "0:574:1"
+    "src": "0:601:1"
   },
   "compiler": {
     "name": "solc",
@@ -28768,11 +29033,11 @@ module.exports={
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xf12b5dd4ead5f743c6baa640b0216200e89b60da"
+      "address": "0x345ca3e014aaf5dca488057592ee47305d9b3e10"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-02-27T09:36:04.456Z"
+  "updatedAt": "2018-02-28T10:06:59.944Z"
 }
 },{}],167:[function(require,module,exports){
 'use strict';
@@ -57235,10 +57500,10 @@ module.exports = XMLHttpRequest;
 },{}],320:[function(require,module,exports){
 module.exports={
     "production": {
-        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+        "FactoryAuction": "0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f"
     },
     "development": {
-        "FactoryAuction": "0x8cdaf0cd259887258bc13a92c0a6da92698644c0"
+        "FactoryAuction": "0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f"
     }
 }
 },{}],321:[function(require,module,exports){
@@ -57310,12 +57575,14 @@ let vmInit = function (app) {
                 let startAmount = document.getElementById("start-auction-amount").value;
 
                 function createContinue(imageUrl) {
-                    console.log(imageUrl)
-
                     let auctionOwner = web3.eth.accounts[0];
-                    factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                        .then(_ => refreshAuctions(imageUrl));
+                    factoryAuction.createAuction(duration, startAmount, imageUrl, { from: auctionOwner })
+                        .then(_ => {
+                            refreshAuctions();
+                            resetFormValues();
+                        });
                 }
+
                 uploadImage(createContinue);
             },
             bid: async function (address) {
@@ -57331,7 +57598,7 @@ let vmInit = function (app) {
                 let maxBidder = (await auction.getMaxBidder()).valueOf();
 
                 document.getElementById("max-bid-" + address).innerHTML = newBid;
-                document.getElementById("max-bidder-" + address).innerHTML = maxBidder;
+                document.getElementById("max-bidder-" + address).innerText = maxBidder;
             }
         },
 
@@ -57366,27 +57633,29 @@ let vmInit = function (app) {
         reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
     }
 
-    async function refreshAuctions(imageUrl) {
+    async function refreshAuctions() {
         let newAuctions;
         while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
 
         newAuctions.forEach(async (addr, ind) => {
-            let result = await mapAuctions(addr, ind, imageUrl);
+            let result = await mapAuctions(addr, ind);
             if (ind >= auctions.length)
                 auctions.push(result)
         });
     }
 
-    async function mapAuctions(addr, ind, imageUrl) {
+    async function mapAuctions(addr, ind) {
         let currentAuction = await contractAuction.at(addr);
 
         let maxBid = (await currentAuction.getMaxBid()).valueOf();
         let owner = (await currentAuction.getOwner()).valueOf();
         let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
+        let imageUrl = (await currentAuction.getImageUrl()).valueOf();
 
         if (maxBidder === "0x0000000000000000000000000000000000000000") {
             maxBidder = "None"
         }
+
         let result = {
             id: ind,
             address: addr,
@@ -57408,6 +57677,12 @@ let vmInit = function (app) {
         component = Vue.component('create-auction', {
             template: "#template-create-auction",
         })
+    }
+
+    function resetFormValues() {
+        document.getElementById("duration").value = "";
+        document.getElementById("start-auction-amount").value = "";
+        document.getElementById("photo").value = "";
     }
 }
 

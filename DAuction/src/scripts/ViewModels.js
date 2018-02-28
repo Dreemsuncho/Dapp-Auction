@@ -20,12 +20,14 @@ let vmInit = function (app) {
                 let startAmount = document.getElementById("start-auction-amount").value;
 
                 function createContinue(imageUrl) {
-                    console.log(imageUrl)
-
                     let auctionOwner = web3.eth.accounts[0];
-                    factoryAuction.createAuction(duration, startAmount, { from: auctionOwner })
-                        .then(_ => refreshAuctions(imageUrl));
+                    factoryAuction.createAuction(duration, startAmount, imageUrl, { from: auctionOwner })
+                        .then(_ => {
+                            refreshAuctions();
+                            resetFormValues();
+                        });
                 }
+
                 uploadImage(createContinue);
             },
             bid: async function (address) {
@@ -41,7 +43,7 @@ let vmInit = function (app) {
                 let maxBidder = (await auction.getMaxBidder()).valueOf();
 
                 document.getElementById("max-bid-" + address).innerHTML = newBid;
-                document.getElementById("max-bidder-" + address).innerHTML = maxBidder;
+                document.getElementById("max-bidder-" + address).innerText = maxBidder;
             }
         },
 
@@ -76,27 +78,29 @@ let vmInit = function (app) {
         reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
     }
 
-    async function refreshAuctions(imageUrl) {
+    async function refreshAuctions() {
         let newAuctions;
         while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
 
         newAuctions.forEach(async (addr, ind) => {
-            let result = await mapAuctions(addr, ind, imageUrl);
+            let result = await mapAuctions(addr, ind);
             if (ind >= auctions.length)
                 auctions.push(result)
         });
     }
 
-    async function mapAuctions(addr, ind, imageUrl) {
+    async function mapAuctions(addr, ind) {
         let currentAuction = await contractAuction.at(addr);
 
         let maxBid = (await currentAuction.getMaxBid()).valueOf();
         let owner = (await currentAuction.getOwner()).valueOf();
         let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
+        let imageUrl = (await currentAuction.getImageUrl()).valueOf();
 
         if (maxBidder === "0x0000000000000000000000000000000000000000") {
             maxBidder = "None"
         }
+
         let result = {
             id: ind,
             address: addr,
@@ -118,6 +122,12 @@ let vmInit = function (app) {
         component = Vue.component('create-auction', {
             template: "#template-create-auction",
         })
+    }
+
+    function resetFormValues() {
+        document.getElementById("duration").value = "";
+        document.getElementById("start-auction-amount").value = "";
+        document.getElementById("photo").value = "";
     }
 }
 
