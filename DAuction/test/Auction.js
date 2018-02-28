@@ -10,7 +10,7 @@ contract("Auction", function (accounts) {
     let startAuctionAmount = 10;
 
     beforeEach(async function () {
-        instance = await Auction.new(instanceOwner, durationAuction, startAuctionAmount);
+        instance = await Auction.new(instanceOwner, durationAuction, startAuctionAmount, "ipfs.imageUrl");
     });
 
 

@@ -12,8 +12,8 @@ contract AuctionFactory {
 
     }
 
-    function createAuction(uint duration, uint startAuctionAmount) public {
-        Auction auction = new Auction(msg.sender, duration, startAuctionAmount);
+    function createAuction(uint duration, uint startAuctionAmount, string imageUrl) public {
+        Auction auction = new Auction(msg.sender, duration, startAuctionAmount, imageUrl);
         auctions.push(auction);
         AuctionCreated(msg.sender, auction);
     }

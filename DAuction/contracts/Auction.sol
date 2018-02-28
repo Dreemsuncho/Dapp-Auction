@@ -31,16 +31,18 @@ contract Auction {
     uint private maxBid;
     address private maxBidder;
     address private owner;
+    string private imageUrl;
     bool private canceled;
 
     mapping(address => uint) private stakeByBidder;
 
-    function Auction(address ownerInput, uint duration, uint startAuctionAmount) public {
+    function Auction(address ownerInput, uint duration, uint startAuctionAmount, string inputImageUrl) public {
         require(duration >= 1);
 
         owner = ownerInput;
         dateEnd = now + duration;
         maxBid = startAuctionAmount;
+        imageUrl = inputImageUrl;
         canceled = false;
     }
 
@@ -95,5 +97,9 @@ contract Auction {
 
     function isEnd() public view returns (bool) {
         return now >= dateEnd;
+    }
+
+    function getImageUrl() public view returns (string) {
+        return imageUrl;
     }
 }

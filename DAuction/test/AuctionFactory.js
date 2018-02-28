@@ -27,7 +27,7 @@ contract("AuctionFactory", function (accounts) {
         it("should initialize new auction", async function () {
             // Arrange Act
             let auctionsBefore = await instance.getAuctions();
-            await instance.createAuction(150, 10, { from: accounts[1] })
+            await instance.createAuction(150, 10, "ipfs.imageUrl", { from: accounts[1] })
             let auctionsAfter = await instance.getAuctions();
 
             // Assert
@@ -40,7 +40,7 @@ contract("AuctionFactory", function (accounts) {
             let auctionOwner = accounts[1];
 
             // Act
-            await instance.createAuction(150, 10, { from: auctionOwner })
+            await instance.createAuction(150, 10, "ipfs.imageUrl", { from: auctionOwner })
 
             let auctions = await instance.getAuctions();
             let auctionAddress = auctions[0];
@@ -48,6 +48,22 @@ contract("AuctionFactory", function (accounts) {
             let actualAuctionOwner = await auction.getOwner();
             // Assert
             assert.strictEqual(actualAuctionOwner, auctionOwner);
+        });
+
+        it("should image url be set correctly", async function () {
+            // Arrange
+            let auctionOwner = accounts[1];
+            let imageUrl = "ipfs.imageUrl";
+
+            // Act
+            await instance.createAuction(150, 10, imageUrl, { from: auctionOwner })
+
+            let auctions = await instance.getAuctions();
+            let auctionAddress = auctions[0];
+            let auction = Auction.at(auctionAddress); // get deployed auction
+            let actualAuctionImageUrl = await auction.getImageUrl();
+            // Assert
+            assert.strictEqual(actualAuctionImageUrl, imageUrl);
         });
     });
 });
