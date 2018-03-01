@@ -101,6 +101,10 @@ contract Auction {
         return owner;
     }
 
+    function setOwner(address addr) public {
+        owner = addr;
+    }
+
     function getMaxBid() public view returns(uint) {
         return maxBid;
     }

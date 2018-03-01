@@ -21,4 +21,15 @@ contract AuctionFactory {
     function getAuctions() public view returns (Auction[]) {
         return auctions;
     }
+
+    function destroy(address auctionAddress) public returns (bool) {
+        for (uint i = 0; i < auctions.length; i += 1) {
+            if (auctionAddress == address(auctions[i])) {
+                delete auctions[i];
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

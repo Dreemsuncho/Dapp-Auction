@@ -34,17 +34,27 @@ let vmInit = function (app) {
             bid: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
-                let bidAmount = Number(document.getElementById("bid-value-" + auctionAddress).value);
 
-                let oldBid = (await auction.getMaxBid()).valueOf();
-                await auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
+                let auctionOwner = (await auction.getOwner()).valueOf();
+                if (account === auctionOwner) {
+                    toastr.warning("Cannot make bid in your auctions!!")
+                }
+                else {
 
-                let newBid;
-                while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
-                let maxBidder = (await auction.getMaxBidder()).valueOf();
+                    let bidAmount = Number(document.getElementById("bid-value-" + auctionAddress).value);
 
-                document.getElementById("max-bid-" + auctionAddress).innerHTML = newBid;
-                document.getElementById("max-bidder-" + auctionAddress).innerText = maxBidder;
+                    let oldBid = (await auction.getMaxBid()).valueOf();
+                    await auction.makeBid({ from: account, value: bidAmount, gas: 3000000 })
+
+                    let newBid;
+                    while ((newBid = await auction.getMaxBid()).valueOf() === oldBid) { }
+                    let maxBidder = (await auction.getMaxBidder()).valueOf();
+
+                    document.getElementById("max-bid-" + auctionAddress).innerHTML = newBid;
+                    document.getElementById("max-bidder-" + auctionAddress).innerText = maxBidder;
+
+                    toastr.success("You successfuly make your stake!!")
+                }
             },
             calculateBid: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
@@ -59,28 +69,21 @@ let vmInit = function (app) {
             withdraw: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
-                let accountStake = (await auction.getStakeByBidder("")).valueOf();
 
-                let hasWithdraw;
+
+                let hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
                 try {
-                    hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
+                    await auction.withdraw({ from: account });
                 } catch (err) {
                     console.log("ERR:", err)
                 }
-
-                let maxBidder = (await auction.getMaxBidder()).valueOf();
-                console.log("MaxBidder", maxBidder)
-                let stake = (await auction.getStakeByBidder(maxBidder)).valueOf();
-                console.log("stake:", stake)
-                console.log("hasWithdraw:",hasWithdraw)
+                hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
 
                 if (hasWithdraw) {
-                    toastr.success("Success")
+                    toastr.success("Successfully withdraw!")
                 } else {
-                    toastr.info("You cannot withdraw funds" + accountStake)
+                    toastr.info("You cannot withdraw funds!")
                 }
-
-                console.log("hasWithdraw:", hasWithdraw);
             },
             cancel: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
@@ -100,6 +103,15 @@ let vmInit = function (app) {
                     document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
                     document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
                 }
+            },
+            destroy: async function (auctionAddress) {
+                let auction = await contractAuction.at(auctionAddress);
+                let account = web3.eth.accounts[0];
+                console.log(auction)
+                await auction.setOwner("0x0", { from: account, gas: 3000000 });
+
+                while ((await auction.getOwner()).valueOf() !== "0x0000000000000000000000000000000000000000") { }
+                window.location.reload();
             }
         },
 
@@ -125,14 +137,18 @@ let vmInit = function (app) {
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if (distance < 0) {
+            try {
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
+                    document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
+                }
+                else {
+                    document.getElementById("timer-" + auctionAddress).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
+                    document.getElementById("expired-" + auctionAddress).setAttribute("disabled", "disabled")
+                }
+            } catch (err) {
                 clearInterval(timer);
-                document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
-                document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
-            }
-            else {
-                document.getElementById("timer-" + auctionAddress).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
-                document.getElementById("expired-" + auctionAddress).setAttribute("disabled", "disabled")
             }
         }, 1000);
 
