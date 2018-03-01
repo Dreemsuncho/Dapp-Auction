@@ -59154,10 +59154,15 @@ module.exports={
 },{}],321:[function(require,module,exports){
 
 const contract = require("truffle-contract");
-const initVm = require("./ViewModels").initVm;
-const initUtils = require("./Utils").initUtils;
+const initVm = require("./AppVM").initVm;
 
 window.App = {};
+
+(function (app) {
+    app.emptyAddress = "0x0000000000000000000000000000000000000000";
+    app.timers = {};
+    app.auctions = [];
+})(window.App);
 
 
 (function (app) {
@@ -59186,7 +59191,8 @@ window.App = {};
 
         app.factoryAuction = factoryAuction;
         app.contractAuction = contractAuction;
-        initVm(app, initUtils);
+        
+        initVm(app);
     })();
 })(window.App);
 
@@ -59197,52 +59203,30 @@ async function initFactoryAuction(env, contractFactoryAuction) {
 
     return factoryAuction;
 }
-},{"../../build/contracts/Auction.json":165,"../../build/contracts/AuctionFactory.json":166,"../Addresses.json":320,"./Utils":322,"./ViewModels":323,"truffle-contract":264}],322:[function(require,module,exports){
+},{"../../build/contracts/Auction.json":165,"../../build/contracts/AuctionFactory.json":166,"../Addresses.json":320,"./AppVM":322,"truffle-contract":264}],322:[function(require,module,exports){
 
-let initUtils = function (auctions, destroy) {
+const initUtils = require("./Utils").initUtils;
 
-    let contractAuction = app.contractAuction;
+const utils = require("./Utils")
 
-    document.getElementById("clear-all").addEventListener("click", function () {
-        auctions.forEach(auc => {
-            if (auc.owner !== "0x0000000000000000000000000000000000000000")
-                destroy(auc.address, true);
-        });
+const initClearAllEvent = utils.initClearAllEvent;
+const setTimer = utils.setTimer;
+const resetCreateFormValues = utils.resetCreateFormValues;
+const initVueComponents = utils.initVueComponents
+const mapAuctions = utils.mapAuctions;
+const uploadImage = utils.uploadImage;
+const refreshAuctions = utils.refreshAuctions;
 
 
-        function checkOwners() {
-            let owners = [];
-
-            auctions.forEach(async auc => {
-                let auction = await contractAuction.at(auc.address);
-                let auctionOwner = (await auction.getOwner()).valueOf();
-                owners.push(auctionOwner);
-            });
-
-            if (owners.every(owner => owner === "0x0000000000000000000000000000000000000000")) {
-                window.location.reload();
-            }
-            else {
-                // setTimeout(() => {
-                //     checkOwners();
-                // }, 1000)
-            }
-        }
-    })
-}
-
-module.exports = { initUtils }
-},{}],323:[function(require,module,exports){
-
-let initVm = function (app, initUtils) {
+let initVm = function (app) {
 
     let factoryAuction = app.factoryAuction;
     let contractAuction = app.contractAuction;
+    let timers = app.timers
+    let emptyAddress = app.emptyAddress;
     let auctions;
-    let timers = {}
 
-
-    initComponents();
+    initVueComponents(Vue);
 
     const vm = new Vue({
         el: "#app",
@@ -59260,12 +59244,13 @@ let initVm = function (app, initUtils) {
                     factoryAuction.createAuction(duration, web3.toWei(startAmount, "ether"), imageUrl, { from: auctionOwner })
                         .then(_ => {
                             refreshAuctions();
-                            resetFormValues();
+                            resetCreateFormValues();
                         });
                 }
 
-                uploadImage(createContinue);
+                uploadImage(createContinue); // IPFS
             },
+
             bid: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
@@ -59287,6 +59272,7 @@ let initVm = function (app, initUtils) {
 
                         document.getElementById("max-bid-" + auctionAddress).innerHTML = newBid;
                         document.getElementById("max-bidder-" + auctionAddress).innerText = maxBidder;
+                        document.getElementById("bid-value-" + auctionAddress).value = "";
 
                         toastr.success("You successfuly make your stake!!")
                     }
@@ -59296,6 +59282,7 @@ let initVm = function (app, initUtils) {
                     }
                 }
             },
+
             calculateBid: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
@@ -59306,6 +59293,7 @@ let initVm = function (app, initUtils) {
                 let difference = ((maxBid - currentBidderStake) / 1000000000000000000) + 1;
                 document.getElementById("bid-value-" + auctionAddress).value = difference;
             },
+
             withdraw: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
@@ -59319,161 +59307,196 @@ let initVm = function (app, initUtils) {
                     toastr.warning("You cannot withdraw funds!")
                 }
             },
+
             cancel: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
 
-                let error = false;
                 try {
                     await auction.forceEnd({ from: account, gas: 3000000 });
-                } catch (err) {
-                    toastr.error("You are not owner or Auction is already end!");
-                    error = err;
-                }
 
-                if (error === false) {
                     clearInterval(timers[auctionAddress]);
-                    setTimeout(() => {
-                        toastr.success("Auction canceled: " + auctionAddress)
-                        document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
-                        document.getElementById("timer-" + auctionAddress).removeAttribute("id");
-                        document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
-                        document.getElementById("expired-" + auctionAddress).removeAttribute("id");
-                    }, 1)
+                    toastr.success("Auction canceled: " + auctionAddress)
+
+                    document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
+                    document.getElementById("timer-" + auctionAddress).removeAttribute("id");
+
+                    document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
+                    document.getElementById("expired-" + auctionAddress).removeAttribute("id");
+                }
+                catch (err) {
+                    toastr.error("You are not owner or Auction is already end!");
                 }
             },
+
             destroy: async function (auctionAddress, flag = false) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
-                console.log(auction)
+
                 await auction.setOwner("0x0", { from: account, gas: 3000000 });
 
                 if (flag === false) {
-                    while ((await auction.getOwner()).valueOf() !== "0x0000000000000000000000000000000000000000") { }
+                    while ((await auction.getOwner()).valueOf() !== emptyAddress) { }
                     window.location.reload();
                 }
             }
         },
 
-        beforeCreate: function () {
-        },
-
         created: function () {
             auctions = this.auctions
+            app.auctions = this.auctions
+
+            initUtils(app)
             refreshAuctions();
         }
     });
 
-    function setTimer(auctionAddress, endDate) {
-        var countDownDate = new Date(endDate * 1000).getTime();
-
-        let timer = setInterval(function () {
-            var now = new Date().getTime();
-
-            var distance = countDownDate - now;
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            try {
-                if (distance < 0) {
-                    clearInterval(timer);
-                    document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
-                    document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
-                }
-                else {
-                    document.getElementById("timer-" + auctionAddress).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
-                    document.getElementById("expired-" + auctionAddress).setAttribute("disabled", "disabled")
-                }
-            } catch (err) {
-                clearInterval(timer);
-            }
-        }, 1000);
-
-        timers[auctionAddress] = timer;
-    }
-
-    function uploadImage(createContinue) {
-        const reader = new FileReader();
-        let imageUrl = "";
-
-        reader.onloadend = function () {
-            const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
-            const buf = buffer.Buffer(reader.result) // Convert data into buffer
-
-            ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
-                if (err)
-                    console.error(err)
-                else
-                    imageUrl = `https://ipfs.io/ipfs/${result[0].hash}`
-
-                createContinue(imageUrl)
-            })
-        }
-
-        const photo = document.getElementById("photo");
-        reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
-    }
-
-    async function refreshAuctions() {
-        let newAuctions;
-        while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
-
-        newAuctions.forEach(async (addr, ind) => {
-            let result = await mapAuctions(addr, ind);
-            if (ind >= auctions.length)
-                // auctions.push(result)
-                auctions.splice(0, 0, result)
-        });
-    }
-
-    async function mapAuctions(addr, ind) {
-        let currentAuction = await contractAuction.at(addr);
-
-        let maxBid = (await currentAuction.getMaxBid()).valueOf();
-        let owner = (await currentAuction.getOwner()).valueOf();
-        let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
-        let imageUrl = (await currentAuction.getImageUrl()).valueOf();
-        let endDate = (await currentAuction.getEndDate()).valueOf();
-        setTimer(addr, endDate);
-
-
-        if (maxBidder === "0x0000000000000000000000000000000000000000") {
-            maxBidder = "None"
-        }
-        let result = {
-            id: ind,
-            address: addr,
-            maxBid: maxBid,
-            owner: owner,
-            maxBidder: maxBidder,
-            imageUrl: imageUrl
-        }
-
-        return result
-    }
-
-    function initComponents() {
-        component = Vue.component('list-auction', {
-            props: ["item"],
-            template: "#template-list-auction",
-        })
-
-        component = Vue.component('create-auction', {
-            template: "#template-create-auction",
-        })
-    }
-
-    function resetFormValues() {
-        document.getElementById("duration").value = "";
-        document.getElementById("start-auction-amount").value = "";
-        document.getElementById("photo").value = "";
-    }
-
-    initUtils(auctions, vm.destroy);
+    initClearAllEvent(vm.destroy);
 }
 
 module.exports = { initVm }
+},{"./Utils":323}],323:[function(require,module,exports){
+
+let contractAuction;
+let emptyAddress;
+let timers;
+let factoryAuction;
+let auctions;
+
+
+let initUtils = function (app) {
+    contractAuction = app.contractAuction;
+    emptyAddress = app.emptyAddress;
+    timers = app.timers;
+    factoryAuction = app.factoryAuction;
+    auctions = app.auctions;
+}
+
+let initClearAllEvent = function (destroy) {
+    document.getElementById("clear-all").addEventListener("click", function () {
+        auctions.forEach(auc => {
+            if (auc.owner !== emptyAddress) {
+                destroy(auc.address, true);
+            }
+        });
+    });
+}
+
+let setTimer = function setTimer(auctionAddress, endDate) {
+    var countDownDate = new Date(endDate * 1000).getTime();
+
+    let timer = setInterval(function () {
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        try {
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
+                document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
+            }
+            else {
+                document.getElementById("timer-" + auctionAddress).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
+                document.getElementById("expired-" + auctionAddress).setAttribute("disabled", "disabled")
+            }
+        } catch (err) {
+            clearInterval(timer);
+        }
+    }, 1000);
+
+    timers[auctionAddress] = timer;
+}
+
+let initVueComponents = function (vue) {
+    component = vue.component('list-auction', {
+        props: ["item"],
+        template: "#template-list-auction",
+    })
+
+    component = vue.component('create-auction', {
+        template: "#template-create-auction",
+    })
+}
+
+let resetCreateFormValues = function () {
+    document.getElementById("duration").value = "";
+    document.getElementById("start-auction-amount").value = "";
+    document.getElementById("photo").value = "";
+}
+
+async function mapAuctions(addr, ind) {
+    let currentAuction = await contractAuction.at(addr);
+
+    let maxBid = (await currentAuction.getMaxBid()).valueOf();
+    let owner = (await currentAuction.getOwner()).valueOf();
+    let maxBidder = (await currentAuction.getMaxBidder()).valueOf();
+    let imageUrl = (await currentAuction.getImageUrl()).valueOf();
+    let endDate = (await currentAuction.getEndDate()).valueOf();
+    setTimer(addr, endDate);
+
+    if (maxBidder === emptyAddress) {
+        maxBidder = "None"
+    }
+    let result = {
+        id: ind,
+        address: addr,
+        maxBid: maxBid,
+        owner: owner,
+        maxBidder: maxBidder,
+        imageUrl: imageUrl
+    }
+
+    return result
+}
+
+let uploadImage = function (createContinue) {
+    const reader = new FileReader();
+    let imageUrl = "";
+
+    reader.onloadend = function () {
+        const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
+        const buf = buffer.Buffer(reader.result) // Convert data into buffer
+
+        ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
+            if (err)
+                console.error(err)
+            else
+                imageUrl = `https://ipfs.io/ipfs/${result[0].hash}`
+
+            createContinue(imageUrl)
+        })
+    }
+
+    const photo = document.getElementById("photo");
+    reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
+}
+
+async function refreshAuctions() {
+    let newAuctions;
+    while ((newAuctions = await factoryAuction.getAuctions()).length === auctions.length) { }
+
+    newAuctions.forEach(async (addr, ind) => {
+        let result = await mapAuctions(addr, ind);
+        if (ind >= auctions.length)
+            // auctions.push(result)
+            auctions.splice(0, 0, result)
+    });
+}
+
+module.exports = {
+    initUtils,
+    initClearAllEvent,
+    setTimer,
+    initVueComponents,
+    resetCreateFormValues,
+    mapAuctions,
+    uploadImage,
+    refreshAuctions
+}
 },{}]},{},[321]);
