@@ -49,6 +49,25 @@ contract("Auction - Withdraw", function (accounts) {
     });
 
     describe("(Sad & Bad) Path", async function () {
+        it("should owner cannot withdraw twice", async function () {
+            // Arrange
+            let bidder = accounts[1];
+            let bidAmount = 12;
+            
+            await instance.makeBid({ from: bidder, value: bidAmount });
+            await instance.cancel({ from: instanceOwner });
+
+            let hasWithdraw = (await instance.withdraw.call({ from: instanceOwner })).valueOf();
+            // Act Assert
+            assert.isTrue(hasWithdraw)
+            
+            await instance.withdraw({ from: instanceOwner });
+
+            hasWithdraw = (await instance.withdraw.call({ from: instanceOwner })).valueOf();
+
+            assert.isFalse(hasWithdraw)
+        });
+
         it("should max bidder has no funds when owner withdraw", async function () {
             // Arrange
             let bidder = accounts[1];
