@@ -49,6 +49,25 @@ contract("Auction - Withdraw", function (accounts) {
     });
 
     describe("(Sad & Bad) Path", async function () {
+        it("should max bidder has no funds when owner withdraw", async function () {
+            // Arrange
+            let bidder = accounts[1];
+            let bidAmount = 12;
+            
+            await instance.makeBid({ from: bidder, value: bidAmount });
+            await instance.cancel({ from: instanceOwner });
+            
+            let maxBidder = (await instance.getMaxBidder()).valueOf();
+            let stakeBefore = (await instance.getStakeByBidder(maxBidder)).valueOf();
+            // Act
+            await instance.withdraw({ from: instanceOwner });
+            let stakeAfter = (await instance.getStakeByBidder(maxBidder)).valueOf();
+
+            // Assert
+            assert.strictEqual(Number(stakeBefore), bidAmount);
+            assert.strictEqual(Number(stakeAfter), 0);
+        });
+
         it("should doesn't withdraw before auction is end", async function () {
             // Arrange
             let withDrawler = accounts[2];

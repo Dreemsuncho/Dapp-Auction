@@ -68,6 +68,12 @@ let vmInit = function (app) {
                     console.log("ERR:", err)
                 }
 
+                let maxBidder = (await auction.getMaxBidder()).valueOf();
+                console.log("MaxBidder", maxBidder)
+                let stake = (await auction.getStakeByBidder(maxBidder)).valueOf();
+                console.log("stake:", stake)
+                console.log("hasWithdraw:",hasWithdraw)
+
                 if (hasWithdraw) {
                     toastr.success("Success")
                 } else {
