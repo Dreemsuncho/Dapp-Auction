@@ -25,9 +25,10 @@ let initVm = function (app) {
     const vm = new Vue({
         el: "#app",
         data: {
-            title: "Welcome to Auction",
+            title: "Welcome to Dap-Auction",
             auctions: []
         },
+        
         methods: {
             createAuction: function () {
                 let duration = document.getElementById("duration").value;
@@ -41,7 +42,7 @@ let initVm = function (app) {
                             resetCreateFormValues();
                         });
                 }
-                
+
                 uploadImage(createContinue); // IPFS
             },
 

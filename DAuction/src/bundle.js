@@ -59145,7 +59145,7 @@ module.exports = XMLHttpRequest;
 },{}],320:[function(require,module,exports){
 module.exports={
     "production": {
-        "FactoryAuction": "0x994cecff3cb1b55e14e3de014e5656ca7fd59d77"
+        "FactoryAuction": "0x2be1159963cf4394c2bb022fbadbd3ce3a856663"
     },
     "development": {
         "FactoryAuction": "0x4a5cd58b24e3bf04360b06bfeaf45a39aa8035b6"
@@ -59231,9 +59231,10 @@ let initVm = function (app) {
     const vm = new Vue({
         el: "#app",
         data: {
-            title: "Welcome to Auction",
+            title: "Welcome to Dap-Auction",
             auctions: []
         },
+        
         methods: {
             createAuction: function () {
                 let duration = document.getElementById("duration").value;
@@ -59247,7 +59248,7 @@ let initVm = function (app) {
                             resetCreateFormValues();
                         });
                 }
-                
+
                 uploadImage(createContinue); // IPFS
             },
 
@@ -59414,23 +59415,6 @@ let setTimer = function setTimer(auctionAddress, endDate) {
     timers[auctionAddress] = timer;
 }
 
-let initVueComponents = function (vue) {
-    component = vue.component('list-auction', {
-        props: ["item"],
-        template: "#template-list-auction",
-    })
-
-    component = vue.component('create-auction', {
-        template: "#template-create-auction",
-    })
-}
-
-let resetCreateFormValues = function () {
-    document.getElementById("duration").value = "";
-    document.getElementById("start-auction-amount").value = "";
-    document.getElementById("photo").value = "";
-}
-
 async function mapAuctions(addr, ind) {
     let currentAuction = await contractAuction.at(addr);
 
@@ -59488,6 +59472,23 @@ async function refreshAuctions() {
             // auctions.push(result)
             auctions.splice(0, 0, result)
     });
+}
+
+let initVueComponents = function (vue) {
+    component = vue.component('list-auction', {
+        props: ["item"],
+        template: "#template-list-auction",
+    })
+
+    component = vue.component('create-auction', {
+        template: "#template-create-auction",
+    })
+}
+
+let resetCreateFormValues = function () {
+    document.getElementById("duration").value = "";
+    document.getElementById("start-auction-amount").value = "";
+    document.getElementById("photo").value = "";
 }
 
 module.exports = {

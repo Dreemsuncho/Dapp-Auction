@@ -55,23 +55,6 @@ let setTimer = function setTimer(auctionAddress, endDate) {
     timers[auctionAddress] = timer;
 }
 
-let initVueComponents = function (vue) {
-    component = vue.component('list-auction', {
-        props: ["item"],
-        template: "#template-list-auction",
-    })
-
-    component = vue.component('create-auction', {
-        template: "#template-create-auction",
-    })
-}
-
-let resetCreateFormValues = function () {
-    document.getElementById("duration").value = "";
-    document.getElementById("start-auction-amount").value = "";
-    document.getElementById("photo").value = "";
-}
-
 async function mapAuctions(addr, ind) {
     let currentAuction = await contractAuction.at(addr);
 
@@ -129,6 +112,23 @@ async function refreshAuctions() {
             // auctions.push(result)
             auctions.splice(0, 0, result)
     });
+}
+
+let initVueComponents = function (vue) {
+    component = vue.component('list-auction', {
+        props: ["item"],
+        template: "#template-list-auction",
+    })
+
+    component = vue.component('create-auction', {
+        template: "#template-create-auction",
+    })
+}
+
+let resetCreateFormValues = function () {
+    document.getElementById("duration").value = "";
+    document.getElementById("start-auction-amount").value = "";
+    document.getElementById("photo").value = "";
 }
 
 module.exports = {
