@@ -22,7 +22,7 @@
             <div class="row">
                 <create-auction @create-auction="createAuction" />
             </div>
-            
+
             <div class="row" style="float:right">
                 <button class="btn btn-default" id="clear-all">Clear All</button>
             </div>
@@ -88,7 +88,7 @@
                 </li>
             </ul>
             <br>
-            <input type="number" v-bind:id="'bid-value-' + item.address" class="form-control-sm"/>
+            <input type="number" v-bind:id="'bid-value-' + item.address" class="form-control-sm" placeholder="In Ether"/>
             <button @click="$emit('bid', item.address)" class="btn btn-primary">Add Bid</button>
             <button @click="$emit('calculate-bid', item.address)" class="btn btn-success">Calculate Bid</button>
             
@@ -109,12 +109,12 @@
     <form class="form">
         <div class="form-group mx-sm-3">
             <strong>Duration:</strong>
-            <input type="number" class="form-control" id="duration" placeholder="Seconds">
+            <input type="number" class="form-control" id="duration" placeholder="In Seconds">
         </div>
         
         <div class="form-group mx-sm-3">
             <strong>Start Amount:</strong>
-            <input type="number"  class="form-control" id="start-auction-amount" placeholder="Start Amount">
+            <input type="number"  class="form-control" id="start-auction-amount" placeholder="In Ether">
         </div>
 
         <div class="form-group mx-sm-3">

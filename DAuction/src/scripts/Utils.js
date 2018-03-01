@@ -1,11 +1,12 @@
 
-let initUtils = function (auctions, callback) {
+let initUtils = function (auctions, destroy) {
 
     let contractAuction = app.contractAuction;
 
     document.getElementById("clear-all").addEventListener("click", function () {
         auctions.forEach(auc => {
-            callback(auc.address, true);
+            if (auc.owner !== "0x0000000000000000000000000000000000000000")
+                destroy(auc.address, true);
         });
 
 
@@ -20,9 +21,11 @@ let initUtils = function (auctions, callback) {
 
             if (owners.every(owner => owner === "0x0000000000000000000000000000000000000000")) {
                 window.location.reload();
-            }   
+            }
             else {
-                checkOwners();
+                // setTimeout(() => {
+                //     checkOwners();
+                // }, 1000)
             }
         }
     })
