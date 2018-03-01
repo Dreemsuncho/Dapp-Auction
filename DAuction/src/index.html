@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/toastr.css">
     <link rel="stylesheet" href="./styles/app.css">
 </head>
 
@@ -36,19 +35,16 @@
 
 
     <footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://wzrd.in/standalone/buffer"></script>
-        <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js" integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
-            crossorigin="anonymous"></script>
+        <script src="./scripts/libs/jquery.js"></script>
+        <script src="./scripts/libs/ipfs.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+        <script src="./scripts/libs/proper.js"></script>
+        <script src="./scripts/libs/bootstrap.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+        <script src="./scripts/libs/toastr.js"></script>
+        <script src="./scripts/libs/vue.js"></script>
+        <script src="./scripts/libs/buffer.js"></script>
+        
         <script src="./bundle.js"></script>
     </footer>
 </body>
@@ -94,7 +90,7 @@
             
             <div class="text-right">
                 <h5 v-bind:id="'timer-' + item.address"></h5><br>
-                <button @click="$emit('withdraw', item.address)" v-bind:id="'expired-' + item.address" type="button" class="btn btn-warning">
+                <button @click="$emit('withdraw', item.address)" v-bind:id="'expired-' + item.address" type="button" class="btn btn-outline-warning">
                     Withdraw
                 </button>
                 <button @click="$emit('cancel', item.address)" type="button" class="btn btn-link">

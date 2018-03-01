@@ -1,8 +1,8 @@
 
-const initUtils = require("./Utils").initUtils;
 
 const utils = require("./Utils")
 
+const initUtils = utils.initUtils;
 const initClearAllEvent = utils.initClearAllEvent;
 const setTimer = utils.setTimer;
 const resetCreateFormValues = utils.resetCreateFormValues;
@@ -41,7 +41,7 @@ let initVm = function (app) {
                             resetCreateFormValues();
                         });
                 }
-
+                
                 uploadImage(createContinue); // IPFS
             },
 
@@ -55,8 +55,8 @@ let initVm = function (app) {
                 }
                 else {
                     let bidAmount = Number(document.getElementById("bid-value-" + auctionAddress).value);
-
                     let oldBid = (await auction.getMaxBid()).valueOf();
+
                     try {
                         await auction.makeBid({ from: account, value: web3.toWei(bidAmount, "ether"), gas: 3000000 })
 
@@ -72,7 +72,7 @@ let initVm = function (app) {
                     }
                     catch (err) {
                         console.log("ERR:", err)
-                        toastr.error("This auction is already end!")
+                        toastr.error("This auction is already end or your bid is to low!");
                     }
                 }
             },
@@ -83,21 +83,22 @@ let initVm = function (app) {
 
                 let maxBid = (await auction.getMaxBid()).valueOf();
                 let currentBidderStake = (await auction.getStakeByBidder(account)).valueOf();
-
                 let difference = ((maxBid - currentBidderStake) / 1000000000000000000) + 1;
+
                 document.getElementById("bid-value-" + auctionAddress).value = difference;
             },
 
             withdraw: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
-
                 let hasWithdrawBefore = (await auction.withdraw.call({ from: account })).valueOf();
+
                 await auction.withdraw({ from: account, gas: 3000000 });
 
                 if (hasWithdrawBefore === true) {
                     toastr.success("Successfully withdraw!")
-                } else {
+                }
+                else {
                     toastr.warning("You cannot withdraw funds!")
                 }
             },
@@ -108,15 +109,15 @@ let initVm = function (app) {
 
                 try {
                     await auction.forceEnd({ from: account, gas: 3000000 });
-
                     clearInterval(timers[auctionAddress]);
-                    toastr.success("Auction canceled: " + auctionAddress)
 
                     document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
                     document.getElementById("timer-" + auctionAddress).removeAttribute("id");
 
                     document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
                     document.getElementById("expired-" + auctionAddress).removeAttribute("id");
+
+                    toastr.success("Auction canceled: " + auctionAddress)
                 }
                 catch (err) {
                     toastr.error("You are not owner or Auction is already end!");
