@@ -1,6 +1,7 @@
 
 const contract = require("truffle-contract");
-const vmInit = require("./ViewModels").vmInit;
+const initVm = require("./ViewModels").initVm;
+const initUtils = require("./Utils").initUtils;
 
 window.App = {};
 
@@ -31,8 +32,7 @@ window.App = {};
 
         app.factoryAuction = factoryAuction;
         app.contractAuction = contractAuction;
-        vmInit(app);
-
+        initVm(app, initUtils);
     })();
 })(window.App);
 

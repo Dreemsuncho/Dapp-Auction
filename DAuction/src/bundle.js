@@ -59148,13 +59148,14 @@ module.exports={
         "FactoryAuction": "0x994cecff3cb1b55e14e3de014e5656ca7fd59d77"
     },
     "development": {
-        "FactoryAuction": "0x9d6181e23e60c98a7048779659fe6a3f7d1d6bb6"
+        "FactoryAuction": "0x2e5d1498287724973c21c3deb4ea5bce5a9e5853"
     }
 }
 },{}],321:[function(require,module,exports){
 
 const contract = require("truffle-contract");
-const vmInit = require("./ViewModels").vmInit;
+const initVm = require("./ViewModels").initVm;
+const initUtils = require("./Utils").initUtils;
 
 window.App = {};
 
@@ -59185,8 +59186,7 @@ window.App = {};
 
         app.factoryAuction = factoryAuction;
         app.contractAuction = contractAuction;
-        vmInit(app);
-
+        initVm(app, initUtils);
     })();
 })(window.App);
 
@@ -59197,9 +59197,41 @@ async function initFactoryAuction(env, contractFactoryAuction) {
 
     return factoryAuction;
 }
-},{"../../build/contracts/Auction.json":165,"../../build/contracts/AuctionFactory.json":166,"../Addresses.json":320,"./ViewModels":322,"truffle-contract":264}],322:[function(require,module,exports){
+},{"../../build/contracts/Auction.json":165,"../../build/contracts/AuctionFactory.json":166,"../Addresses.json":320,"./Utils":322,"./ViewModels":323,"truffle-contract":264}],322:[function(require,module,exports){
 
-let vmInit = function (app) {
+let initUtils = function (auctions, callback) {
+
+    let contractAuction = app.contractAuction;
+
+    document.getElementById("clear-all").addEventListener("click", function () {
+        auctions.forEach(auc => {
+            callback(auc.address, true);
+        });
+
+
+        function checkOwners() {
+            let owners = [];
+
+            auctions.forEach(async auc => {
+                let auction = await contractAuction.at(auc.address);
+                let auctionOwner = (await auction.getOwner()).valueOf();
+                owners.push(auctionOwner);
+            });
+
+            if (owners.every(owner => owner === "0x0000000000000000000000000000000000000000")) {
+                window.location.reload();
+            }   
+            else {
+                checkOwners();
+            }
+        }
+    })
+}
+
+module.exports = { initUtils }
+},{}],323:[function(require,module,exports){
+
+let initVm = function (app, initUtils) {
 
     let factoryAuction = app.factoryAuction;
     let contractAuction = app.contractAuction;
@@ -59271,18 +59303,14 @@ let vmInit = function (app) {
                 let account = web3.eth.accounts[0];
 
 
-                let hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
-                try {
-                    await auction.withdraw({ from: account });
-                } catch (err) {
-                    console.log("ERR:", err)
-                }
-                hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
+                let hasWithdrawBefore = (await auction.withdraw.call({ from: account })).valueOf();
+                await auction.withdraw({ from: account, gas: 3000000 });
+                let hasWithdrawAfter = (await auction.withdraw.call({ from: account })).valueOf();
 
-                if (hasWithdraw) {
+                if (hasWithdrawBefore === true && hasWithdrawAfter === false) {
                     toastr.success("Successfully withdraw!")
                 } else {
-                    toastr.info("You cannot withdraw funds!")
+                    toastr.warning("You cannot withdraw funds!")
                 }
             },
             cancel: async function (auctionAddress) {
@@ -59291,27 +59319,30 @@ let vmInit = function (app) {
 
                 let error = false;
                 try {
-                    await auction.forceEnd({ from: account });
+                    await auction.forceEnd({ from: account, gas: 3000000 });
                 } catch (err) {
                     toastr.error("You are not owner or Auction is already end!");
                     error = err;
                 }
 
                 if (error === false) {
-                    toastr.success("Auction canceled: " + auctionAddress)
                     clearInterval(timers[auctionAddress]);
+                    setTimeout(() => { clearInterval(timers[auctionAddress]); }, 1001)
+                    toastr.success("Auction canceled: " + auctionAddress)
                     document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
                     document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
                 }
             },
-            destroy: async function (auctionAddress) {
+            destroy: async function (auctionAddress, flag = false) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
                 console.log(auction)
                 await auction.setOwner("0x0", { from: account, gas: 3000000 });
 
-                while ((await auction.getOwner()).valueOf() !== "0x0000000000000000000000000000000000000000") { }
-                window.location.reload();
+                if (flag === false) {
+                    while ((await auction.getOwner()).valueOf() !== "0x0000000000000000000000000000000000000000") { }
+                    window.location.reload();
+                }
             }
         },
 
@@ -59431,7 +59462,9 @@ let vmInit = function (app) {
         document.getElementById("start-auction-amount").value = "";
         document.getElementById("photo").value = "";
     }
+
+    initUtils(auctions, vm.destroy);
 }
 
-module.exports = { vmInit }
+module.exports = { initVm }
 },{}]},{},[321]);

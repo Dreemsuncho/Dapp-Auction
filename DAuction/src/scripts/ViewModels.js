@@ -1,5 +1,5 @@
 
-let vmInit = function (app) {
+let initVm = function (app, initUtils) {
 
     let factoryAuction = app.factoryAuction;
     let contractAuction = app.contractAuction;
@@ -71,18 +71,14 @@ let vmInit = function (app) {
                 let account = web3.eth.accounts[0];
 
 
-                let hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
-                try {
-                    await auction.withdraw({ from: account });
-                } catch (err) {
-                    console.log("ERR:", err)
-                }
-                hasWithdraw = (await auction.withdraw.call({ from: account })).valueOf();
+                let hasWithdrawBefore = (await auction.withdraw.call({ from: account })).valueOf();
+                await auction.withdraw({ from: account, gas: 3000000 });
+                let hasWithdrawAfter = (await auction.withdraw.call({ from: account })).valueOf();
 
-                if (hasWithdraw) {
+                if (hasWithdrawBefore === true && hasWithdrawAfter === false) {
                     toastr.success("Successfully withdraw!")
                 } else {
-                    toastr.info("You cannot withdraw funds!")
+                    toastr.warning("You cannot withdraw funds!")
                 }
             },
             cancel: async function (auctionAddress) {
@@ -91,27 +87,30 @@ let vmInit = function (app) {
 
                 let error = false;
                 try {
-                    await auction.forceEnd({ from: account });
+                    await auction.forceEnd({ from: account, gas: 3000000 });
                 } catch (err) {
                     toastr.error("You are not owner or Auction is already end!");
                     error = err;
                 }
 
                 if (error === false) {
-                    toastr.success("Auction canceled: " + auctionAddress)
                     clearInterval(timers[auctionAddress]);
+                    setTimeout(() => { clearInterval(timers[auctionAddress]); }, 1001)
+                    toastr.success("Auction canceled: " + auctionAddress)
                     document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
                     document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
                 }
             },
-            destroy: async function (auctionAddress) {
+            destroy: async function (auctionAddress, flag = false) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
                 console.log(auction)
                 await auction.setOwner("0x0", { from: account, gas: 3000000 });
 
-                while ((await auction.getOwner()).valueOf() !== "0x0000000000000000000000000000000000000000") { }
-                window.location.reload();
+                if (flag === false) {
+                    while ((await auction.getOwner()).valueOf() !== "0x0000000000000000000000000000000000000000") { }
+                    window.location.reload();
+                }
             }
         },
 
@@ -231,6 +230,8 @@ let vmInit = function (app) {
         document.getElementById("start-auction-amount").value = "";
         document.getElementById("photo").value = "";
     }
+
+    initUtils(auctions, vm.destroy);
 }
 
-module.exports = { vmInit }
+module.exports = { initVm }

@@ -18,13 +18,18 @@
         <section id="app">
             <h1>{{ title }}</h1>
 
+
             <div class="row">
                 <create-auction @create-auction="createAuction" />
             </div>
             
+            <div class="row" style="float:right">
+                <button class="btn btn-default" id="clear-all">Clear All</button>
+            </div>
+
             <div class="row">
-                <list-auction v-for="auc in auctions" v-bind:item="auc" v-bind:key="auc.id"
-                @bid="bid" @withdraw="withdraw" @calculate-bid="calculateBid" @cancel="cancel" @destroy="destroy" />
+                <list-auction v-for="auc in auctions" v-bind:item="auc" v-bind:key="auc.id" @bid="bid" @withdraw="withdraw" @calculate-bid="calculateBid"
+                    @cancel="cancel" @destroy="destroy" />
             </div>
         </section>
     </div>
