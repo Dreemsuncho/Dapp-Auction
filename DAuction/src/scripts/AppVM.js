@@ -10,6 +10,7 @@ const initVueComponents = utils.initVueComponents
 const mapAuctions = utils.mapAuctions;
 const uploadImage = utils.uploadImage;
 const refreshAuctions = utils.refreshAuctions;
+const loading = utils.loading;
 
 
 let initVm = function (app) {
@@ -28,7 +29,7 @@ let initVm = function (app) {
             title: "Welcome to Dap-Auction",
             auctions: []
         },
-        
+
         methods: {
             createAuction: function () {
                 let duration = document.getElementById("duration").value;
@@ -36,10 +37,19 @@ let initVm = function (app) {
 
                 function createContinue(imageUrl) {
                     let auctionOwner = web3.eth.accounts[0];
+                    loading(true);
                     factoryAuction.createAuction(duration, web3.toWei(startAmount, "ether"), imageUrl, { from: auctionOwner })
-                        .then(_ => {
-                            refreshAuctions();
+                        .then(async _ => {
+                            await refreshAuctions();
                             resetCreateFormValues();
+                            toastr.success("You successfully create a auction!")
+                        })
+                        .catch(_ => {
+                            toastr.warning("There is a problem see console!")
+                            console.log("ERROR:", _)
+                        })
+                        .finally(_ => {
+                            loading(false);
                         });
                 }
 
@@ -59,6 +69,7 @@ let initVm = function (app) {
                     let oldBid = (await auction.getMaxBid()).valueOf();
 
                     try {
+                        loading(true)
                         await auction.makeBid({ from: account, value: web3.toWei(bidAmount, "ether"), gas: 3000000 })
 
                         let newBid;
@@ -76,6 +87,7 @@ let initVm = function (app) {
                         toastr.error("This auction is already end or your bid is to low!");
                     }
                 }
+                loading(false)
             },
 
             calculateBid: async function (auctionAddress) {
@@ -94,6 +106,7 @@ let initVm = function (app) {
                 let account = web3.eth.accounts[0];
                 let hasWithdrawBefore = (await auction.withdraw.call({ from: account })).valueOf();
 
+                loading(true)
                 await auction.withdraw({ from: account, gas: 3000000 });
 
                 if (hasWithdrawBefore === true) {
@@ -102,12 +115,14 @@ let initVm = function (app) {
                 else {
                     toastr.warning("You cannot withdraw funds!")
                 }
+                loading(false)
             },
 
             cancel: async function (auctionAddress) {
                 let auction = await contractAuction.at(auctionAddress);
                 let account = web3.eth.accounts[0];
 
+                loading(true)
                 try {
                     await auction.forceEnd({ from: account, gas: 3000000 });
                     clearInterval(timers[auctionAddress]);
@@ -118,11 +133,14 @@ let initVm = function (app) {
                     document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
                     document.getElementById("expired-" + auctionAddress).removeAttribute("id");
 
+                    document.getElementById("cancel-" + auctionAddress).setAttribute("disabled", true);
+
                     toastr.success("Auction canceled: " + auctionAddress)
                 }
                 catch (err) {
                     toastr.error("You are not owner or Auction is already end!");
                 }
+                loading(false)
             },
 
             destroy: async function (auctionAddress, flag = false) {

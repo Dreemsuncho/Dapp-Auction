@@ -14,14 +14,23 @@ let initUtils = function (app) {
     auctions = app.auctions;
 }
 
+let loading = function (flag) {
+    if (flag === true) {
+        $("#loader").fadeIn();
+    }
+    else {
+        $("#loader").fadeOut();
+    }
+}
+
 let initClearAllEvent = function (destroy) {
-    document.getElementById("clear-all").addEventListener("click", function () {
-        auctions.forEach(auc => {
-            if (auc.owner !== emptyAddress) {
-                destroy(auc.address, true);
-            }
-        });
-    });
+    // document.getElementById("clear-all").addEventListener("click", function () {
+    //     auctions.forEach(auc => {
+    //         if (auc.owner !== emptyAddress) {
+    //             destroy(auc.address, true);
+    //         }
+    //     });
+    // });
 }
 
 let setTimer = function setTimer(auctionAddress, endDate) {
@@ -42,10 +51,12 @@ let setTimer = function setTimer(auctionAddress, endDate) {
                 clearInterval(timer);
                 document.getElementById("timer-" + auctionAddress).innerHTML = "EXPIRED";
                 document.getElementById("expired-" + auctionAddress).removeAttribute("disabled")
+                document.getElementById("cancel-" + auctionAddress).setAttribute("disabled", true)
             }
             else {
                 document.getElementById("timer-" + auctionAddress).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s Left:";
                 document.getElementById("expired-" + auctionAddress).setAttribute("disabled", "disabled")
+                document.getElementById("cancel-" + auctionAddress).removeAttribute("disabled")
             }
         } catch (err) {
             clearInterval(timer);
@@ -139,5 +150,6 @@ module.exports = {
     resetCreateFormValues,
     mapAuctions,
     uploadImage,
-    refreshAuctions
+    refreshAuctions,
+    loading
 }
